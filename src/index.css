@@ -1,5 +1,23 @@
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+/* filepath: c:\Users\Aluno\Documents\proa\zeelusPlataforma\Front-End\src\index.css */
+:root {
+    --color-1: #A9E5BB;
+    --color-2: #F5F3EF;
+    --color-3: #98D4E8;
+    --color-4: #D8F2E5;
+    --color-5: #C1C8E4;
+    --color-6: #5B8E7D;
+    --color-7: #004777;
+    --font-text: Arial, Helvetica, sans-seri;
+    --font-title: Arial, Helvetica, sans-seri;
+    --font-subtitle: Arial, Helvetica, sans-seri;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
 }

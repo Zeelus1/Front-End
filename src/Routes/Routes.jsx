@@ -2,8 +2,7 @@ import { createBrowserRouter } from "react-router";
 
 import Home from "../Home.jsx";
 import LandingPage from "../pages/landingPage/LandingPage.jsx";
-import Cadastro from "../pages/cadastro/Cadastro.jsx"
-import Login from "../pages/login/Login.jsx"
+import CadastroLogin from "../pages/cadastroLogin/CadastroLogin.jsx"
 import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 
 const router = createBrowserRouter([
@@ -13,13 +12,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage/>
     },
     {
-        path: "/cadastro",
-        element: <Cadastro/>,
-        errorElement: <ErrorPage/>
-    },
-    {
-        path: "/login",
-        element: <Login/>,
+        path: "/auth",
+        element: <CadastroLogin/>,
         errorElement: <ErrorPage/>
     },
     {
