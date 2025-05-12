@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router";
 
-import Home from "../Home.jsx";
+import App from "../App.jsx";
 import LandingPage from "../pages/landingPage/LandingPage.jsx";
 import CadastroLogin from "../pages/cadastroLogin/CadastroLogin.jsx"
 import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
@@ -18,9 +18,13 @@ const router = createBrowserRouter([
     },
     {
         path: "/home",
-        element: <Home />,
+        element: <App />,
         errorElement: <ErrorPage/>,
         children: [
+            {
+                path: "", 
+                element: <><p>teste testado funcionando</p></>,
+            },
             {
                 path: "calendario", 
                 element: <></>,
