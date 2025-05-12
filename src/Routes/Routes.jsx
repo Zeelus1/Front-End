@@ -4,7 +4,7 @@ import App from "../App.jsx";
 import LandingPage from "../pages/landingPage/LandingPage.jsx";
 import CadastroLogin from "../pages/cadastroLogin/CadastroLogin.jsx"
 import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
-
+import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx"
 const router = createBrowserRouter([
     {
         path: "/",
@@ -39,7 +39,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "treinamento", 
-                element: <></>,
+                element: <TreinamentosPage />,
+
             },
         ],
     },
