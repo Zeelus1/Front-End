@@ -1,8 +1,10 @@
-import React from 'react';
-import Style from './registrosPage.module.css';
+import React from "react";
+import Style from "./RegistrosPage.module.css";
 
-export default function registrosPage() {
+export default function RegistrosPage() {
   return (
-    <div>registrosPage</div>
-  )
+    <div>
+      RegistrosPage
+    </div>
+  );
 }
