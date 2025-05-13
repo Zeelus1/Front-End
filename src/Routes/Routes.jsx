@@ -6,6 +6,7 @@ import CadastroLogin from "../pages/cadastroLogin/CadastroLogin.jsx"
 import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx"
 import RegistrosPage from "../pages/registrosPage/RegistrosPage.jsx";
+import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "calendario", 
-                element: <></>,
+                element: <CalendarioPage/>,
             },
             {
                 path: "registros", 
