@@ -38,7 +38,7 @@ function ErrorPage() {
             </div>
           )}
 
-            <button onClick={() => navigate("/")}>Clique aqui para voltar a pagína inicial</button>
+            <button onClick={() => navigate("/home")}>Clique aqui para voltar a pagína inicial</button>
         </div>
 
       </section>
