@@ -2,26 +2,22 @@ import { useRouteError } from "react-router";
 import Style from "./ErrorPage.module.css";
 import CoracaoChorando from "../../img/CoracaoChorando.png";
 import { useNavigate } from "react-router";
-import ZeelusLogo from "../../img/zeelusLogo1.png"
+import ZeelusLogo from "../../img/zeelusLogo1.png";
 
 function ErrorPage() {
   const error = useRouteError();
-    const navigate = useNavigate()
-
-    
-
+  const navigate = useNavigate();
 
   return (
     <main className={Style.main}>
-
       <section class={Style.section1}>
-
-        <img src={ZeelusLogo} alt="" className={Style.responsiveImage}/>
+        <img
+          src={ZeelusLogo}
+          alt="Logo da plataforma zeelus"
+          className={Style.responsiveImage}
+        />
 
         <div className={Style.container_section1}>
-
-            
-
           <h1>Oops! Parece que essa página se perdeu no caminho...</h1>
 
           <p>
@@ -38,9 +34,10 @@ function ErrorPage() {
             </div>
           )}
 
-            <button onClick={() => navigate("/home")}>Clique aqui para voltar a pagína inicial</button>
+          <button onClick={() => navigate("/home")}>
+            Clique aqui para voltar a pagína inicial
+          </button>
         </div>
-
       </section>
 
       <section class={Style.section2}>
