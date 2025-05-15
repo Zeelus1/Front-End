@@ -1,6 +1,6 @@
 import { useRouteError } from "react-router";
 import Style from "./ErrorPage.module.css";
-import CoracaoChorando from "../../img/CoracaoChorando.png";
+import CoracaoChorando from "../../img/coracaoChorando.png";
 import { useNavigate } from "react-router";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
 
