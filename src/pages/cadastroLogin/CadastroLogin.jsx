@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Style from "./CadastroLogin.module.css"
 import LabelInput from '../../components/labelInput/LabelInput'
 import ImgGarotoCoracaoAzul from "../../img/rapazSegurandoCoracao.png"
-import ZeelusLogo from "../../img/ZeelusLogo1.png"
+import ZeelusLogo from "../../img/zeelusLogo1.png"
 
 function CadastroLogin() {
   const [name, setName] = useState("")
