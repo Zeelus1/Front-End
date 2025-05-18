@@ -1,20 +1,35 @@
-import { useState, useEffect } from 'react'
-import Style from "./LandingPage.module.css"
-import Logo from "../../img/zeelusLogo1.png"
-import ButtonMenu from "../../icons/icons8-menu.svg"
-import ButtonClose from "../../icons/icons8-close.svg"
-import Footer from "../../components/footer/Footer.jsx"
-import { Link } from 'react-router'
-import ButtonStart from '../../components/buttonStart/ButtonStart.jsx'
+import { useState, useEffect } from 'react';
+import Style from "./LandingPage.module.css";
+import Logo from "../../img/zeelusLogo1.png";
+import ButtonMenu from "../../icons/icons8-menu.svg";
+import ButtonClose from "../../icons/icons8-close.svg";
+import Footer from "../../components/footer/Footer.jsx";
+import { Link } from 'react-router';
+import ButtonStart from '../../components/buttonStart/ButtonStart.jsx';
 
 function LandingPage() {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [scrolled, setScrolled] = useState(false);
+  
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
+  
   useEffect(() => {
     const handleClickOutside = (e) => {
       const overlay = document.getElementById('overlay');
@@ -22,27 +37,26 @@ function LandingPage() {
         setIsMenuOpen(false);
       }
     };
-
+    
     document.addEventListener('click', handleClickOutside);
-
+    
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
-
+    
     return () => {
       document.removeEventListener('click', handleClickOutside);
       document.body.style.overflow = 'auto';
     };
   }, [isMenuOpen]);
 
-
   return (
     <>
-      <header className={Style.header}>
+      <header className={`${Style.header} ${scrolled ? Style.scrolled : ''}`}>
         <img src={Logo} alt="Logo da zeelus" className={Style.logo} />
-
+        
         <button
           className={Style.btn_abrir}
           onClick={toggleMenu}
@@ -54,7 +68,7 @@ function LandingPage() {
             className={Style.menu}
           />
         </button>
-
+        
         <div className={`${Style.menu_mobile} ${isMenuOpen ? Style.active : ''}`}>
           <div
             className={Style.btn_fechar}
@@ -65,6 +79,7 @@ function LandingPage() {
               alt="Fechar menu"
             />
           </div>
+          
           <nav className={Style.nav_mobile}>
             <ul>
               <li>
@@ -91,17 +106,16 @@ function LandingPage() {
             </ul>
           </nav>
         </div>
-
+        
         {isMenuOpen && (
           <div
             id="overlay"
-            className={Style.overlay_menu}
+            className={`${Style.overlay_menu} ${isMenuOpen ? Style.active : ''}`}
             onClick={toggleMenu}
           ></div>
         )}
-
+        
         <nav className={Style.nav_desktop}>
-
           <ul>
             <li className={Style.liLink}>
               <a href="#home">Home</a>
@@ -119,7 +133,7 @@ function LandingPage() {
               <a href="#faq">FAQ</a>
             </li>
             <li className={Style.liLink}>
-              <Link to="" >Equipe da Zeelus</Link>
+              <Link to="">Equipe da Zeelus</Link>
             </li>
             <li>
               <Link to="/auth">
@@ -129,16 +143,16 @@ function LandingPage() {
               </Link>
             </li>
           </ul>
-
         </nav>
-
       </header>
+      
       <main className={Style.main}>
-
+        {/* Seu conteúdo principal aqui */}
       </main>
+      
       <Footer />
     </>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;
