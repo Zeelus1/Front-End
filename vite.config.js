@@ -11,7 +11,7 @@ export default defineConfig({
         name: 'Zeelus',
         short_name: 'Zeelus',
         description: 'Plataforma de Gestão para Acompanhantes de Pessoas Atípicas',
-        theme_color: '#004777',
+        theme_color: '#F5F3EF',
         background_color: '#F5F3EF',
         display: 'standalone',
         icons: [
