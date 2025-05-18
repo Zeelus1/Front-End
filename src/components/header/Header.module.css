@@ -19,10 +19,6 @@
     width: 210px;
 }
 
-.nav_desktop {
-    /* border: 2px solid red; */
-}
-
 .nav_desktop ul {
     display: flex;
     gap: 15px;
