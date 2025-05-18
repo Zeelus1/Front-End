@@ -35,7 +35,7 @@
 
 }
 
-.nav_desktop ul li a::after {
+.nav_desktop ul .liLink a::after {
   content: " ";
   width: 0%;
   height: 2.5px;
@@ -46,7 +46,7 @@
   transition: 0.5s;
 }
 
-.nav_desktop ul li a:hover::after {
+.nav_desktop ul .liLink a:hover::after {
   width: 100%;
 }
 

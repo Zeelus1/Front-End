@@ -82,13 +82,13 @@ function Header() {
               <Link to="/home/treinamento" onClick={toggleMenu}>Treinamento</Link>
             </li>
             <li>
-              <Link to="/ajuda" onClick={toggleMenu}>Ajuda</Link>
+              <Link to="" onClick={toggleMenu}>Ajuda</Link>
             </li>
             <li>
-              <Link to="/notificacao" onClick={toggleMenu}>Notificação</Link>
+              <Link to="" onClick={toggleMenu}>Notificação</Link>
             </li>
             <li>
-              <Link to="/perfil" onClick={toggleMenu}>Perfil</Link>
+              <Link to="" onClick={toggleMenu}>Perfil</Link>
             </li>
           </ul>
         </nav>
@@ -105,19 +105,19 @@ function Header() {
       <nav className={Style.nav_desktop}>
 
         <ul>
-          <li>
+          <li className={Style.liLink}>
             <Link to="/home">Home</Link>
           </li>
-          <li>
+          <li className={Style.liLink}>
             <Link to="/home/calendario">Calendario</Link>
           </li>
-          <li>
+          <li className={Style.liLink}>
             <Link to="/home/registros">Registros</Link>
           </li>
-          <li>
+          <li className={Style.liLink}>
             <Link to="/home/forum">Fórum</Link>
           </li>
-          <li>
+          <li className={Style.liLink}>
             <Link to="/home/treinamento">Treinamento</Link>
           </li>
           <li>
