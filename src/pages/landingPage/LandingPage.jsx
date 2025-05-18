@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import Style from "./LandingPage.module.css";
 import Logo from "../../img/zeelusLogo1.png";
 import ButtonMenu from "../../icons/icons8-menu.svg";
 import ButtonClose from "../../icons/icons8-close.svg";
 import Footer from "../../components/footer/Footer.jsx";
-import { Link } from 'react-router';
-import ButtonStart from '../../components/buttonStart/ButtonStart.jsx';
+import { Link } from "react-router";
+import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
+import VectorSectionHome from "../../img/vectorHomeSection.svg";
+import MaeFilha from "../../img/maeFilha.png";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -23,98 +25,114 @@ function LandingPage() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [scrolled]);
-  
+
   useEffect(() => {
     const handleClickOutside = (e) => {
-      const overlay = document.getElementById('overlay');
+      const overlay = document.getElementById("overlay");
       if (isMenuOpen && e.target === overlay) {
         setIsMenuOpen(false);
       }
     };
-    
-    document.addEventListener('click', handleClickOutside);
-    
+
+    document.addEventListener("click", handleClickOutside);
+
     if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
-    
+
     return () => {
-      document.removeEventListener('click', handleClickOutside);
-      document.body.style.overflow = 'auto';
+      document.removeEventListener("click", handleClickOutside);
+      document.body.style.overflow = "auto";
     };
   }, [isMenuOpen]);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 910);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 910);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
-      <header className={`${Style.header} ${scrolled ? Style.scrolled : ''}`}>
+      <header className={`${Style.header} ${scrolled ? Style.scrolled : ""}`}>
         <img src={Logo} alt="Logo da zeelus" className={Style.logo} />
-        
+
         <button
           className={Style.btn_abrir}
           onClick={toggleMenu}
           aria-label="Abrir menu de navegação"
         >
-          <img
-            src={ButtonMenu}
-            alt="Menu Hambúrguer"
-            className={Style.menu}
-          />
+          <img src={ButtonMenu} alt="Menu Hambúrguer" className={Style.menu} />
         </button>
-        
-        <div className={`${Style.menu_mobile} ${isMenuOpen ? Style.active : ''}`}>
-          <div
-            className={Style.btn_fechar}
-            onClick={toggleMenu}
-          >
-            <img
-              src={ButtonClose}
-              alt="Fechar menu"
-            />
+
+        <div
+          className={`${Style.menu_mobile} ${isMenuOpen ? Style.active : ""}`}
+        >
+          <div className={Style.btn_fechar} onClick={toggleMenu}>
+            <img src={ButtonClose} alt="Fechar menu" />
           </div>
-          
+
           <nav className={Style.nav_mobile}>
             <ul>
               <li>
-                <a href="#home" onClick={toggleMenu}>Home</a>
+                <a href="#home" onClick={toggleMenu}>
+                  Home
+                </a>
               </li>
               <li>
-                <a href="#funcionalidades" onClick={toggleMenu}>Funcionalidades</a>
+                <a href="#funcionalidades" onClick={toggleMenu}>
+                  Funcionalidades
+                </a>
               </li>
               <li>
-                <a href="#planos" onClick={toggleMenu}>Planos</a>
+                <a href="#planos" onClick={toggleMenu}>
+                  Planos
+                </a>
               </li>
               <li>
-                <a href="#avaliacoes" onClick={toggleMenu}>Avaliações</a>
+                <a href="#avaliacoes" onClick={toggleMenu}>
+                  Avaliações
+                </a>
               </li>
               <li>
-                <a href="#faq" onClick={toggleMenu}>FAQ</a>
+                <a href="#faq" onClick={toggleMenu}>
+                  FAQ
+                </a>
               </li>
               <li>
-                <Link to="" onClick={toggleMenu}>Equipe da Zeelus</Link>
+                <Link to="" onClick={toggleMenu}>
+                  Equipe da Zeelus
+                </Link>
               </li>
               <li>
-                <Link to="/auth" onClick={toggleMenu}>Começar</Link>
+                <Link to="/auth" onClick={toggleMenu}>
+                  Começar
+                </Link>
               </li>
             </ul>
           </nav>
         </div>
-        
+
         {isMenuOpen && (
           <div
             id="overlay"
-            className={`${Style.overlay_menu} ${isMenuOpen ? Style.active : ''}`}
+            className={`${Style.overlay_menu} ${
+              isMenuOpen ? Style.active : ""
+            }`}
             onClick={toggleMenu}
           ></div>
         )}
-        
+
         <nav className={Style.nav_desktop}>
           <ul>
             <li className={Style.liLink}>
@@ -137,19 +155,53 @@ function LandingPage() {
             </li>
             <li>
               <Link to="/auth">
-                <ButtonStart>
-                  Começar
-                </ButtonStart>
+                <ButtonStart>Começar</ButtonStart>
               </Link>
             </li>
           </ul>
         </nav>
       </header>
-      
+
       <main className={Style.main}>
-        {/* Seu conteúdo principal aqui */}
+        <section className={Style.home} id="home">
+          <div className={Style.container}>
+            <div className={Style.div1}>
+              <div>
+                
+                <h1>
+                  Soluções que <br /> <span className={Style.destaque}>acolhem</span>, <br /> ferramentas que <br />
+                  <span className={Style.destaque}>empoderam</span>!
+                </h1>
+                <Link to="/auth">
+                  <ButtonStart>Começar</ButtonStart>
+                </Link>
+              </div>
+            </div>
+            {!isMobile && (
+              <div className={Style.div2}>
+                <img src={MaeFilha} alt="" />
+              </div>
+            )}
+          </div>
+
+          {/* -------------------------------- */}
+
+          <div className={Style.div3}>
+            <img src={VectorSectionHome} alt="" />
+          </div>
+        </section>
+
+        <section className={Style.funcionalidades} id="funcionalidades">
+          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cum similique provident voluptatum eum libero iusto hic enim minima labore assumenda nulla at, error nesciunt totam quam exercitationem natus ea.</h1>
+        </section>
+
+        <section id="planos"></section>
+
+        <section id="avaliacoes"></section>
+
+        <section id="faq"></section>
       </main>
-      
+
       <Footer />
     </>
   );
