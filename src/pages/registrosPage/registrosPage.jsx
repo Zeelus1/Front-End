@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./RegistrosPage.module.css";
 import BlocoInicial from "../../components/blocoinicial/BlocoInicial";
 import coracaoSorrindo from "../../img/coracaoSorrindo.png";
-import CampoBusca from "../../components/campoBusca/campoBusca";
+import CampoBusca from "../../components/campoBusca/CampoBusca.jsx";
 import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro";
 import registrosTitulo from "../../img/registrosTitulo.png";
 import CardRegistro from "../../components/cardRegistro/CardRegistro";
