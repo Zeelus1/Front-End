@@ -2,9 +2,9 @@ import { createBrowserRouter } from "react-router";
 
 import App from "../App.jsx";
 import LandingPage from "../pages/landingPage/LandingPage.jsx";
-import CadastroLogin from "../pages/cadastroLogin/CadastroLogin.jsx"
+import CadastroLogin from "../pages/cadastroLogin/CadastroLogin.jsx";
 import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
-import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx"
+import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx";
 import RegistrosPage from "../pages/registrosPage/RegistrosPage.jsx";
 import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
 
