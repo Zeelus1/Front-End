@@ -1,0 +1,46 @@
+.container {
+  position: relative;
+  width: 70%;
+  height: 40px;
+  margin: 24px auto;
+  border: none;
+}
+
+.icone {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-25%);
+  color: #00000096;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  padding: 10px 16px 10px 40px;
+  border-radius: 50px;
+  border: none;
+  box-shadow: 1px 3px 8px #00000081;
+  font-family: 'inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.input:focus {
+  outline-color: #004777;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -9,44 +9,47 @@ import RegistrosPage from "../pages/registrosPage/RegistrosPage.jsx";
 import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <LandingPage />,
-        errorElement: <ErrorPage/>
-    },
-    {
-        path: "/auth",
-        element: <CadastroLogin/>,
-        errorElement: <ErrorPage/>
-    },
-    {
-        path: "/home",
-        element: <App />,
-        errorElement: <ErrorPage/>,
-        children: [
-            {
-                path: "", 
-                element: <><p>teste testado funcionando</p></>,
-            },
-            {
-                path: "calendario", 
-                element: <CalendarioPage/>,
-            },
-            {
-                path: "registros", 
-                element: <RegistrosPage/>,
-            },
-            {
-                path: "forum", 
-                element: <></>,
-            },
-            {
-                path: "treinamento", 
-                element: <TreinamentosPage />,
-
-            },
-        ],
-    },
+  {
+    path: "/",
+    element: <LandingPage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/auth",
+    element: <CadastroLogin />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/home",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "",
+        element: (
+          <>
+            <p>teste testado funcionando</p>
+          </>
+        ),
+      },
+      {
+        path: "calendario",
+        element: <CalendarioPage />,
+      },
+      {
+        path: "registros",
+        element: <RegistrosPage />,
+      },
+      {
+        path: "forum",
+        element: <></>,
+      },
+      {
+        path: "treinamento",
+        element: <TreinamentosPage />,
+      },
+    ],
+  },
 ]);
 
 export default router;
