@@ -1,0 +1,17 @@
+.button{
+    background-image: linear-gradient(to right, #7094E2, #5DC7EA);
+    border: none;
+    padding: 15px;
+    color: #fff;
+    font-family: var(--font-text);
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.button:hover{
+    transform: scale(1.1);
+}
+

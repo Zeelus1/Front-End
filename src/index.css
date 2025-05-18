@@ -9,6 +9,7 @@
     --color-5: #C1C8E4;
     --color-6: #5B8E7D;
     --color-7: #004777;
+    --white: #fff;
     --font-text: "Inter", Arial, Helvetica, sans-seri;
     --font-title: "Poppins", Arial, Helvetica, sans-seri;
 }
@@ -21,4 +22,8 @@
 
 html{
     font-size: 62.5%;
+}
+
+#root{
+    overflow-x: hidden; 
 }
