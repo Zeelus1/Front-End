@@ -15,7 +15,6 @@ function LandingPage() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Efeito para detectar rolagem da página
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -31,7 +30,6 @@ function LandingPage() {
     };
   }, [scrolled]);
   
-  // Efeito para gerenciar o overlay e o scroll do body
   useEffect(() => {
     const handleClickOutside = (e) => {
       const overlay = document.getElementById('overlay');
