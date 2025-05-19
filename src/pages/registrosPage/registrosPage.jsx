@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Style from "./RegistrosPage.module.css";
 import BlocoInicial from "../../components/blocoinicial/BlocoInicial";
 import coracaoSorrindo from "../../img/coracaoSorrindo.png";
@@ -8,7 +8,7 @@ import registrosTitulo from "../../img/registrosTitulo.png";
 import CardRegistro from "../../components/cardRegistro/CardRegistro";
 
 function RegistrosPage() {
-  const dadosRegistros = [
+  const [dadosRegistros, setDadosRegistros] = useState([
     {
       tituloRegistro: "Primeiro exame de Márcia",
       dataRegistro: "01/02/2025 às 13:00",
@@ -21,7 +21,16 @@ function RegistrosPage() {
       descricaoRegistro:
         "Dona Márcia precisa fazer uso contínuo de alguns medicamentos para manter sua saúde em equilíbrio. No entanto, ela costuma demonstrar resistência e desinteresse em seguir corretamente o tratamento, muitas vezes esquecendo-se de tomá-los ou questionando sua real necessidade.",
     },
-  ];
+  ]);
+
+const handleDelete = (index) => {
+  const confirmar = window.confirm("Tem certeza que deseja deletar este registro?");
+  if (!confirmar) return;
+
+  const novosRegistros = [...dadosRegistros];
+  novosRegistros.splice(index, 1);
+  setDadosRegistros(novosRegistros);
+};
 
   return (
     <main>
@@ -30,8 +39,7 @@ function RegistrosPage() {
           imagem={coracaoSorrindo}
           textoAlt="Imagem de um coração sorridente com os olhos fechados em estilo animado"
         >
-          Acompanhe com carinho cada passo em sua rotina de cuidado!
-          <br />
+          Acompanhe com carinho cada passo em sua rotina de cuidado! <br />
           <span className={Style.subtituloBlocoInicial}>
             Registre aqui momentos e mudanças importantes de seu dia a dia!
           </span>
@@ -59,7 +67,7 @@ function RegistrosPage() {
             dataRegistro={registro.dataRegistro}
             descricaoRegistro={registro.descricaoRegistro}
             onEditar={() => console.log("Editar", registro.tituloRegistro)}
-            onDeletar={() => console.log("Deletar", registro.tituloRegistro)}
+            onDeletar={() => handleDelete(index)}
           />
         ))}
       </section>
