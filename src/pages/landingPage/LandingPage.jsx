@@ -8,11 +8,37 @@ import { Link } from "react-router";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import MaeFilha from "../../img/maeFilha.png";
-import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png"
+import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
+import Carrossel from "../../components/carrossel/Carrossel.jsx";
+
+import MaeFilhaBricando from "../../img/maeFilhaBricando.png";
+import MaePaiFilhaJuntos from "../../img/maePaiFilhaJuntos.png";
+import MaeFilhaAbracadas from "../../img/maeFilhaAbracadas.png";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const slidesData = [
+    {
+      image: MaeFilhaBricando,
+      title: "01. Crie seu perfil",
+      description:
+        "Crie seu perfil na Zeelus e comece a organizar e acompanhar a jornada de cuidado de forma prática e eficiente. Ao cadastrar informações essenciais, você terá acesso a todas as funcionalidades da plataforma para gerenciar melhor o seu dia a dia como cuidador e o de sua pessoa assistida!",
+    },
+    {
+      image: MaePaiFilhaJuntos,
+      title: "02. Conheça nossa plataforma",
+      description:
+        "Explore a Zeelus e descubra como nossa plataforma facilita a rotina de cuidado, com ferramentas intuitivas e recursos para organização, aprendizado e conexão com outros cuidadores!",
+    },
+    {
+      image: MaeFilhaAbracadas,
+      title: "03. Faça a diferença",
+      description:
+        "Faça a diferença no cuidado de quem você ama com a Zeelus. Ao utilizar nossa plataforma, você terá ferramentas para oferecer mais apoio, organização e aprendizado, tornando a jornada de cuidado mais leve e eficiente, tanto para você quanto para a pessoa assistida!",
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -176,9 +202,10 @@ function LandingPage() {
           <div className={Style.container}>
             <div className={Style.div1}>
               <div>
-                
                 <h1>
-                  Soluções que <br /> <span className={Style.destaque}>acolhem</span>, <br /> ferramentas que <br />
+                  Soluções que <br />{" "}
+                  <span className={Style.destaque}>acolhem</span>, <br />{" "}
+                  ferramentas que <br />
                   <span className={Style.destaque}>empoderam</span>!
                 </h1>
                 <Link to="/auth">
@@ -201,32 +228,46 @@ function LandingPage() {
         </section>
 
         <section className={Style.sobre} id="sobre">
-
           <h1>
             <span className={Style.destaqueSobre}>
               Reinventando o conceito de <br /> cuidado por meio da tecnologia!
-              </span>
+            </span>
           </h1>
 
           <div className={Style.containerSobre}>
-
             <div className={Style.molduraSobre}>
-              <img src={ColegasTrabalhandoJunto} alt="Colegas trabalhando junto" />
+              <img
+                src={ColegasTrabalhandoJunto}
+                alt="Colegas trabalhando junto"
+              />
             </div>
 
             <p>
-              Na <span className={Style.destaqueSobre}>Zeelus</span>, acreditamos que o cuidado vai além de simples tarefas diárias. Nosso objetivo é transformar a jornada dos cuidadores informais, oferecendo uma plataforma que utiliza a tecnologia para proporcionar mais organização, apoio e aprendizado contínuo.
+              Na <span className={Style.destaqueSobre}>Zeelus</span>,
+              acreditamos que o cuidado vai além de simples tarefas diárias.
+              Nosso objetivo é transformar a jornada dos cuidadores informais,
+              oferecendo uma plataforma que utiliza a tecnologia para
+              proporcionar mais organização, apoio e aprendizado contínuo.
             </p>
-
           </div>
 
           <div className={Style.boxVideoSobre}>
-            <iframe width="709" height="399" src="https://www.youtube.com/embed/tOyGmNnyRKY" title="Comercial Zeelus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe
+              width="709"
+              height="399"
+              src="https://www.youtube.com/embed/tOyGmNnyRKY"
+              title="Comercial Zeelus"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
-
         </section>
 
-        <section id="funcionalidades"></section>
+        <section id="funcionalidades">
+          <Carrossel slides={slidesData} autoSlideInterval={10000} />
+        </section>
 
         <section id="planos"></section>
 
