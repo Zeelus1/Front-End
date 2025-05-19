@@ -12,7 +12,7 @@
   background-color: var(--white);
   width: 100%;
   height: var(--header-height);
-  padding: 0 40px;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +35,7 @@
 
 .nav_desktop ul {
   display: flex;
-  gap: 24px;
+  gap: 10px;
   font-family: var(--font-text);
   align-items: center;
   padding: 0;
@@ -267,9 +267,8 @@
 }
 
 .div1 {
-  box-shadow: 0 0 0 var(--color-7);
   /* z-index: 0; */
-  box-shadow: 20px -10px 20px 0px var(--color-7);
+  box-shadow: 20px -20px 20px 0px var(--color-7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,6 +399,86 @@
   }
 }
 
-.funcionalidades{
+/* ----------------------------------------------------------------- */
+
+.sobre{
   margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid black; */
+}
+
+.sobre h1{
+  font-family: var(--font-title);
+  font-size: 4rem;
+  text-align: center;
+  margin: 10px;
+}
+
+.containerSobre{
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  padding-right: 20px;
+  /* gap: 20px; */
+  /* flex-wrap: wrap-reverse; */
+
+}
+
+@media screen and (max-width: 1082px){
+  .containerSobre{
+    flex-wrap: wrap-reverse;
+    width: 100%;
+  }
+}
+
+.containerSobre .molduraSobre{
+  /* border: 2px solid blue; */
+  max-width: 570px;
+  max-height: 495px;
+}
+
+.containerSobre .molduraSobre img{
+  width: 100%;
+}
+
+.containerSobre p{
+  font-family: var(--font-text);
+  width: 400px;
+  /* width: 100%; */
+  font-size: 2.5rem;
+  line-height: 4rem;
+  text-align: justify;
+  font-weight: 500;
+
+}
+
+@media screen and (max-width: 997px){
+  .containerSobre p{
+    width: 80%;
+    margin: 10px 0;
+
+  }
+}
+
+@media screen and (max-width: 600px){
+  .containerSobre p{
+    width: 80%;
+    margin: 10px 0;
+    font-size: 1.8rem;
+
+  }
+}
+
+.destaqueSobre{
+  background-image: linear-gradient(to right, var(--color-7), #0084DD);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 0;
+  color: #7094e2;
 }
