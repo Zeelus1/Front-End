@@ -8,6 +8,7 @@ import { Link } from "react-router";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import MaeFilha from "../../img/maeFilha.png";
+import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png"
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,6 +91,11 @@ function LandingPage() {
                 </a>
               </li>
               <li>
+                <a href="#sobre" onClick={toggleMenu}>
+                  Sobre
+                </a>
+              </li>
+              <li>
                 <a href="#funcionalidades" onClick={toggleMenu}>
                   Funcionalidades
                 </a>
@@ -137,6 +143,9 @@ function LandingPage() {
           <ul>
             <li className={Style.liLink}>
               <a href="#home">Home</a>
+            </li>
+            <li className={Style.liLink}>
+              <a href="#sobre">Sobre</a>
             </li>
             <li className={Style.liLink}>
               <a href="#funcionalidades">Funcionalidades</a>
@@ -191,9 +200,29 @@ function LandingPage() {
           </div>
         </section>
 
-        <section className={Style.funcionalidades} id="funcionalidades">
-          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet cum similique provident voluptatum eum libero iusto hic enim minima labore assumenda nulla at, error nesciunt totam quam exercitationem natus ea.</h1>
+        <section className={Style.sobre} id="sobre">
+
+          <h1>
+            <span className={Style.destaqueSobre}>
+              Reinventando o conceito de <br /> cuidado por meio da tecnologia!
+              </span>
+          </h1>
+
+          <div className={Style.containerSobre}>
+
+            <div className={Style.molduraSobre}>
+              <img src={ColegasTrabalhandoJunto} alt="Colegas trabalhando junto" />
+            </div>
+
+            <p>
+              Na <span className={Style.destaqueSobre}>Zeelus</span>, acreditamos que o cuidado vai além de simples tarefas diárias. Nosso objetivo é transformar a jornada dos cuidadores informais, oferecendo uma plataforma que utiliza a tecnologia para proporcionar mais organização, apoio e aprendizado contínuo.
+            </p>
+
+          </div>
+
         </section>
+
+        <section id="funcionalidades"></section>
 
         <section id="planos"></section>
 
