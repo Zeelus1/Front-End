@@ -220,6 +220,10 @@ function LandingPage() {
 
           </div>
 
+          <div className={Style.boxVideoSobre}>
+            <iframe width="709" height="399" src="https://www.youtube.com/embed/tOyGmNnyRKY" title="Comercial Zeelus" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+
         </section>
 
         <section id="funcionalidades"></section>
