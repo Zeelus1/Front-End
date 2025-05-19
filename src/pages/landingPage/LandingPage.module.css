@@ -482,3 +482,11 @@
   text-shadow: 0 0 0;
   color: #7094e2;
 }
+
+.boxVideoSobre{
+  background-color: var(--color-3);
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
