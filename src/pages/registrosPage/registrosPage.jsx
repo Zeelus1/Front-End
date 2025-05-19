@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import Style from "./RegistrosPage.module.css";
-import BlocoInicial from "../../components/blocoinicial/BlocoInicial";
+import BlocoInicial from "../../components/blocoinicial/BlocoInicial.jsx";
 import coracaoSorrindo from "../../img/coracaoSorrindo.png";
 import CampoBusca from "../../components/campoBusca/CampoBusca.jsx";
-import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro";
+import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro.jsx";
 import registrosTitulo from "../../img/registrosTitulo.png";
-import CardRegistro from "../../components/cardRegistro/CardRegistro";
+import CardRegistro from "../../components/cardRegistro/CardRegistro.jsx";
 
 function RegistrosPage() {
   const [dadosRegistros, setDadosRegistros] = useState([
