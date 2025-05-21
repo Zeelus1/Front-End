@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx";
 import RegistrosPage from "../pages/registrosPage/RegistrosPage.jsx";
 import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
+import ForumPage from "../pages/forumPage/ForumPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "forum",
-        element: <></>,
+        element:<ForumPage />,
       },
       {
         path: "treinamento",
