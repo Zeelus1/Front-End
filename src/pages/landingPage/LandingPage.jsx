@@ -18,6 +18,7 @@ import MaeFilhaAbracadas from "../../img/maeFilhaAbracadas.png";
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showVideoModal, setShowVideoModal] = useState(false);
 
   const slidesData = [
     {
@@ -214,9 +215,29 @@ function LandingPage() {
               </div>
             </div>
             {!isMobile && (
-              <div className={Style.div2}>
-                <img src={MaeFilha} alt="" />
-              </div>
+              <>
+                <div className={Style.div2}>
+                  <img src={MaeFilha} alt="" />
+                  <button
+                    className={Style.buttonStart}
+                    onClick={() => {
+                      if (window.innerWidth > 910) setShowVideoModal(true);
+                    }}
+                  >
+                    <svg
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      width="26px"
+                    >
+                      <path
+                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </>
             )}
           </div>
 
@@ -263,6 +284,35 @@ function LandingPage() {
               allowfullscreen
             ></iframe>
           </div>
+
+          {showVideoModal && (
+            <div
+              className={Style.videoModalOverlay}
+              onClick={() => setShowVideoModal(false)}
+            >
+              <div
+                className={Style.videoModalCard}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className={Style.closeModal}
+                  onClick={() => setShowVideoModal(false)}
+                >
+                  X
+                </button>
+                <iframe
+                  width="709"
+                  height="399"
+                  src="https://www.youtube.com/embed/tOyGmNnyRKY"
+                  title="Comercial Zeelus"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          )}
         </section>
 
         <section id="funcionalidades">
