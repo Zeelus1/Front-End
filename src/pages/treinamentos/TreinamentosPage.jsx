@@ -50,7 +50,7 @@ function TreinamentosPage() {
             <li>Cuidados com o desenvolvimento</li>
           </ul>
         </div>
-        <button className={Style.botaoGradient}>Começar</button>
+        <button className={Style.botaoGradient} disabled>Em breve</button>
       </AccordionItem>
 
       <AccordionItem icon={ImgCerebroIcone} textoAlt="Símbolo de um cérebro" title="Estimulação Cognitiva">
@@ -67,7 +67,7 @@ function TreinamentosPage() {
             <li>Estimulação da coordenação motora</li>
           </ul>
         </div>
-        <button className={Style.botaoGradient}>Começar</button>
+        <button className={Style.botaoGradient} disabled>Em breve</button>
       </AccordionItem>
 
 

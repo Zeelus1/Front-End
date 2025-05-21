@@ -12,22 +12,20 @@ function AccordionItem({ title, icon, textoAlt, children }) {
           <li className={Style.icon}>
             <img src={icon} alt={textoAlt} />
           </li>
-          <li 
+          <li
             className={Style.title}>{title}
           </li>
           <li className={Style.arrow}>
-            <img src={ImgSetaBaixo} alt="Seta" className={`${Style.arrow} ${isOpen ? Style.rotate : ''}`}/>
+            <img src={ImgSetaBaixo} alt="Seta" className={`${Style.arrow} ${isOpen ? Style.rotate : ''}`} />
           </li>
         </ul>
       </div>
-      {isOpen && (
-        <div className={Style.content}>
-          {children}
-        </div>
-      )}
+      <div className={`${Style.content} ${isOpen ? Style.aberto : Style.fechado}`}>
+        {children}
+      </div>
     </div>
 
-    
+
   );
 }
 
