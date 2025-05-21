@@ -6,7 +6,7 @@
 
 .accordionItem {
   max-width: 1330px;
-  margin: 1rem auto;
+  margin: 70px auto;
   background-color: #e9fcfb;
   border-radius: 75px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -42,15 +42,19 @@
 
 .header ul {
   list-style: none;
-  align-items: center;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center; /* Centraliza todos os elementos horizontalmente */
+  gap: 1.5rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.header ul li:nth-child(3) {
+.header ul li {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 .arrow {
@@ -68,3 +72,22 @@
   font-size: 0.95rem;
   color: #333;
 }
+
+.content {
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.aberto {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.fechado {
+  max-height: 0;
+  opacity: 0;
+}
+
+

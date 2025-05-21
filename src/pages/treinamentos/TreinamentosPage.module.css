@@ -23,14 +23,21 @@
   font-size: 36px;
   font-weight: bold;
   width: 20%;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
   cursor: pointer;
+  display: block;
+}
+
+.botaoGradient:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  font-family: var(--font-text);
 }
 
 .botaoGradient:hover {
   transform: scale(1.05);
 }
-
 
 .botao:hover {
   background-color: #0066aa;
@@ -44,4 +51,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: var(--font-text);
 }
