@@ -1,0 +1,121 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: var(--font-text);
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.nome {
+  font-weight: 600;
+  font-size: 25px;
+  font-family: var(--font-title);
+  background: linear-gradient(to right, #7094E2, #5DC7EA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  margin-left: auto;
+}
+
+.titulo {
+  font-size: 35px;
+  font-family: var(--font-title);
+  font-weight: bold;
+  color: #004777;
+  margin-bottom: 0.75rem;
+}
+
+.texto {
+  font-size: 25px;
+  font-weight: medium;
+  font-family: var(--font-text);
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.aviso {
+  background: linear-gradient(to right, rgba(112, 148, 226, 0.40), rgba(93, 199, 234, 0.40));
+  color: #000;
+  border-radius: 20px;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-size: 20px;
+  font-family: var(--font-title);
+  font-weight: medium;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.gradienteTexto {
+  background: linear-gradient(to right, #004777, #0084DD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradienteTextoIcone {
+  background: linear-gradient(to right, #004777, #0084DD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: 20px;
+  font-family: var(--font-title);
+  font-weight: medium;
+}
+
+.aviso a {
+  color: #004777;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.icones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+
+.icones div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #004777;
+}
+
+.icones img {
+  width: 24px;
+  height: 24px;
+}
