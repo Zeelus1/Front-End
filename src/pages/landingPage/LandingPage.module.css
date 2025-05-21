@@ -366,7 +366,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 70vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -429,7 +429,6 @@
 
 @media screen and (max-width: 600px) {
   .home {
-    min-height: 60vh;
     padding: 0;
   }
   .div1 h1 {
