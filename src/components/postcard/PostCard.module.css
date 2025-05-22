@@ -3,7 +3,7 @@
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  max-width: 1105px;
   margin: 2rem auto;
   font-family: var(--font-text);
 }
@@ -12,7 +12,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+}
+
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .avatar {
@@ -32,11 +37,9 @@
   -webkit-text-fill-color: transparent;
 }
 
-.menu {
-  font-size: 24px;
+.menuIcon {
   cursor: pointer;
-  color: #888;
-  margin-left: auto;
+  filter: brightness(0.6);
 }
 
 .titulo {
@@ -51,7 +54,7 @@
   font-size: 25px;
   font-weight: medium;
   font-family: var(--font-text);
-  line-height: 1.6;
+  line-height: auto;
   color: #333;
   margin-bottom: 1.5rem;
 }
@@ -98,11 +101,26 @@
 
 .icones {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 1rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem;
   gap: 1rem;
+}
+
+.iconeItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.separador {
+  width: 1px;
+  height: 28px;
+  object-fit: contain;
+  margin: 0 0.75rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 1px #0070bb); 
 }
 
 .icones div {

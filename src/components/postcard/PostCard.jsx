@@ -4,21 +4,23 @@ import ImgCurtir from "../../img/like.png";
 import ImgMensagem from "../../img/mensagem.png";
 import ImgFavoritar from "../../img/favoritar.png";
 import ImgAvatar from "../../img/3dAvatar.png";
+import ImgMenu from "../../img/3pontos.png";
+import ImgBarra from "../../img/barra.png";
 
-function ForumPost({ autorImg, autorNome, data, titulo, texto }) {
+function ForumPost({ autorNome, data, titulo, texto }) {
 
   return (
     <div className={Style.card}>
       <div className={Style.topo}>
-        <img src={ImgAvatar} alt="Foto de perfil do usuário" className={Style.avatar} />
-        <div>
+        <div className={Style.perfil}>
+          <img src={ImgAvatar} alt="Foto de perfil do usuário" className={Style.avatar} />
           <p className={Style.nome}>{autorNome} • {data}</p>
         </div>
-        <div className={Style.menu}>⋮</div>
+        <img src={ImgMenu} alt="Menu" className={Style.menuIcon} />
       </div>
 
       <h2 className={Style.titulo}>{titulo}</h2>
-      <p className={Style.texto}>{texto}</p>
+      <p className={Style.texto}>{texto} </p>
 
       <div className={Style.aviso}>
         <p>
@@ -27,9 +29,24 @@ function ForumPost({ autorImg, autorNome, data, titulo, texto }) {
       </div>
 
       <div className={Style.icones}>
-        <div><img src={ImgCurtir} alt="Icone de curtir" /> <span className={Style.gradienteTextoIcone}>12</span></div>
-        <div><img src={ImgMensagem} alt="Icone de comentários" /> <span className={Style.gradienteTextoIcone}>6</span></div>
-        <div><img src={ImgFavoritar} alt="Icone de favoritar" /> <span className={Style.gradienteTextoIcone}>8</span></div>
+        <div className={Style.iconeItem}>
+          <img src={ImgCurtir} alt="Icone de curtir" />
+          <span className={Style.gradienteTextoIcone}>12</span>
+        </div>
+
+        <img src={ImgBarra} alt="Separador" className={Style.separador} />
+
+        <div className={Style.iconeItem}>
+          <img src={ImgMensagem} alt="Icone de comentários" />
+          <span className={Style.gradienteTextoIcone}>6</span>
+        </div>
+
+        <img src={ImgBarra} alt="Separador" className={Style.separador} />
+
+        <div className={Style.iconeItem}>
+          <img src={ImgFavoritar} alt="Icone de favoritar" />
+          <span className={Style.gradienteTextoIcone}>8</span>
+        </div>
       </div>
     </div>
   );
