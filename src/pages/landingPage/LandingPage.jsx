@@ -399,7 +399,65 @@ function LandingPage() {
           </div>
         </section>
 
-        <section id="planos"></section>
+        <section id="planos" className={Style.planos}>
+          <h1>
+            Veja nossos planos!
+          </h1>
+
+          <div className={Style.containerPlanos}>
+            
+            <div className={Style.cardPlanos}>
+              <h2>
+                Plano Care
+              </h2>
+
+              <div className={Style.boxPlanos}>
+                <h3>
+                  Gratuito!
+                </h3>
+
+                <ul>
+                  <li>Agenda Interativa</li>
+                  <li>Anamnese do Assistido</li>
+                  <li>Diario de Monitoramento</li>
+                  <li>Fórum Comunitario</li>
+                  <li>Treinamento de Primeiros Socorros</li>
+                </ul>
+
+                <Link to={"/auth"} style={{ width: "80%", display: "block" }}>
+                  <ButtonStart children={"Assinar"} width={"100%"}></ButtonStart>
+                </Link>
+              </div>
+            </div>
+
+            <div className={Style.cardPlanos}>
+              <h2>
+                Plano CarePlus
+              </h2>
+
+              <div className={Style.boxPlanos}>
+                <h3>
+                  R$ 19,90/mês!
+                </h3>
+
+                <ul>
+                  <li>Plano Care</li>
+                  <li>Experiência sem Anúncios</li>
+                  <li>Assistente por IA</li>
+                  <li>Multiplos Perfis de Anamnese</li>
+                </ul>
+
+                <Link to={""} style={{ width: "80%", display: "block" }}>
+                  <ButtonStart children={"Assinar"} width={"100%"}></ButtonStart>
+                </Link>
+              </div>
+            </div>
+            
+        
+
+          </div>
+
+        </section>
 
         <section id="avaliacoes"></section>
 
