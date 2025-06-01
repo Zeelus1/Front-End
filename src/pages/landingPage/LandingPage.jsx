@@ -8,6 +8,7 @@ import ButtonClose from "../../icons/icons8-close.svg";
 import Carrossel from "../../components/carrossel/Carrossel.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
+import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
@@ -17,13 +18,13 @@ import MaeFilha from "../../img/maeFilha.png";
 import MaeFilhaBricando from "../../img/maeFilhaBricando.png";
 import MaePaiFilhaJuntos from "../../img/maePaiFilhaJuntos.png";
 import MaeFilhaAbracadas from "../../img/maeFilhaAbracadas.png";
-import PessoaDigitando from "../../img/pessoaDigitando.png"
-import PessoasAbracando from "../../img/pessoasAbracando.png"
-import RealizandoTreinamento from "../../img/realizandoTreinamento.png"  
+import PessoaDigitando from "../../img/pessoaDigitando.png";
+import PessoasAbracando from "../../img/pessoasAbracando.png";
+import RealizandoTreinamento from "../../img/realizandoTreinamento.png";
 
-import IconDocumento from "../../icons/mi_document.png"
-import IconVortex from "../../icons/ic_twotone-diversity-2.png"
-import IconEscudo from "../../icons/ic_baseline-health-and-safety.png"
+import IconDocumento from "../../icons/mi_document.png";
+import IconVortex from "../../icons/ic_twotone-diversity-2.png";
+import IconEscudo from "../../icons/ic_baseline-health-and-safety.png";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -329,92 +330,51 @@ function LandingPage() {
           <Carrossel slides={slidesData} autoSlideInterval={10000} />
 
           <h1>
-            A <span className={Style.destaqueFuncionalide}>Zeelus</span> fornece soluções <br /> integradas de maneira prática!
+            A <span className={Style.destaqueFuncionalide}>Zeelus</span> fornece
+            soluções <br /> integradas de maneira prática!
           </h1>
 
           <div className={Style.containerFuncionalidade}>
-
-            <div className={Style.cardFuncionalidades}>
-
-              <div className={Style.moldura}>
-                <img src={IconDocumento} alt="Icone de documentação" />
-              </div>
-              
-              <h2>
-                Documentação Segura
-              </h2>
-
-              <p>
-                Registre observações, cronogramas e 
+            <CardFuncionalidades
+              icon={IconDocumento}
+              title="Documentação Segura"
+              description="Registre observações, cronogramas e 
                 a anamnese de seu assistido com privacidade e 
-                segurança!
-              </p>
+                segurança!"
+              image={PessoaDigitando}
+              imageAlt="Pessoa digitando"
+              iconAlt="Icone de documentação"
+            />
 
-              <div className={Style.molduraCard}>
-                <img src={PessoaDigitando} alt="Pessoa digitando" />
-              </div>
+            <CardFuncionalidades
+              icon={IconVortex}
+              title="Comunicação Adaptativa"
+              description="Conecte-se a outros acompanhantes e compartilhe experiências em um ambiente acolhedor!"
+              image={PessoasAbracando}
+              imageAlt="Duas pessoas se abraçando"
+              iconAlt="Icone de vortex"
+            />
 
-            </div>
-
-            <div className={Style.cardFuncionalidades}>
-
-              <div className={Style.moldura}>
-                <img src={IconVortex} alt="Icone de vortex" />
-              </div>
-              
-              <h2>
-                Comunicação Adaptativa
-              </h2>
-
-              <p>
-                Conecte-se a outros acompanhantes e compartilhe experiências em um ambiente acolhedor!
-              </p>
-
-              <div className={Style.molduraCard}>
-                <img src={PessoasAbracando} alt="Duas pessoas se abraçando" />
-              </div>
-
-            </div>
-
-            <div className={Style.cardFuncionalidades}>
-
-              <div className={Style.moldura}>
-                <img src={IconEscudo} alt="Icone de escudo" />
-              </div>
-              
-              <h2>
-                Ambiente de Crescimento
-              </h2>
-
-              <p>
-                Promova seu desenvolvimento pessoal e profissional com apoio estruturado e recursos como aulas simples e práticas de primeiros socorros!
-              </p>
-
-              <div className={Style.molduraCard}>
-                <img src={RealizandoTreinamento} alt="Pessoas realizando treinamento de primeiros socorros" />
-              </div>
-
-            </div>
-
+            <CardFuncionalidades
+              icon={IconEscudo}
+              title="Ambiente de Crescimento"
+              description="Promova seu desenvolvimento pessoal e profissional com apoio estruturado e recursos como aulas simples e práticas de primeiros socorros!"
+              image={RealizandoTreinamento}
+              imageAlt="Pessoas realizando treinamento de primeiros socorros"
+              iconAlt="Icone de escudo"
+            />
           </div>
         </section>
 
         <section id="planos" className={Style.planos}>
-          <h1>
-            Veja nossos planos!
-          </h1>
+          <h1>Veja nossos planos!</h1>
 
           <div className={Style.containerPlanos}>
-            
             <div className={Style.cardPlanos}>
-              <h2>
-                Plano Care
-              </h2>
+              <h2>Plano Care</h2>
 
               <div className={Style.boxPlanos}>
-                <h3>
-                  Gratuito!
-                </h3>
+                <h3>Gratuito!</h3>
 
                 <ul>
                   <li>Agenda Interativa</li>
@@ -425,20 +385,19 @@ function LandingPage() {
                 </ul>
 
                 <Link to={"/auth"} style={{ width: "80%", display: "block" }}>
-                  <ButtonStart children={"Assinar"} width={"100%"}></ButtonStart>
+                  <ButtonStart
+                    children={"Assinar"}
+                    width={"100%"}
+                  ></ButtonStart>
                 </Link>
               </div>
             </div>
 
             <div className={Style.cardPlanos}>
-              <h2>
-                Plano CarePlus
-              </h2>
+              <h2>Plano CarePlus</h2>
 
               <div className={Style.boxPlanos}>
-                <h3>
-                  R$ 19,90/mês!
-                </h3>
+                <h3>R$ 19,90/mês!</h3>
 
                 <ul>
                   <li>Plano Care</li>
@@ -448,18 +407,29 @@ function LandingPage() {
                 </ul>
 
                 <Link to={""} style={{ width: "80%", display: "block" }}>
-                  <ButtonStart children={"Assinar"} width={"100%"}></ButtonStart>
+                  <ButtonStart
+                    children={"Assinar"}
+                    width={"100%"}
+                  ></ButtonStart>
                 </Link>
               </div>
             </div>
-            
-        
-
           </div>
-
         </section>
 
-        <section id="avaliacoes"></section>
+        <section id="avaliacoes">
+          <h1>
+            Confira algumas avaliações de <br /> usuários da Zeelus!
+          </h1>
+
+          <div>
+            <div>
+              <img src="" alt="" />
+            </div>
+
+            <h2>Facilda</h2>
+          </div>
+        </section>
 
         <section id="faq"></section>
       </main>
