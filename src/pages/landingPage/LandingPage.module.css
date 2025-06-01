@@ -604,63 +604,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-}
-
-.cardFuncionalidades{
-  width: 95vw;
-  max-width: 460px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 20px;
-  height: 500px;
-  justify-content: space-between;
-  box-shadow: -10px 0px 0px 0px #004777;
-}
-
-.cardFuncionalidades .moldura{
-  width: 70px;
-  height: 70px;
-  margin-top: 20px;
-}
-
-.cardFuncionalidades .moldura img{
-  width: 100%;
-  height: 100%;
-}
-
-.cardFuncionalidades h2{
-  font-family: var(--font-title);
-  font-size: 2.5rem;
-  font-weight: 500;
-
-  background-image: linear-gradient(to right, #0a53f1, #0098ca);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 0;
-  color: #7094e2;
-}
-
-.cardFuncionalidades p{
-  font-family: var(--font-text);
-  font-size: 1.8rem;
-  text-align: center;
-  font-weight: 500;
-  padding: 0px 10px;
-}
-
-.cardFuncionalidades .molduraCard{
-  width: 100%;
-  margin-top: 10px;
-  height: 250px;
-}
-
-.cardFuncionalidades .molduraCard img{
-  width: 100%;
-  height: 100%;
-  border-radius: 0 0 20px 20px;
+  padding-bottom: 50px;
 }
 
 .planos .containerPlanos{
@@ -668,6 +612,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-bottom: 30px;
 }
 
 .planos h1{
@@ -676,76 +621,4 @@
   font-size: 2.5rem;
   margin: 20px 0;
   font-weight: 500;
-}
-
-.planos .cardPlanos{
-  width: 95vw;
-  max-width: 460px;
-  background-image: linear-gradient(to right, #0084DD, var(--color-7));
-  display: flex;
-  flex-direction: column;
-  padding: 30px 10px 10px 10px;
-  gap: 10px;
-  border-radius: 20px;
-  transition: .3s ease;
-}
-
-.cardPlanos:hover{
-    transform: scale(1.1);
-}
-
-.cardPlanos h2{
-  color: #fff;
-  text-align: center;
-  font-family: var(--font-text);
-  font-size: 2.5rem;
-  
-}
-
-.planos .cardPlanos .boxPlanos{
-  background-color: #fff;
-  height: 100%;
-  border-radius: 20px;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
-
-}
-
-.boxPlanos h3{
-  font-family: var(--font-title);
-  font-size: 2.5rem;
-}
-
-.boxPlanos ul{
-  list-style: none;
-  padding-left: 0;
-  width: 350px;
-}
-
-.boxPlanos li{
-  position: relative;
-  padding-left: 40px;
-  font-family: var(--font-text);
-  font-size: 2.4rem;
-  margin: 10px 0;
-}
-
-.boxPlanos li::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 25px;
-  height: 25px;
-  background: url("../../icons/icon-park-solid_check-one.png");
-  background-size: contain;
-}
-
-.boxPlanos button{
-  width: 100%;
 }
