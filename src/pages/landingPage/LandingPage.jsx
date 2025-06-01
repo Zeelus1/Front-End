@@ -13,7 +13,11 @@ import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
+
 import Logo from "../../img/zeelusLogo1.png";
+import ProaSlider from "../../img/proalogoSlide.png"
+import SenacSlider from "../../img/senacLogoSlider.png"
+import BraileSlider from "../../img/braileLogoSlider.png"
 
 import MaeFilha from "../../img/maeFilha.png";
 import MaeFilhaBricando from "../../img/maeFilhaBricando.png";
@@ -26,6 +30,7 @@ import RealizandoTreinamento from "../../img/realizandoTreinamento.png";
 import IconDocumento from "../../icons/mi_document.png";
 import IconVortex from "../../icons/ic_twotone-diversity-2.png";
 import IconEscudo from "../../icons/ic_baseline-health-and-safety.png";
+import SliderParceiros from "../../components/sliderParceiros/SliderParceiros.jsx";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,6 +57,12 @@ function LandingPage() {
         "Faça a diferença no cuidado de quem você ama com a Zeelus. Ao utilizar nossa plataforma, você terá ferramentas para oferecer mais apoio, organização e aprendizado, tornando a jornada de cuidado mais leve e eficiente, tanto para você quanto para a pessoa assistida!",
     },
   ];
+
+  const sliders = [
+    ProaSlider,
+    SenacSlider,
+    BraileSlider
+  ]
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -402,7 +413,7 @@ function LandingPage() {
         </section>
 
         <section id="avaliacoes">
-          <h1>
+          {/* <h1>
             Confira algumas avaliações de <br /> usuários da Zeelus!
           </h1>
 
@@ -412,7 +423,15 @@ function LandingPage() {
             </div>
 
             <h2>Facilda</h2>
-          </div>
+          </div> */}
+        </section>
+
+        <section id="parceiros" className={Style.parceiros}>
+          <h2>
+            Parceiros
+          </h2>
+          
+          <SliderParceiros logos={sliders}/>
         </section>
 
         <section id="faq"></section>

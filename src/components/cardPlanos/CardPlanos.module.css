@@ -14,6 +14,12 @@
     transform: scale(1.1);
 }
 
+@media screen and (max-width: 600px){
+    .cardPlanos:hover{
+        transform: scale(1);
+    }
+}
+
 .cardPlanos h2{
   color: #fff;
   text-align: center;
@@ -52,6 +58,12 @@
   font-family: var(--font-text);
   font-size: 2.4rem;
   margin: 10px 0;
+}
+
+@media screen and (max-width: 600px){
+    .boxPlanos li{
+        padding-left: 30px;
+    }
 }
 
 .boxPlanos li::before{
