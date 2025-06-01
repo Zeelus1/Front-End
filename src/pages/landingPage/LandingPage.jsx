@@ -9,6 +9,7 @@ import Carrossel from "../../components/carrossel/Carrossel.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
+import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
@@ -370,50 +371,33 @@ function LandingPage() {
           <h1>Veja nossos planos!</h1>
 
           <div className={Style.containerPlanos}>
-            <div className={Style.cardPlanos}>
-              <h2>Plano Care</h2>
+            <CardPlanos
+              title="Plano Care"
+              price="Gratuito!"
+              features={[
+                "Agenda Interativa",
+                "Anamnese do Assistido",
+                "Diario de Monitoramento",
+                "Fórum Comunitario",
+                "Treinamento de Primeiros Socorros",
+              ]}
+              link="/auth"
+              buttonText="Assinar"
+            />
 
-              <div className={Style.boxPlanos}>
-                <h3>Gratuito!</h3>
+            <CardPlanos
+              title="Plano CarePlus"
+              price="R$ 19,90/mês!"
+              features={[
+                "Plano Care",
+                "Experiência sem Anúncios",
+                "Assistente por IA",
+                "Multiplos Perfis de Anamnese",
+              ]}
+              link=""
+              buttonText="Assinar"
+            />
 
-                <ul>
-                  <li>Agenda Interativa</li>
-                  <li>Anamnese do Assistido</li>
-                  <li>Diario de Monitoramento</li>
-                  <li>Fórum Comunitario</li>
-                  <li>Treinamento de Primeiros Socorros</li>
-                </ul>
-
-                <Link to={"/auth"} style={{ width: "80%", display: "block" }}>
-                  <ButtonStart
-                    children={"Assinar"}
-                    width={"100%"}
-                  ></ButtonStart>
-                </Link>
-              </div>
-            </div>
-
-            <div className={Style.cardPlanos}>
-              <h2>Plano CarePlus</h2>
-
-              <div className={Style.boxPlanos}>
-                <h3>R$ 19,90/mês!</h3>
-
-                <ul>
-                  <li>Plano Care</li>
-                  <li>Experiência sem Anúncios</li>
-                  <li>Assistente por IA</li>
-                  <li>Multiplos Perfis de Anamnese</li>
-                </ul>
-
-                <Link to={""} style={{ width: "80%", display: "block" }}>
-                  <ButtonStart
-                    children={"Assinar"}
-                    width={"100%"}
-                  ></ButtonStart>
-                </Link>
-              </div>
-            </div>
           </div>
         </section>
 
