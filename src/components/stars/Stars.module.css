@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.2s ease;
+  user-select: none;
+  color: #ddd;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+}
+
+.starFilled {
+  color: #ffc107;
+}
+
+.starHover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.readonly {
+  cursor: default;
+}
+
+.label {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #666;
+}

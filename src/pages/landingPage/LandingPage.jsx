@@ -10,6 +10,7 @@ import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
+import Stars from "../../components/stars/Stars.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
@@ -26,6 +27,9 @@ import MaeFilhaAbracadas from "../../img/maeFilhaAbracadas.png";
 import PessoaDigitando from "../../img/pessoaDigitando.png";
 import PessoasAbracando from "../../img/pessoasAbracando.png";
 import RealizandoTreinamento from "../../img/realizandoTreinamento.png";
+import AvatarAvaliacao1 from "../../img/avatarAvaliacao1.png"
+import AvatarAvaliacao2 from "../../img/avatarAvaliacao2.png"
+import AvatarAvaliacao3 from "../../img/avatarAvaliacao3.png"
 
 import IconDocumento from "../../icons/mi_document.png";
 import IconVortex from "../../icons/ic_twotone-diversity-2.png";
@@ -34,6 +38,8 @@ import SliderParceiros from "../../components/sliderParceiros/SliderParceiros.js
 import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png"
 import IconPlanoElo from "../../icons/coracaoPlanoElo.png"
 import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png"
+import IconAspa from "../../icons/iconAspa.png"
+import CardAvaliacao from "../../components/cardAvaliacao/CardAvaliacao.jsx";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -448,18 +454,43 @@ function LandingPage() {
           </div>
         </section>
 
-        <section id="avaliacoes">
-          {/* <h1>
+        <section id="avaliacoes" className={Style.avaliacoes}>
+          <h1>
             Confira algumas avaliações de <br /> usuários da Zeelus!
           </h1>
+          
 
-          <div>
-            <div>
-              <img src="" alt="" />
-            </div>
 
-            <h2>Facilda</h2>
-          </div> */}
+          <div className={Style.containerAvaliacao}>
+            <CardAvaliacao
+              avatar={AvatarAvaliacao1}
+              title="Facildade que Transforma!"
+              rating={5}
+              name="Yuri Ramos"
+              quoteIcon={IconAspa}
+            >
+              Plataforma completa! A Zeelus acompanha rotinas, treinamentos e documentos em um só lugar. Meu dia a dia ficou muito mais leve. Recomendo!
+            </CardAvaliacao>
+            <CardAvaliacao
+              avatar={AvatarAvaliacao2}
+              title="Tecnologia que acolhe de verdade!"
+              rating={5}
+              name="Velma de Souza"
+              quoteIcon={IconAspa}
+            >
+              Sempre quis um suporte humanizado, e a Zeelus entregou! Ferramentas fáceis e um fórum inspirador. Sinto que tenho apoio de verdade agora!
+            </CardAvaliacao>
+            <CardAvaliacao
+              avatar={AvatarAvaliacao3}
+              title="Soluções que fazem a diferença!"
+              rating={5}
+              name="Yuri Ramos"
+              quoteIcon={IconAspa}
+            >
+              Tudo que um cuidador precisa: organização, segurança e apoio. A Zeelus transformou minha rotina!
+            </CardAvaliacao>
+          </div>
+
         </section>
 
         <section id="parceiros" className={Style.parceiros}>
