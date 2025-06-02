@@ -1,17 +1,33 @@
 .cardPlanos{
   width: 95vw;
-  max-width: 460px;
-  background-image: linear-gradient(to right, #0084DD, var(--color-7));
+  max-width: 400px;
   display: flex;
   flex-direction: column;
-  padding: 30px 10px 10px 10px;
-  gap: 10px;
   border-radius: 20px;
   transition: .3s ease;
+  align-items: center;
+  background: #004777;
+  background: linear-gradient(135deg, #004777 31%, #D5E9FF 31%, #D5E9FF 73%, #004777 73%);
 }
 
 .cardPlanos:hover{
     transform: scale(1.1);
+}
+
+.box{
+  background-color: var(--color-7);
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px 0px 20px 20px;
+}
+
+.otherBox{
+  background-color: var(--color-7);
+  width: 100%;
+  border-radius: 20px 20px 20px 0px;
+  padding: 10px 0;
 }
 
 @media screen and (max-width: 600px){
@@ -25,20 +41,18 @@
   text-align: center;
   font-family: var(--font-text);
   font-size: 2.5rem;
-  
 }
 
 .cardPlanos .boxPlanos{
-  background-color: #fff;
+  background-color: #D5E9FF;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 20px 0px 20px 0px;
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  justify-content: space-between;
-
+  width: 100%;
 }
 
 .boxPlanos h3{
@@ -80,4 +94,10 @@
 
 .boxPlanos button{
   width: 100%;
+}
+
+.moldura{
+  border: 2px solid black;
+  height: 45px;
+  width: 45px;
 }
