@@ -59,6 +59,7 @@
   list-style: none;
   padding-left: 0;
   width: 350px;
+  margin: 0 auto;
 }
 
 .boxPlanos li{
@@ -92,7 +93,11 @@
 }
 
 .boxPlanos .moldura{
-  border: 2px solid black;
   height: 45px;
   width: 45px;
+}
+
+.boxPlanos .moldura img{
+  width: 100%;
+  height: 100%;
 }

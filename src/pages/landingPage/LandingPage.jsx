@@ -31,6 +31,9 @@ import IconDocumento from "../../icons/mi_document.png";
 import IconVortex from "../../icons/ic_twotone-diversity-2.png";
 import IconEscudo from "../../icons/ic_baseline-health-and-safety.png";
 import SliderParceiros from "../../components/sliderParceiros/SliderParceiros.jsx";
+import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png"
+import IconPlanoElo from "../../icons/coracaoPlanoElo.png"
+import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png"
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -392,6 +395,7 @@ function LandingPage() {
                 "Fórum Comunitario",
                 "Treinamento de Primeiros Socorros",
               ]}
+              icon={IconPlanoGratuito}
               link="/auth"
               buttonText="Obter Agora!"
             />
@@ -404,7 +408,7 @@ function LandingPage() {
               </div>
               <div className={Style.boxPlanos}>
                 <div className={Style.moldura}>
-                  <img src="" alt="" />
+                  <img src={IconPlanoElo} alt="" />
                 </div>
                 <h3>R$ 19,90/mês!</h3>
                 <ul>
@@ -430,6 +434,7 @@ function LandingPage() {
                   R$ 34,90/mês
                 </>
               }
+              icon={IconPlanoCarePlus}
               features={[
                 "Plano Care + Plano Elo",
                 "Experiência sem Anúncios",
