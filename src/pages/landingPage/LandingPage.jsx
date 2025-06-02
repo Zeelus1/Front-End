@@ -393,20 +393,51 @@ function LandingPage() {
                 "Treinamento de Primeiros Socorros",
               ]}
               link="/auth"
-              buttonText="Assinar"
+              buttonText="Obter Agora!"
             />
+
+            {/* ----------------------------------------------------------- */}
+
+            <div className={Style.cardPlanos}>
+              <div className={Style.otherBox}>
+                <h2>Plano Elo</h2>
+              </div>
+              <div className={Style.boxPlanos}>
+                <div className={Style.moldura}>
+                  <img src="" alt="" />
+                </div>
+                <h3>R$ 19,90/mês!</h3>
+                <ul>
+                  <li>Plano Care</li>
+                  <li>Exportação de Relatorio em PDF</li>
+                  <li>IA Personalizada (Até 10 Interações/mês)</li>
+                  <li>Experiência com Anúncios Reduzidos</li>
+                </ul>
+              </div>
+                <div className={Style.box}>
+                  <Link to={""} style={{ width: "80%", display: "block" }}>
+                    <ButtonStart children={"Obter Agora!"} width={"100%"} />
+                  </Link>
+                </div>
+            </div>
+
+            {/* ----------------------------------------------------------- */}
 
             <CardPlanos
               title="Plano CarePlus"
-              price="R$ 19,90/mês!"
+              price={
+                <>
+                  R$ 34,90/mês
+                </>
+              }
               features={[
-                "Plano Care",
+                "Plano Care + Plano Elo",
                 "Experiência sem Anúncios",
-                "Assistente por IA",
+                "Assistente por IA sem Limites",
                 "Multiplos Perfis de Anamnese",
               ]}
               link=""
-              buttonText="Assinar"
+              buttonText="Obter Agora!"
             />
 
           </div>

@@ -4,14 +4,9 @@
   display: flex;
   flex-direction: column;
   border-radius: 20px;
-  transition: .3s ease;
   align-items: center;
   background: #004777;
   background: linear-gradient(135deg, #004777 31%, #D5E9FF 31%, #D5E9FF 73%, #004777 73%);
-}
-
-.cardPlanos:hover{
-    transform: scale(1.1);
 }
 
 .box{
@@ -96,7 +91,7 @@
   width: 100%;
 }
 
-.moldura{
+.boxPlanos .moldura{
   border: 2px solid black;
   height: 45px;
   width: 45px;
