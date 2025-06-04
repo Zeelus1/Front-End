@@ -2,7 +2,7 @@ import Style from "./CardPlanos.module.css";
 import { Link } from "react-router";
 import ButtonStart from "../buttonStart/ButtonStart";
 
-function CardPlanos({ title, price, features, link, buttonText }) {
+function CardPlanos({ title, price, features, link, buttonText, icon }) {
   return (
     <div className={Style.cardPlanos}>
       <div className={Style.otherBox}>
@@ -10,7 +10,7 @@ function CardPlanos({ title, price, features, link, buttonText }) {
       </div>
       <div className={Style.boxPlanos}>
         <div className={Style.moldura}>
-          <img src="" alt="" />
+          <img src={icon} alt="" />
         </div>
         <h3>{price}</h3>
         <ul>

@@ -10,6 +10,7 @@ import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
+import Stars from "../../components/stars/Stars.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
@@ -26,11 +27,20 @@ import MaeFilhaAbracadas from "../../img/maeFilhaAbracadas.png";
 import PessoaDigitando from "../../img/pessoaDigitando.png";
 import PessoasAbracando from "../../img/pessoasAbracando.png";
 import RealizandoTreinamento from "../../img/realizandoTreinamento.png";
+import AvatarAvaliacao1 from "../../img/avatarAvaliacao1.png"
+import AvatarAvaliacao2 from "../../img/avatarAvaliacao2.png"
+import AvatarAvaliacao3 from "../../img/avatarAvaliacao3.png"
 
 import IconDocumento from "../../icons/mi_document.png";
 import IconVortex from "../../icons/ic_twotone-diversity-2.png";
 import IconEscudo from "../../icons/ic_baseline-health-and-safety.png";
 import SliderParceiros from "../../components/sliderParceiros/SliderParceiros.jsx";
+import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png"
+import IconPlanoElo from "../../icons/coracaoPlanoElo.png"
+import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png"
+import IconAspa from "../../icons/iconAspa.png"
+import CardAvaliacao from "../../components/cardAvaliacao/CardAvaliacao.jsx";
+import Faq from "../../components/faq/Faq.jsx";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,6 +73,25 @@ function LandingPage() {
     SenacSlider,
     BraileSlider
   ]
+
+  const faqData = [
+    {
+      question: "O que é a Zeelus?",
+      answer: "A Zeelus é uma plataforma inovadora que conecta cuidadores e oferece ferramentas para facilitar a rotina de cuidados, promovendo organização, aprendizado e suporte contínuo.",
+    },
+    {
+      question: "Meus dados estão protegidos?",
+      answer: "Sim! A Zeelus prioriza a segurança e privacidade dos seus dados. Utilizamos tecnologias avançadas de criptografia e seguimos rigorosos protocolos de proteção de dados.",
+    },
+    {
+      question: "Para quem é a Zeelus?",
+      answer: "A Zeelus é ideal para cuidadores formais e informais que buscam uma solução completa para organizar suas atividades, compartilhar experiências e desenvolver suas habilidades no cuidado.",
+    },
+    {
+      question: "Preciso pagar para usar?",
+      answer: "A Zeelus oferece um plano gratuito com diversas funcionalidades essenciais. Também disponibilizamos planos premium com recursos adicionais para quem busca uma experiência ainda mais completa.",
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -392,6 +421,7 @@ function LandingPage() {
                 "Fórum Comunitario",
                 "Treinamento de Primeiros Socorros",
               ]}
+              icon={IconPlanoGratuito}
               link="/auth"
               buttonText="Obter Agora!"
             />
@@ -404,7 +434,7 @@ function LandingPage() {
               </div>
               <div className={Style.boxPlanos}>
                 <div className={Style.moldura}>
-                  <img src="" alt="" />
+                  <img src={IconPlanoElo} alt="" />
                 </div>
                 <h3>R$ 19,90/mês!</h3>
                 <ul>
@@ -430,6 +460,7 @@ function LandingPage() {
                   R$ 34,90/mês
                 </>
               }
+              icon={IconPlanoCarePlus}
               features={[
                 "Plano Care + Plano Elo",
                 "Experiência sem Anúncios",
@@ -443,18 +474,43 @@ function LandingPage() {
           </div>
         </section>
 
-        <section id="avaliacoes">
-          {/* <h1>
+        <section id="avaliacoes" className={Style.avaliacoes}>
+          <h1>
             Confira algumas avaliações de <br /> usuários da Zeelus!
           </h1>
+          
 
-          <div>
-            <div>
-              <img src="" alt="" />
-            </div>
 
-            <h2>Facilda</h2>
-          </div> */}
+          <div className={Style.containerAvaliacao}>
+            <CardAvaliacao
+              avatar={AvatarAvaliacao1}
+              title="Facilidade que Transforma!"
+              rating={5}
+              name="Yuri Ramos"
+              quoteIcon={IconAspa}
+            >
+              Plataforma completa! A Zeelus acompanha rotinas, treinamentos e documentos em um só lugar. Meu dia a dia ficou muito mais leve. Recomendo!
+            </CardAvaliacao>
+            <CardAvaliacao
+              avatar={AvatarAvaliacao2}
+              title="Tecnologia que acolhe de verdade!"
+              rating={5}
+              name="Velma de Souza"
+              quoteIcon={IconAspa}
+            >
+              Sempre quis um suporte humanizado, e a Zeelus entregou! Ferramentas fáceis e um fórum inspirador. Sinto que tenho apoio de verdade agora!
+            </CardAvaliacao>
+            <CardAvaliacao
+              avatar={AvatarAvaliacao3}
+              title="Soluções que fazem a diferença!"
+              rating={5}
+              name="Yuri Ramos"
+              quoteIcon={IconAspa}
+            >
+              Tudo que um cuidador precisa: organização, segurança e apoio. A Zeelus transformou minha rotina!
+            </CardAvaliacao>
+          </div>
+
         </section>
 
         <section id="parceiros" className={Style.parceiros}>
@@ -465,7 +521,12 @@ function LandingPage() {
           <SliderParceiros logos={sliders}/>
         </section>
 
-        <section id="faq"></section>
+        <section id="faq" className={Style.faq}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195"><path fill="#fff" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,96C672,107,768,181,864,192C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+          
+          <Faq data={faqData} title={"FAQ"}/>
+
+        </section>
       </main>
 
       <Footer />
