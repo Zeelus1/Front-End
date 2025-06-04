@@ -139,12 +139,12 @@
     padding: 15px;
   }
 
-  .questionContent {
-    gap: 10px;
+  .questionText {
+    font-size: 1.6rem;
   }
 
-  .questionText {
-    font-size: 1rem;
+  .questionContent {
+    gap: 10px;
   }
 
   .plus {
