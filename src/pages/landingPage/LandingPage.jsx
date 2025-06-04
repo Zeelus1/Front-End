@@ -40,6 +40,7 @@ import IconPlanoElo from "../../icons/coracaoPlanoElo.png"
 import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png"
 import IconAspa from "../../icons/iconAspa.png"
 import CardAvaliacao from "../../components/cardAvaliacao/CardAvaliacao.jsx";
+import Faq from "../../components/faq/Faq.jsx";
 
 function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,6 +73,25 @@ function LandingPage() {
     SenacSlider,
     BraileSlider
   ]
+
+  const faqData = [
+    {
+      question: "O que é a Zeelus?",
+      answer: "A Zeelus é uma plataforma inovadora que conecta cuidadores e oferece ferramentas para facilitar a rotina de cuidados, promovendo organização, aprendizado e suporte contínuo.",
+    },
+    {
+      question: "Meus dados estão protegidos?",
+      answer: "Sim! A Zeelus prioriza a segurança e privacidade dos seus dados. Utilizamos tecnologias avançadas de criptografia e seguimos rigorosos protocolos de proteção de dados.",
+    },
+    {
+      question: "Para quem é a Zeelus?",
+      answer: "A Zeelus é ideal para cuidadores formais e informais que buscam uma solução completa para organizar suas atividades, compartilhar experiências e desenvolver suas habilidades no cuidado.",
+    },
+    {
+      question: "Preciso pagar para usar?",
+      answer: "A Zeelus oferece um plano gratuito com diversas funcionalidades essenciais. Também disponibilizamos planos premium com recursos adicionais para quem busca uma experiência ainda mais completa.",
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -464,7 +484,7 @@ function LandingPage() {
           <div className={Style.containerAvaliacao}>
             <CardAvaliacao
               avatar={AvatarAvaliacao1}
-              title="Facildade que Transforma!"
+              title="Facilidade que Transforma!"
               rating={5}
               name="Yuri Ramos"
               quoteIcon={IconAspa}
@@ -501,7 +521,12 @@ function LandingPage() {
           <SliderParceiros logos={sliders}/>
         </section>
 
-        <section id="faq"></section>
+        <section id="faq" className={Style.faq}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195"><path fill="#fff" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,96C672,107,768,181,864,192C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+          
+          <Faq data={faqData} title={"FAQ"}/>
+
+        </section>
       </main>
 
       <Footer />

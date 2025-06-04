@@ -34,16 +34,10 @@
   height: 100%;
 }
 
-.listDivAvaliacao{
-  /* border: 2px solid blue; */
-  
-}
-
 .listDivAvaliacao h2{
   font-family: var(--font-title);
   font-size: 2rem;
   font-style: italic;
-  /* width: 33%; */
   max-width: 203px;
   color: var(--color-7);
 }
@@ -51,7 +45,6 @@
 .molduraAspaAvaliacao{
   width: 25px;
   height: 25px;
-  /* border: 2px solid black; */
 }
 
 .molduraAspaAvaliacao img{
