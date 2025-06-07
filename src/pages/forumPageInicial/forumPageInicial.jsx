@@ -12,6 +12,8 @@ import User1 from "../../img/user4.png";
 import User2 from "../../img/user5.png";
 import User3 from "../../img/3dAvatar.png";
 
+import { Link } from 'react-router';
+
 const forumPageInicial = () => {
   return (
     <div>
@@ -32,15 +34,17 @@ const forumPageInicial = () => {
 
       <TituloForum>Postagens em Destaque!</TituloForum>
 
-      <PostCard
-        autorNome="José Conceição"
-        data="23/12/2024"
-        titulo="Dicas para ajudar alguém com sobrecarga sensorial?"
-        texto="Meu filho tem muita sensibilidade a estímulos sensoriais e sempre fica sobrecarregado em ambientes lotados e barulhentos. Qualquer shopping, parque ou festa vira um grande desafio para ele. Ele pode ficar irritado..."
-        mostrarAviso={false}
-        avatar={User3}
-        className="cardSombraLateral"
-      />
+      <Link to="/home/post">
+        <PostCard
+          autorNome="José Conceição"
+          data="23/12/2024"
+          titulo="Dicas para ajudar alguém com sobrecarga sensorial?"
+          texto="Meu filho tem muita sensibilidade a estímulos sensoriais e sempre fica sobrecarregado em ambientes lotados e barulhentos. Qualquer shopping, parque ou festa vira um grande desafio para ele. Ele pode ficar irritado..."
+          mostrarAviso={false}
+          avatar={User3}
+          className="cardSombraLateral"
+        />
+      </Link>
 
       <PostCard
         autorNome="Leonardo Almeida"

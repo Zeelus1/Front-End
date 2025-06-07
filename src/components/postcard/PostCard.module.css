@@ -10,7 +10,27 @@
 }
 
 .cardSombraLateral {
-  box-shadow: -8px 4px 16px -4px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+  z-index: 0; 
+}
+
+.cardSombraLateral::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  bottom: 16px;
+  width: 10px;
+  border-radius: 16px 0 0 16px;
+  background: linear-gradient(to bottom, #004777, #0084DD);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cardSombraLateral > * {
+  position: relative;
+  z-index: 2; 
 }
 
 .topo {
