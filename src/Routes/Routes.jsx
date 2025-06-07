@@ -9,6 +9,9 @@ import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
 import ForumPage from "../pages/forumPage/ForumPage.jsx";
 import Login from "../pages/cadastroLogin/Login.jsx";
 import Cadastro from "../pages/cadastroLogin/Cadastro.jsx";
+import { CustomProvider } from "rsuite";
+import { ptBR } from 'rsuite/esm/locales/index.js';
+import 'rsuite/dist/rsuite.min.css';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +44,13 @@ const router = createBrowserRouter([
       },
       {
         path: "calendario",
-        element: <CalendarioPage />,
+        element: (
+          <>
+            <CustomProvider locale={ptBR}>
+              <CalendarioPage />
+            </CustomProvider>
+          </>
+        ),
       },
       {
         path: "registros",
