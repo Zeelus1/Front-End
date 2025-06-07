@@ -1,12 +1,12 @@
 import React from "react";
 import Style from "./ForumPage.module.css";
-import AccordionItem from '../../components/postcard/PostCard.jsx';
 import PostCard from "../../components/postcard/PostCard.jsx";
 import TituloForum from "../../components/tituloForum/TituloForum.jsx";
-import CommentInput from "../../components/commentImput/CommentInput.jsx";
-import CommentCard from "../../components/commentcard/CommentCard.jsx";
 import CommentsSection from "../../components/commentssection/CommentsSection.jsx";
-import ShortPostCard from "../../components/shortpostcard/ShortPostCard.jsx";
+import ShortPostCard from "../../components/shortpostcard/ShortPostCard.jsx";0
+
+import Faq from "../../components/faq/Faq.jsx";
+import IconInterrogacao from "../../icons/pontoInterrogacaoFAQ.png";
 
 import User4 from "../../img/user4.png";
 import User5 from "../../img/user5.png";
@@ -51,9 +51,6 @@ const postsDestaque = [
     favoritos: 9
   }
 ];
-
-import Faq from "../../components/faq/Faq.jsx";
-import IconInterrogacao from "../../icons/pontoInterrogacaoFAQ.png";
 
 const faqData = [
   {
