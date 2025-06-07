@@ -1,0 +1,11 @@
+.title {
+  font-size: 35px;
+  font-family: var(--font-title);
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(to right, #004777, #0084DD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 35px 0 35px 0;
+}
