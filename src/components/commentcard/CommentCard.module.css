@@ -1,0 +1,100 @@
+.commentCard {
+  display: flex;
+  align-items: center;
+  background-color: #d0f2ff;
+  border-radius: 0px 20px 20px 20px;
+  padding: 1rem;
+  margin-top: 86px;
+  width: 100%;
+  max-width: 850px;
+}
+
+.commentAvatar {
+  width: 79px;
+  height: 79px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.commentNome {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: var(--font-title);
+  background: linear-gradient(to right, #7094E2, #5DC7EA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.commentContent {
+  flex: 1;
+}
+
+.commentHeader {
+  margin: 0;
+  font-weight: 600;
+  color: #0070bb;
+  font-size: 0.95rem;
+}
+
+.commentData {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: var(--font-title);
+  background: linear-gradient(to right, #7094E2, #5DC7EA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.commentTexto {
+  margin: 0.9rem 0;
+  font-size: 22px;
+  font-family: var(--font-text);
+  font-weight: medium;
+  color: #000;
+}
+
+.commentIcons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.commentCount {
+  background: linear-gradient(to right, #004777, #0084DD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-size: 20px;
+  font-family: var(--font-title);
+  font-weight: medium;
+}
+
+.commentIcon {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #0070bb;
+  font-weight: 500;
+  cursor:pointer
+}
+
+.commentIconImg {
+  width: 24px;
+  height: 24px;
+}
+
+.commentDivisor {
+  width: 1px;
+  height: 28px;
+  object-fit: contain;
+  margin: 0 0.75rem;
+  display: inline-block;
+  filter: drop-shadow(0 0 1px #0070bb); 
+}

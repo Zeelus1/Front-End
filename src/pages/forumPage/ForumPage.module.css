@@ -1,0 +1,4 @@
+.faq {
+  background: linear-gradient(180deg, rgba(0, 71, 119, 1) 50%, rgba(0, 132, 221, 1) 100%);
+  background-image: url("../../img/fundoLand.png"), linear-gradient(180deg, rgba(0, 71, 119, 1) 50%, rgba(0, 132, 221, 1) 100%);
+}
