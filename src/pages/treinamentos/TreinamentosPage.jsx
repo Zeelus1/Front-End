@@ -11,8 +11,10 @@ function TreinamentosPage() {
   return (
     <>
       <BlocoInicial imagem={ImgCoracaoComUmaMao} textoAlt="Imagem de uma mão segurando um coração">
-        O que você faz nos primeiros minutos pós acidente <br />
-        pode salvar uma vida! <br />
+        <div className={Style.tituloBloco}>
+          O que você faz nos primeiros minutos pós acidente <br />
+          pode salvar uma vida!
+        </div>
       </BlocoInicial>
 
       <AccordionItem icon={ImgHospitalSimbolo} textoAlt="Símbolo de uma cruz hospitlar" title="Primeiros Socorros">
