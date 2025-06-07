@@ -72,3 +72,131 @@
   font-size: 20px;
   gap: 8px;
 }
+
+/* ...código existente... */
+
+/* Responsividade para telas médias */
+@media (max-width: 1002px) {
+  .shortPostCard {
+    width: 90vw;
+    max-width: 420px;
+    padding: 16px 12px 10px 12px;
+  }
+  .shortPostTitle {
+    font-size: 22px;
+  }
+  .shortPostText {
+    font-size: 17px;
+  }
+  .shortPostAvatar {
+    width: 60px;
+    height: 60px;
+  }
+  .shortPostIcons span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 997px) {
+  .shortPostCard {
+    width: 95vw;
+    max-width: 400px;
+    padding: 14px 8px 10px 8px;
+  }
+  .shortPostTitle {
+    font-size: 20px;
+  }
+  .shortPostText {
+    font-size: 16px;
+  }
+  .shortPostAvatar {
+    width: 54px;
+    height: 54px;
+  }
+  .shortPostIcons span {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 910px) {
+  .shortPostCard {
+    width: 98vw;
+    max-width: 370px;
+    padding: 12px 6px 10px 6px;
+  }
+  .shortPostTitle {
+    font-size: 18px;
+  }
+  .shortPostText {
+    font-size: 15px;
+  }
+  .shortPostAvatar {
+    width: 48px;
+    height: 48px;
+  }
+  .shortPostIcons span {
+    font-size: 16px;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+  .shortPostCard {
+    width: 98vw;
+    min-width: unset;
+    max-width: 100%;
+    padding: 14px 8px 10px 8px;
+    margin: 0 auto 18px auto;
+  }
+
+  .shortPostTitle {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .shortPostText {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .shortPostFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .shortPostAvatar {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+
+  .shortPostIcons {
+    gap: 12px;
+  }
+
+  .shortPostIcons span {
+    font-size: 14px;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 910px) {
+  .shortPostsGrid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+  }
+  .shortPostCard {
+    width: 95vw;
+    max-width: 98vw;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .shortPostCard {
+    width: 98vw;
+    max-width: 100vw;
+    min-width: 0;
+  }
+}
