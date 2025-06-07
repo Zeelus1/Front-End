@@ -55,6 +55,15 @@
   transition: all 0.3s ease;
 }
 
+.faqQuestion.withBorder {
+  border-bottom: 2px solid black;
+}
+
+/* Remove a borda quando ativo */
+.faqItem.active .faqQuestion.withBorder {
+  border-bottom: none;
+}
+
 .questionContent {
   display: flex;
   align-items: center;
@@ -83,6 +92,7 @@
 
 .plus {
   font-size: 2rem;
+  font-weight: 600;
   color: #6ad8fd;
   transition: transform 0.3s ease;
 }
