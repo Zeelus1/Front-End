@@ -1,0 +1,13 @@
+.subtituloBlocoInicial {
+  font-weight: 300;
+  font-family: var(--font-title);
+  font-size: 25px;
+  letter-spacing: 0.5px;
+  line-height: -50px;
+}
+
+.blocos {
+  display: flex;
+  margin-left: 4%;
+  margin-right: 4%;
+}

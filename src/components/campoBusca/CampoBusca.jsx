@@ -2,7 +2,7 @@ import React from "react";
 import Style from "./CampoBusca.module.css";
 import { Search } from "lucide-react";
 
-function CampoBusca() {
+function CampoBusca({ placeholder = "Pesquise pelos seus registros" }) {
   return (
     <div className={Style.container}>
       <label htmlFor="buscarRegistro" className={Style["sr-only"]}>
@@ -12,7 +12,7 @@ function CampoBusca() {
       <input
         id="buscarRegistro"
         type="text"
-        placeholder="Pesquise pelos seus registros"
+        placeholder={placeholder}
         className={Style.input}
       />
     </div>

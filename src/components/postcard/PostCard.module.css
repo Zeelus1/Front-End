@@ -6,6 +6,11 @@
   max-width: 1105px;
   margin: 2rem auto;
   font-family: var(--font-text);
+  margin-bottom: 35px;
+}
+
+.cardSombraLateral {
+  box-shadow: -8px 4px 16px -4px rgba(0,0,0,0.15);
 }
 
 .topo {

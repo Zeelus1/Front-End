@@ -6,7 +6,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx";
 import RegistrosPage from "../pages/registrosPage/RegistrosPage.jsx";
 import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
-import ForumPage from "../pages/forumPage/ForumPage.jsx";
+import ForumPage from "../pages/forumPageInicial/ForumPageInicial.jsx";
 import Login from "../pages/cadastroLogin/Login.jsx";
 import Cadastro from "../pages/cadastroLogin/Cadastro.jsx";
 
