@@ -2,7 +2,7 @@
   background: #fff;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   max-width: 1105px;
   margin: 2rem auto;
   font-family: var(--font-text);
