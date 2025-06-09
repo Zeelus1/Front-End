@@ -200,7 +200,7 @@ function LandingPage() {
                 </Link>
               </li>
               <li>
-                <Link to="/auth" onClick={toggleMenu}>
+                <Link to="/cadastro" onClick={toggleMenu}>
                   Começar
                 </Link>
               </li>
@@ -242,7 +242,7 @@ function LandingPage() {
               <Link to="">Equipe da Zeelus</Link>
             </li>
             <li>
-              <Link to="/auth">
+              <Link to="/cadastro">
                 <ButtonStart>Começar</ButtonStart>
               </Link>
             </li>
