@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Plus } from 'lucide-react';
 import styles from './ChatZee.module.css';
 import mascote from "../../img/mascoteZeeIa.png";
-// import { getGeminiResponse } from './geminiApi'; // Descomente e ajuste o caminho
+import promptGemini from '../../middleware/geminiApi.js';
 
 const ChatZee = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,7 @@ const ChatZee = () => {
 
     try {
       // Troque pelo seu método real de chamada à API Gemini
-      const response = await getGeminiResponse(message);
+      const response = await promptGemini(message);
       setMessages(msgs => [
         ...msgs,
         {
