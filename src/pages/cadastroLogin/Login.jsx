@@ -3,15 +3,19 @@ import Style from "../cadastroLogin/CadastroLogin.module.css";
 import LabelInput from "../../components/labelInput/LabelInput";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
 import ImgGarotoCoracaoAzul from "../../img/rapazSegurandoCoracao.png";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate()
 
   function handleLogin(e) {
     e.preventDefault();
-    // lógica de login
+
+    if(email == "zeelus@mail.com" && password == "zeelus"){
+      navigate("/home")
+    }
   }
 
   return (
