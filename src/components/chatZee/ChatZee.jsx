@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Plus } from 'lucide-react';
 import styles from './ChatZee.module.css';
-import mascote from "../../img/mascoteZeeIa.png";
+import mascote from "../../img/mascoteZeeIA.png";
 import promptGemini from '../../middleware/geminiApi.js';
 
 const ChatZee = () => {
