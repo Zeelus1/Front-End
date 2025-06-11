@@ -95,6 +95,12 @@ function Cadastro() {
               Cadastrar
             </button>
           </div>
+          <div className={Style.divTroca}>
+            <p>Já possui conta? </p> {" "}
+            <Link to="/login">
+              Faça login
+            </Link>
+          </div>
         </form>
       </section>
     </main>
