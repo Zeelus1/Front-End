@@ -46,7 +46,7 @@ Cuidar de quem amamos pode ser desafiador. Pensando nisso, desenvolvemos a Zeelu
 
 - **React** — Interface modular, dinâmica e com foco em performance
 - **Java + Spring Boot** — Backend robusto, seguro e escalável
-- **MySQL** — Banco de dados relacional confiável e amplamente usado
+- **PostgreSQL** — Banco de dados relacional confiável e amplamente usado
 
 ## 🌱 Escalabilidade
 
