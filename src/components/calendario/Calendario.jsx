@@ -11,6 +11,12 @@ import {
 } from "rsuite";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import 'rsuite/Calendar/styles/index.css';
+import 'rsuite/Badge/styles/index.css';
+import 'rsuite/Modal/styles/index.css';
+import 'rsuite/Button/styles/index.css';
+import 'rsuite/Input/styles/index.css';
+import 'rsuite/TimePicker/styles/index.css';
 
 import Style from "./Calendario.module.css";
 
@@ -211,13 +217,13 @@ function Calendario() {
   return (
     <>
       <ToastContainer />
-      <div className={Style.calendarioContainer}>
+      <div className={Style.calendarioContainer} >
         <div className={Style.caixaCalendario}>
           <Calendar
             compact
             renderCell={renderizarCelula}
             onSelect={aoSelecionarData}
-            style={{ width: 260 }}
+            style={{ width: 260 , fontFamily: "Arial, Helvetica, sans-serif"}}
           />
           <button
             className={Style.botaoAdicionar}
@@ -247,11 +253,11 @@ function Calendario() {
                 }}
               >
                 <div
-                  style={{ fontSize: "2rem", fontWeight: 600, marginBottom: 8 }}
+                  style={{ fontSize: "2rem", fontWeight: 600, marginBottom: 8, fontFamily: "Arial" }}
                 >
                   Ops! Não há nada marcado para este dia.
                 </div>
-                <div style={{ fontSize: "1.2rem", color: "#888" }}>
+                <div style={{ fontSize: "1.2rem", color: "#888", fontFamily: "Arial, Helvetica, sans-serif" }}>
                   Clique em "Adicionar Evento" para agendar algum!
                 </div>
               </div>
