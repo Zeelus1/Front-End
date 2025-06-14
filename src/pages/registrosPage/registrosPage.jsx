@@ -6,8 +6,12 @@ import CampoBusca from "../../components/campoBusca/CampoBusca.jsx";
 import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro.jsx";
 import registrosTitulo from "../../img/registrosTitulo.png";
 import CardRegistro from "../../components/cardRegistro/CardRegistro.jsx";
+import ModalRegistro from "../../components/modalRegistro/ModalRegistro.jsx";
 
 function RegistrosPage() {
+  const [modalAberto, setModalAberto] = useState(false);
+  const [registroEditando, setRegistroEditando] = useState(null);
+
   const [dadosRegistros, setDadosRegistros] = useState([
     {
       tituloRegistro: "Primeiro exame de Márcia",
@@ -23,14 +27,58 @@ function RegistrosPage() {
     },
   ]);
 
-const handleDelete = (index) => {
-  const confirmar = window.confirm("Tem certeza que deseja deletar este registro?");
-  if (!confirmar) return;
+  const handleDelete = (index) => {
+    const confirmar = window.confirm(
+      "Tem certeza que deseja deletar este registro?"
+    );
+    if (!confirmar) return;
 
-  const novosRegistros = [...dadosRegistros];
-  novosRegistros.splice(index, 1);
-  setDadosRegistros(novosRegistros);
-};
+    const novosRegistros = [...dadosRegistros];
+    novosRegistros.splice(index, 1);
+    setDadosRegistros(novosRegistros);
+  };
+
+  const handleAdd = () => {
+    setRegistroEditando(null);
+    setModalAberto(true);
+  };
+
+  const handleEdit = (index) => {
+    setRegistroEditando({ ...dadosRegistros[index], index });
+    setModalAberto(true);
+  };
+
+  const handleSalvarRegistro = (novoRegistro) => {
+    const agora = new Date().toLocaleString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    if (novoRegistro.index !== undefined) {
+      const registrosAtualizados = [...dadosRegistros];
+      registrosAtualizados[novoRegistro.index] = {
+        ...novoRegistro,
+        dataRegistro: agora,
+        editado: true,
+      };
+      setDadosRegistros(registrosAtualizados);
+    } else {
+      setDadosRegistros([
+        {
+          ...novoRegistro,
+          dataRegistro: agora,
+          editado: false,
+        },
+        ...dadosRegistros,
+      ]);
+    }
+
+    setModalAberto(false);
+    setRegistroEditando(null);
+  };
 
   return (
     <main>
@@ -48,7 +96,7 @@ const handleDelete = (index) => {
 
       <div className={Style.blocos}>
         <CampoBusca />
-        <BotaoAddRegistro />
+        <BotaoAddRegistro onClick={handleAdd} />
       </div>
 
       <div>
@@ -66,11 +114,18 @@ const handleDelete = (index) => {
             tituloRegistro={registro.tituloRegistro}
             dataRegistro={registro.dataRegistro}
             descricaoRegistro={registro.descricaoRegistro}
-            onEditar={() => console.log("Editar", registro.tituloRegistro)}
+            editado={registro.editado}
+            onEditar={() => handleEdit(index)}
             onDeletar={() => handleDelete(index)}
           />
         ))}
       </section>
+      <ModalRegistro
+        aberto={modalAberto}
+        onClose={() => setModalAberto(false)}
+        onSalvar={handleSalvarRegistro}
+        registro={registroEditando}
+      />
     </main>
   );
 }

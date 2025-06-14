@@ -6,6 +6,7 @@ function CardRegistro({
   tituloRegistro,
   dataRegistro,
   descricaoRegistro,
+  editado,
   onEditar,
   onDeletar,
 }) {
@@ -17,8 +18,10 @@ function CardRegistro({
           size={16}
           style={{ marginRight: "6px", verticalAlign: "middle" }}
         />
-        {dataRegistro}
+        {dataRegistro}{" "}
+        {editado && <em style={{ marginLeft: "8px" }}>(editado)</em>}
       </p>
+
       <p className={Style.descricaoRegistro}>{descricaoRegistro}</p>
       <div className={Style.botoesRegistro}>
         <button type="button" className={Style.btnEditar} onClick={onEditar}>
