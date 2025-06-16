@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Style from "../cadastroLogin/CadastroLogin.module.css";
 import LabelInput from "../../components/labelInput/LabelInput";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
-import ImgGarotoCoracaoAzul from "../../img/rapazSegurandoCoracao.png";
 import { Link } from "react-router";
+import FamiliaTresPessoas from "../../img/familiaTresPessoas.png";
 
 function Cadastro() {
   const [name, setName] = useState("");
@@ -22,8 +22,8 @@ function Cadastro() {
       <section className={Style.section}>
         <div className={Style.moldura}>
           <img
-            src={ImgGarotoCoracaoAzul}
-            alt="Homem segurando um grande coração"
+            src={FamiliaTresPessoas}
+            alt="Familia de três pessoas sorrindo"
           />
         </div>
       </section>
@@ -96,10 +96,7 @@ function Cadastro() {
             </button>
           </div>
           <div className={Style.divTroca}>
-            <p>Já possui conta? </p> {" "}
-            <Link to="/login">
-              Faça login
-            </Link>
+            <p>Já possui conta? <Link to="/login">Faça login</Link></p> 
           </div>
         </form>
       </section>
