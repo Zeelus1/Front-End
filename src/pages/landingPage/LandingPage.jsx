@@ -10,7 +10,6 @@ import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
-import Stars from "../../components/stars/Stars.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
@@ -166,17 +165,12 @@ function LandingPage() {
             <ul>
               <li>
                 <a href="#home" onClick={toggleMenu}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#sobre" onClick={toggleMenu}>
-                  Sobre
+                  Inicio
                 </a>
               </li>
               <li>
                 <a href="#funcionalidades" onClick={toggleMenu}>
-                  Funcionalidades
+                  Soluções
                 </a>
               </li>
               <li>
@@ -190,13 +184,16 @@ function LandingPage() {
                 </a>
               </li>
               <li>
-                <a href="#faq" onClick={toggleMenu}>
-                  FAQ
+                <a href="#parceiros" onClick={toggleMenu}>
+                  Parceiros
                 </a>
               </li>
               <li>
-                <Link to="" onClick={toggleMenu}>
-                  Equipe da Zeelus
+                <a href="#faq">FAQ</a>
+              </li>
+              <li>
+                <Link to="/login" onClick={toggleMenu}>
+                  Entrar
                 </Link>
               </li>
               <li>
@@ -221,13 +218,10 @@ function LandingPage() {
         <nav className={Style.nav_desktop}>
           <ul>
             <li className={Style.liLink}>
-              <a href="#home">Home</a>
+              <a href="#home">Inicio</a>
             </li>
             <li className={Style.liLink}>
-              <a href="#sobre">Sobre</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#funcionalidades">Funcionalidades</a>
+              <a href="#funcionalidades">Soluções</a>
             </li>
             <li className={Style.liLink}>
               <a href="#planos">Planos</a>
@@ -236,10 +230,15 @@ function LandingPage() {
               <a href="#avaliacoes">Avaliações</a>
             </li>
             <li className={Style.liLink}>
-              <a href="#faq">FAQ</a>
+              <a href="#parceiros">Parceiros</a>
             </li>
             <li className={Style.liLink}>
-              <Link to="">Equipe da Zeelus</Link>
+              <a href="#faq">FAQ</a>
+            </li>
+            <li>
+              <Link to="/login">
+                <button className={Style.buttonLogin}>Entrar</button>
+              </Link>
             </li>
             <li>
               <Link to="/cadastro">
