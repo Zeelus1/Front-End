@@ -268,17 +268,64 @@
   width: 150px;
 }
 
+.videoBgWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.videoBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.overlayGradiente {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+    #000000cb,
+    #00000028
+  );
+}
+
 .home {
   background-color: var(--color-7);
   background-image: url("../../img/fundoLand.png");
   background-position: center;
   position: relative;
   max-height: 100vh;
+  overflow: hidden;
+  min-height: calc(100vh - var(--header-height));
 }
+
 
 .container {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+@media screen and (max-width: 910px) {
+  .videoBg {
+    display: none;
+  }
+  
+  .overlayGradiente {
+    background: #0000005b;
+  
+  }
 }
 
 .div1,
