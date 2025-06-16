@@ -10,15 +10,14 @@ import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
-import Stars from "../../components/stars/Stars.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
 
 import Logo from "../../img/zeelusLogo1.png";
-import ProaSlider from "../../img/proalogoSlide.png"
-import SenacSlider from "../../img/senacLogoSlider.png"
-import BraileSlider from "../../img/braileLogoSlider.png"
+import ProaSlider from "../../img/proalogoSlide.png";
+import SenacSlider from "../../img/senacLogoSlider.png";
+import BraileSlider from "../../img/braileLogoSlider.png";
 
 import MaeFilha from "../../img/maeFilha.png";
 import MaeFilhaBricando from "../../img/maeFilhaBricando.png";
@@ -27,18 +26,19 @@ import MaeFilhaAbracadas from "../../img/maeFilhaAbracadas.png";
 import PessoaDigitando from "../../img/pessoaDigitando.png";
 import PessoasAbracando from "../../img/pessoasAbracando.png";
 import RealizandoTreinamento from "../../img/realizandoTreinamento.png";
-import AvatarAvaliacao1 from "../../img/avatarAvaliacao1.png"
-import AvatarAvaliacao2 from "../../img/avatarAvaliacao2.png"
-import AvatarAvaliacao3 from "../../img/avatarAvaliacao3.png"
+import AvatarAvaliacao1 from "../../img/avatarAvaliacao1.png";
+import AvatarAvaliacao2 from "../../img/avatarAvaliacao2.png";
+import AvatarAvaliacao3 from "../../img/avatarAvaliacao3.png";
+import Video from "../../video/1LandingPage.mp4";
 
 import IconDocumento from "../../icons/mi_document.png";
 import IconVortex from "../../icons/ic_twotone-diversity-2.png";
 import IconEscudo from "../../icons/ic_baseline-health-and-safety.png";
 import SliderParceiros from "../../components/sliderParceiros/SliderParceiros.jsx";
-import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png"
-import IconPlanoElo from "../../icons/coracaoPlanoElo.png"
-import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png"
-import IconAspa from "../../icons/iconAspa.png"
+import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png";
+import IconPlanoElo from "../../icons/coracaoPlanoElo.png";
+import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png";
+import IconAspa from "../../icons/iconAspa.png";
 import CardAvaliacao from "../../components/cardAvaliacao/CardAvaliacao.jsx";
 import Faq from "../../components/faq/Faq.jsx";
 
@@ -68,28 +68,28 @@ function LandingPage() {
     },
   ];
 
-  const sliders = [
-    ProaSlider,
-    SenacSlider,
-    BraileSlider
-  ]
+  const sliders = [ProaSlider, SenacSlider, BraileSlider];
 
   const faqData = [
     {
       question: "O que é a Zeelus?",
-      answer: "A Zeelus é uma plataforma inovadora que conecta cuidadores e oferece ferramentas para facilitar a rotina de cuidados, promovendo organização, aprendizado e suporte contínuo.",
+      answer:
+        "A Zeelus é uma plataforma inovadora que conecta cuidadores e oferece ferramentas para facilitar a rotina de cuidados, promovendo organização, aprendizado e suporte contínuo.",
     },
     {
       question: "Meus dados estão protegidos?",
-      answer: "Sim! A Zeelus prioriza a segurança e privacidade dos seus dados. Utilizamos tecnologias avançadas de criptografia e seguimos rigorosos protocolos de proteção de dados.",
+      answer:
+        "Sim! A Zeelus prioriza a segurança e privacidade dos seus dados. Utilizamos tecnologias avançadas de criptografia e seguimos rigorosos protocolos de proteção de dados.",
     },
     {
       question: "Para quem é a Zeelus?",
-      answer: "A Zeelus é ideal para cuidadores formais e informais que buscam uma solução completa para organizar suas atividades, compartilhar experiências e desenvolver suas habilidades no cuidado.",
+      answer:
+        "A Zeelus é ideal para cuidadores formais e informais que buscam uma solução completa para organizar suas atividades, compartilhar experiências e desenvolver suas habilidades no cuidado.",
     },
     {
       question: "Preciso pagar para usar?",
-      answer: "A Zeelus oferece um plano gratuito com diversas funcionalidades essenciais. Também disponibilizamos planos premium com recursos adicionais para quem busca uma experiência ainda mais completa.",
+      answer:
+        "A Zeelus oferece um plano gratuito com diversas funcionalidades essenciais. Também disponibilizamos planos premium com recursos adicionais para quem busca uma experiência ainda mais completa.",
     },
   ];
 
@@ -134,8 +134,6 @@ function LandingPage() {
     };
   }, [isMenuOpen]);
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 910);
-
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 910);
     window.addEventListener("resize", handleResize);
@@ -166,17 +164,12 @@ function LandingPage() {
             <ul>
               <li>
                 <a href="#home" onClick={toggleMenu}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#sobre" onClick={toggleMenu}>
-                  Sobre
+                  Inicio
                 </a>
               </li>
               <li>
                 <a href="#funcionalidades" onClick={toggleMenu}>
-                  Funcionalidades
+                  Soluções
                 </a>
               </li>
               <li>
@@ -190,13 +183,16 @@ function LandingPage() {
                 </a>
               </li>
               <li>
-                <a href="#faq" onClick={toggleMenu}>
-                  FAQ
+                <a href="#parceiros" onClick={toggleMenu}>
+                  Parceiros
                 </a>
               </li>
               <li>
-                <Link to="" onClick={toggleMenu}>
-                  Equipe da Zeelus
+                <a href="#faq">FAQ</a>
+              </li>
+              <li>
+                <Link to="/login" onClick={toggleMenu}>
+                  Entrar
                 </Link>
               </li>
               <li>
@@ -221,13 +217,10 @@ function LandingPage() {
         <nav className={Style.nav_desktop}>
           <ul>
             <li className={Style.liLink}>
-              <a href="#home">Home</a>
+              <a href="#home">Inicio</a>
             </li>
             <li className={Style.liLink}>
-              <a href="#sobre">Sobre</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#funcionalidades">Funcionalidades</a>
+              <a href="#funcionalidades">Soluções</a>
             </li>
             <li className={Style.liLink}>
               <a href="#planos">Planos</a>
@@ -236,10 +229,15 @@ function LandingPage() {
               <a href="#avaliacoes">Avaliações</a>
             </li>
             <li className={Style.liLink}>
-              <a href="#faq">FAQ</a>
+              <a href="#parceiros">Parceiros</a>
             </li>
             <li className={Style.liLink}>
-              <Link to="">Equipe da Zeelus</Link>
+              <a href="#faq">FAQ</a>
+            </li>
+            <li>
+              <Link to="/login">
+                <button className={Style.buttonLogin}>Entrar</button>
+              </Link>
             </li>
             <li>
               <Link to="/cadastro">
@@ -266,34 +264,21 @@ function LandingPage() {
                 </Link>
               </div>
             </div>
-            {!isMobile && (
-              <>
-                <div className={Style.div2}>
-                  <img src={MaeFilha} alt="" />
-                  <button
-                    className={Style.buttonStart}
-                    onClick={() => {
-                      if (window.innerWidth > 910) setShowVideoModal(true);
-                    }}
-                  >
-                    <svg
-                      viewBox="0 0 448 512"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                      width="26px"
-                    >
-                      <path
-                        d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                        fill="currentColor"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </>
-            )}
           </div>
 
-          {/* -------------------------------- */}
+          <div className={Style.videoBgWrapper}>
+            <video
+              className={Style.videoBg}
+              src={Video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={MaeFilha}
+            />
+
+            <div className={Style.overlayGradiente}></div>
+          </div>
 
           <div className={Style.div3}>
             <img src={VectorSectionHome} alt="" />
@@ -444,22 +429,18 @@ function LandingPage() {
                   <li>Experiência com Anúncios Reduzidos</li>
                 </ul>
               </div>
-                <div className={Style.box}>
-                  <Link to={""} style={{ width: "80%", display: "block" }}>
-                    <ButtonStart children={"Obter Agora!"} width={"100%"} />
-                  </Link>
-                </div>
+              <div className={Style.box}>
+                <Link to={""} style={{ width: "80%", display: "block" }}>
+                  <ButtonStart children={"Obter Agora!"} width={"100%"} />
+                </Link>
+              </div>
             </div>
 
             {/* ----------------------------------------------------------- */}
 
             <CardPlanos
               title="Plano CarePlus"
-              price={
-                <>
-                  R$ 34,90/mês
-                </>
-              }
+              price={<>R$ 34,90/mês</>}
               icon={IconPlanoCarePlus}
               features={[
                 "Plano Care + Plano Elo",
@@ -470,7 +451,6 @@ function LandingPage() {
               link=""
               buttonText="Obter Agora!"
             />
-
           </div>
         </section>
 
@@ -478,8 +458,6 @@ function LandingPage() {
           <h1>
             Confira algumas avaliações de <br /> usuários da Zeelus!
           </h1>
-          
-
 
           <div className={Style.containerAvaliacao}>
             <CardAvaliacao
@@ -489,7 +467,9 @@ function LandingPage() {
               name="Yuri Ramos"
               quoteIcon={IconAspa}
             >
-              Plataforma completa! A Zeelus acompanha rotinas, treinamentos e documentos em um só lugar. Meu dia a dia ficou muito mais leve. Recomendo!
+              Plataforma completa! A Zeelus acompanha rotinas, treinamentos e
+              documentos em um só lugar. Meu dia a dia ficou muito mais leve.
+              Recomendo!
             </CardAvaliacao>
             <CardAvaliacao
               avatar={AvatarAvaliacao2}
@@ -498,7 +478,9 @@ function LandingPage() {
               name="Velma de Souza"
               quoteIcon={IconAspa}
             >
-              Sempre quis um suporte humanizado, e a Zeelus entregou! Ferramentas fáceis e um fórum inspirador. Sinto que tenho apoio de verdade agora!
+              Sempre quis um suporte humanizado, e a Zeelus entregou!
+              Ferramentas fáceis e um fórum inspirador. Sinto que tenho apoio de
+              verdade agora!
             </CardAvaliacao>
             <CardAvaliacao
               avatar={AvatarAvaliacao3}
@@ -507,25 +489,28 @@ function LandingPage() {
               name="Yuri Ramos"
               quoteIcon={IconAspa}
             >
-              Tudo que um cuidador precisa: organização, segurança e apoio. A Zeelus transformou minha rotina!
+              Tudo que um cuidador precisa: organização, segurança e apoio. A
+              Zeelus transformou minha rotina!
             </CardAvaliacao>
           </div>
-
         </section>
 
         <section id="parceiros" className={Style.parceiros}>
-          <h2>
-            Parceiros
-          </h2>
-          
-          <SliderParceiros logos={sliders}/>
+          <h2>Parceiros</h2>
+
+          <SliderParceiros logos={sliders} />
         </section>
 
         <section id="faq" className={Style.faq}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195"><path fill="#fff" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,96C672,107,768,181,864,192C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
-          
-          <Faq data={faqData} title={"FAQ"}/>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195">
+            <path
+              fill="#fff"
+              fill-opacity="1"
+              d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,96C672,107,768,181,864,192C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+            ></path>
+          </svg>
 
+          <Faq data={faqData} title={"FAQ"} />
         </section>
       </main>
 
