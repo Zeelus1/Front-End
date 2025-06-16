@@ -4,7 +4,7 @@ import App from "../App.jsx";
 import LandingPage from "../pages/landingPage/LandingPage.jsx";
 import ErrorPage from "../pages/ErrorPage/ErrorPage.jsx";
 import TreinamentosPage from "../pages/treinamentos/TreinamentosPage.jsx";
-import RegistrosPage from "../pages/registrosPage/RegistrosPage.jsx";
+import RegistrosPage from "../pages/registrosPage/registrosPage.jsx";
 import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
 import ForumPage from "../pages/forumPageInicial/ForumPageInicial.jsx";
 import ForumPageAberto from '../pages/forumPage/ForumPage.jsx';
