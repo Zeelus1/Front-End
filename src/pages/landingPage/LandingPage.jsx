@@ -134,8 +134,6 @@ function LandingPage() {
     };
   }, [isMenuOpen]);
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 910);
-
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 910);
     window.addEventListener("resize", handleResize);
@@ -252,7 +250,6 @@ function LandingPage() {
 
       <main className={Style.main}>
         <section className={Style.home} id="home">
-          
           <div className={Style.container}>
             <div className={Style.div1}>
               <div>
@@ -281,13 +278,11 @@ function LandingPage() {
             />
 
             <div className={Style.overlayGradiente}></div>
-          
           </div>
 
           <div className={Style.div3}>
             <img src={VectorSectionHome} alt="" />
           </div>
-
         </section>
 
         <section className={Style.sobre} id="sobre">
