@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import Style from "../cadastroLogin/CadastroLogin.module.css";
 import LabelInput from "../../components/labelInput/LabelInput";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
-import ImgGarotoCoracaoAzul from "../../img/rapazSegurandoCoracao.png";
 import { Link, useNavigate } from "react-router";
+import FamiliaTresPessoas from "../../img/familiaTresPessoas.png";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function handleLogin(e) {
     e.preventDefault();
 
-    if(email == "zeelus@mail.com" && password == "zeelus"){
-      navigate("/home")
+    if (email == "zeelus@mail.com" && password == "zeelus") {
+      navigate("/home");
     }
   }
 
@@ -23,14 +23,14 @@ function Login() {
       <section className={Style.section}>
         <div className={Style.moldura}>
           <img
-            src={ImgGarotoCoracaoAzul}
-            alt="Homem segurando um grande coração"
+            src={FamiliaTresPessoas}
+            alt="Familia de três pessoas sorrindo"
           />
         </div>
       </section>
       <section className={Style.section}>
         <div className={Style.molduraLogo}>
-          <img src={ZeelusLogo} alt="Logo da plataforma Zeelus" />
+          <img src={ZeelusLogo} alt="Familia de três pessoas" />
         </div>
         <h1>Entrar</h1>
         <form className={Style.forms} onSubmit={handleLogin} autoComplete="off">
@@ -57,6 +57,7 @@ function Login() {
             setProps={setPassword}
           />
           <div className={Style.divTroca}>
+            <p>Não possui conta? <Link to="/cadastro">Faça cadastro</Link></p> 
             <Link to="/esqueci-senha">Esqueci minha senha</Link>
           </div>
           <div className={Style.divSubmit}>

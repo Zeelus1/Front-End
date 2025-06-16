@@ -37,18 +37,21 @@
   overflow: hidden;
 }
 
-.section:first-of-type::before {
-  content: "";
+.section:first-of-type .moldura {
   position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  transform: none;
+  box-shadow: none;
+}
+
+.section:first-of-type .moldura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
 }
 
 .section h1 {
@@ -75,7 +78,6 @@
 .moldura {
   max-width: 500px;
   max-height: 520px;
-  border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
   transform: perspective(1000px) rotateY(-5deg);
@@ -188,9 +190,10 @@
 .divTroca {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin: 1rem 0;
   gap: 5px;
+  font-size: 1.4rem;
 }
 
 .divSubmit {
