@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Plus, Mic, MicOff, AlertCircle } from 'lucide-react';
 import styles from './ChatZee.module.css';
 import mascote from "../../img/mascoteZeeIA.png";
@@ -27,16 +27,10 @@ const ChatZee = () => {
   const [transcription, setTranscription] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [recordingStatus, setRecordingStatus] = useState('');
-  const [showWarning, setShowWarning] = useState(true);
   const [support, setSupport] = useState({
     supported: false,
     message: ''
   });
-
-  // Sempre rola para a última mensagem
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
 
   // Detecta suporte a funcionalidades de áudio
   useEffect(() => {
@@ -60,7 +54,7 @@ const ChatZee = () => {
     }
   }, []);
 
-  // Configura a instância de reconhecimento de voz e seus eventos.
+  // Configura a instância de reconhecimento de voz e seus eventos
   useEffect(() => {
     if (!support.supported) return;
 
@@ -106,25 +100,13 @@ const ChatZee = () => {
     };
   }, [support.supported]);
 
-  /**
-   * Adiciona uma nova mensagem ao estado, evitando repetição de código.
-   * @param {string} texto Conteúdo da mensagem
-   * @param {boolean} isBot Indica se a mensagem é do bot
-   */
-  const adicionarMensagem = useCallback((texto, isBot = false) => {
-    setMessages(prev => [
-      ...prev,
-      {
-        id: Date.now(),
-        text: texto,
-        isBot,
-        timestamp: new Date()
-      }
-    ]);
-  }, []);
+  // Sempre rola para a última mensagem
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   // Inicia a gravação de áudio
-  const iniciarGravacao = async () => {
+  const startRecording = async () => {
     if (!support.supported || isRecording) {
       if (!support.supported) alert(support.message);
       return;
@@ -142,12 +124,20 @@ const ChatZee = () => {
       console.error('Erro ao acessar o microfone:', error);
       setRecordingStatus('Permissão do microfone negada.');
       setIsProcessing(false);
-      adicionarMensagem('Não foi possível acessar seu microfone. Verifique as permissões do navegador.', true);
+      setMessages(msgs => [
+        ...msgs,
+        {
+          id: msgs.length + 1,
+          text: 'Não foi possível acessar seu microfone. Verifique as permissões do navegador.',
+          isBot: true,
+          timestamp: new Date()
+        }
+      ]);
     }
   };
 
   // Para a gravação e processa a transcrição
-  const pararGravacao = () => {
+  const stopRecording = () => {
     if (recognitionRef.current && isRecording) {
       recognitionRef.current.stop();
       
@@ -157,15 +147,28 @@ const ChatZee = () => {
         setIsProcessing(true);
         setRecordingStatus('Processando...');
 
-        adicionarMensagem(finalTranscription, false);
+        const userMsg = {
+          id: messages.length + 1,
+          text: finalTranscription,
+          isBot: false,
+          timestamp: new Date()
+        };
+        setMessages(msgs => [...msgs, userMsg]);
         setTranscription('');
 
         promptGemini(finalTranscription)
           .then(response => {
-            adicionarMensagem(response, true);
+            setMessages(msgs => [
+              ...msgs,
+              { id: msgs.length + 1, text: response, isBot: true, timestamp: new Date() }
+            ]);
           })
-          .catch(() => {
-            adicionarMensagem('Desculpe, houve um erro ao processar sua solicitação.', true);
+          .catch(error => {
+            console.error('Erro ao processar com Gemini:', error);
+            setMessages(msgs => [
+              ...msgs,
+              { id: msgs.length + 1, text: 'Desculpe, houve um erro ao processar sua solicitação.', isBot: true, timestamp: new Date() }
+            ]);
           })
           .finally(() => {
             setIsProcessing(false);
@@ -178,35 +181,49 @@ const ChatZee = () => {
   };
 
   // Envia mensagem e recebe resposta do Gemini
-  const enviarMensagem = async () => {
+  const handleSendMessage = async () => {
     if (!message.trim()) return;
 
-    adicionarMensagem(message, false);
+    const userMsg = {
+      id: messages.length + 1,
+      text: message,
+      isBot: false,
+      timestamp: new Date()
+    };
+    setMessages(msgs => [...msgs, userMsg]);
     setMessage('');
 
     try {
-      // Troque pelo seu método real de chamada à API Gemini
       const response = await promptGemini(message);
-      adicionarMensagem(response, true);
+      setMessages(msgs => [
+        ...msgs,
+        {
+          id: msgs.length + 1,
+          text: response,
+          isBot: true,
+          timestamp: new Date()
+        }
+      ]);
     } catch {
-      adicionarMensagem('Desculpe, não consegui obter uma resposta agora.', true);
+      setMessages(msgs => [
+        ...msgs,
+        {
+          id: msgs.length + 1,
+          text: 'Desculpe, não consegui obter uma resposta agora.',
+          isBot: true,
+          timestamp: new Date()
+        }
+      ]);
     }
   };
 
   // Envia ao pressionar Enter (sem Shift)
-  const aoPressionarTecla = (e) => {
+  const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      enviarMensagem();
+      handleSendMessage();
     }
   };
-
-  // Reseta o aviso quando o chat é aberto
-  useEffect(() => {
-    if (isOpen) {
-      setShowWarning(true);
-    }
-  }, [isOpen]);
 
   return (
     <div className={styles.container}>
@@ -223,7 +240,7 @@ const ChatZee = () => {
                 <p className={styles.subtitle}>Bem-vindo a Zee IA!</p>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className={styles.closeButton}>
+            <button onClick={() => setIsOpen(false)} className={styles.closeButton} aria-label="Fechar chat">
               <X size={30} />
             </button>
           </div>
@@ -240,7 +257,7 @@ const ChatZee = () => {
                 </div>
               </div>
             ))}
-            {isRecording && transcription && (
+            {isRecording && support.supported && transcription && (
               <div className={`${styles.messageWrapper} ${styles.userMessage}`}>
                 <div className={`${styles.messageBubble} ${styles.userBubble} ${styles.transcribing}`}>
                   <p>{transcription}</p>
@@ -255,28 +272,20 @@ const ChatZee = () => {
             className={styles.inputContainer}
             onSubmit={e => {
               e.preventDefault();
-              enviarMensagem();
+              handleSendMessage();
             }}
           >
-            {!support.supported && showWarning && (
+            {!support.supported && (
               <div className={styles.browserWarning}>
                 <AlertCircle size={16} />
                 <span>{support.message}</span>
-                <button
-                  type="button"
-                  className={styles.closeWarning}
-                  onClick={() => setShowWarning(false)}
-                  aria-label="Fechar aviso"
-                >
-                  <X size={16} />
-                </button>
               </div>
             )}
             <div className={styles.inputWrapper}>
               <textarea
                 value={message}
                 onChange={e => setMessage(e.target.value)}
-                onKeyDown={aoPressionarTecla}
+                onKeyDown={handleKeyPress}
                 placeholder="Digite sua mensagem"
                 className={styles.textarea}
                 rows={1}
@@ -285,13 +294,13 @@ const ChatZee = () => {
               {support.supported && (
                 <button
                   type="button"
-                  onClick={isRecording ? pararGravacao : iniciarGravacao}
+                  onClick={isRecording ? stopRecording : startRecording}
                   className={`${styles.recordButton} ${isRecording ? styles.recording : ''}`}
                   disabled={isProcessing}
                   title={isRecording ? "Parar gravação" : "Iniciar gravação"}
                   aria-label={isRecording ? "Parar gravação" : "Iniciar gravação"}
                 >
-                  {isRecording ? <MicOff size={24} /> : <Mic size={24} />}
+                  {isRecording ? <MicOff size={18} /> : <Mic size={18} />}
                 </button>
               )}
               <button
@@ -305,7 +314,6 @@ const ChatZee = () => {
             </div>
             {recordingStatus && (
               <div className={styles.statusMessage}>
-                <Mic size={16} />
                 {recordingStatus}
               </div>
             )}
@@ -314,7 +322,7 @@ const ChatZee = () => {
       ) : (
         // Botão flutuante
         <div className={styles.floatingButtonContainer}>
-          <button onClick={() => setIsOpen(true)} className={styles.floatingButton}>
+          <button onClick={() => setIsOpen(true)} className={styles.floatingButton} aria-label="Abrir chat">
             <div className={styles.mascotContainer}>
               <img src={mascote} alt="Mascote" className={styles.mascotImage} />
               <Plus size={20} className={styles.fallbackIcon} />
@@ -326,4 +334,4 @@ const ChatZee = () => {
   );
 };
 
-export default ChatZee;
+export default ChatZee; 

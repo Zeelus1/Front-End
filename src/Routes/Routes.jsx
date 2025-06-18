@@ -10,7 +10,7 @@ import ForumPage from "../pages/forumPageInicial/ForumPageInicial.jsx";
 import ForumPageAberto from '../pages/forumPage/ForumPage.jsx';
 import Login from "../pages/cadastroLogin/Login.jsx";
 import Cadastro from "../pages/cadastroLogin/Cadastro.jsx";
-import SobreNos from "../pages/SobreNos/SobreNos.jsx";
+import SobreNos from "../pages/sobreNos/SobreNos.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
 
