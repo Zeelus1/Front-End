@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import Style from "./LandingPage.module.css";
 
 import ButtonMenu from "../../icons/icons8-menu.svg";
@@ -46,6 +49,14 @@ function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showVideoModal, setShowVideoModal] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   const slidesData = [
     {
@@ -249,17 +260,18 @@ function LandingPage() {
       </header>
 
       <main className={Style.main}>
-        <section className={Style.home} id="home">
-          <div className={Style.container}>
+        {/* Seção Home */}
+        <section className={Style.home} id="home" data-aos="fade-up">
+          <div className={Style.container} data-aos="fade-right" data-aos-delay="200">
             <div className={Style.div1}>
               <div>
-                <h1>
+                <h1 data-aos="fade-up" data-aos-delay="400">
                   Soluções que <br />{" "}
                   <span className={Style.destaque}>acolhem</span>, <br />{" "}
                   ferramentas que <br />
                   <span className={Style.destaque}>empoderam</span>!
                 </h1>
-                <Link to="/auth">
+                <Link to="/auth" data-aos="fade-up" data-aos-delay="600">
                   <ButtonStart>Começar</ButtonStart>
                 </Link>
               </div>
@@ -285,22 +297,23 @@ function LandingPage() {
           </div>
         </section>
 
-        <section className={Style.sobre} id="sobre">
-          <h1>
+        {/* Seção Sobre */}
+        <section className={Style.sobre} id="sobre" data-aos="fade-up">
+          <h1 data-aos="fade-up" data-aos-delay="200">
             <span className={Style.destaqueSobre}>
               Reinventando o conceito de <br /> cuidado por meio da tecnologia!
             </span>
           </h1>
 
           <div className={Style.containerSobre}>
-            <div className={Style.molduraSobre}>
+            <div className={Style.molduraSobre} data-aos="fade-right" data-aos-delay="400">
               <img
                 src={ColegasTrabalhandoJunto}
                 alt="Colegas trabalhando junto"
               />
             </div>
 
-            <p>
+            <p data-aos="fade-left" data-aos-delay="600">
               Na <span className={Style.destaqueSobre}>Zeelus</span>,
               acreditamos que o cuidado vai além de simples tarefas diárias.
               Nosso objetivo é transformar a jornada dos cuidadores informais,
@@ -352,64 +365,79 @@ function LandingPage() {
           )}
         </section>
 
-        <section id="funcionalidades" className={Style.funcionalidades}>
-          <Carrossel slides={slidesData} autoSlideInterval={10000} />
+        {/* Seção Funcionalidades */}
+        <section
+          id="funcionalidades"
+          className={Style.funcionalidades}
+          data-aos="fade-up"
+        >
+          <div data-aos="fade-up" data-aos-delay="200">
+            <Carrossel slides={slidesData} autoSlideInterval={10000} />
+          </div>
 
-          <h1>
+          <h1 data-aos="fade-up" data-aos-delay="300">
             A <span className={Style.destaqueFuncionalide}>Zeelus</span> fornece
             soluções <br /> integradas de maneira prática!
           </h1>
 
           <div className={Style.containerFuncionalidade}>
-            <CardFuncionalidades
-              icon={IconDocumento}
-              title="Documentação Segura"
-              description="Registre observações, cronogramas e 
+            <div data-aos="fade-up" data-aos-delay="200">
+              <CardFuncionalidades
+                icon={IconDocumento}
+                title="Documentação Segura"
+                description="Registre observações, cronogramas e 
                 a anamnese de seu assistido com privacidade e 
                 segurança!"
-              image={PessoaDigitando}
-              imageAlt="Pessoa digitando"
-              iconAlt="Icone de documentação"
-            />
-
-            <CardFuncionalidades
-              icon={IconVortex}
-              title="Comunicação Adaptativa"
-              description="Conecte-se a outros acompanhantes e compartilhe experiências em um ambiente acolhedor!"
-              image={PessoasAbracando}
-              imageAlt="Duas pessoas se abraçando"
-              iconAlt="Icone de vortex"
-            />
-
-            <CardFuncionalidades
-              icon={IconEscudo}
-              title="Ambiente de Crescimento"
-              description="Promova seu desenvolvimento pessoal e profissional com apoio estruturado e recursos como aulas simples e práticas de primeiros socorros!"
-              image={RealizandoTreinamento}
-              imageAlt="Pessoas realizando treinamento de primeiros socorros"
-              iconAlt="Icone de escudo"
-            />
+                image={PessoaDigitando}
+                imageAlt="Pessoa digitando"
+                iconAlt="Icone de documentação"
+              />
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <CardFuncionalidades
+                icon={IconVortex}
+                title="Comunicação Adaptativa"
+                description="Conecte-se a outros acompanhantes e compartilhe experiências em um ambiente acolhedor!"
+                image={PessoasAbracando}
+                imageAlt="Duas pessoas se abraçando"
+                iconAlt="Icone de vortex"
+              />
+            </div>
+            <div data-aos="fade-up" data-aos-delay="600">
+              <CardFuncionalidades
+                icon={IconEscudo}
+                title="Ambiente de Crescimento"
+                description="Promova seu desenvolvimento pessoal e profissional com apoio estruturado e recursos como aulas simples e práticas de primeiros socorros!"
+                image={RealizandoTreinamento}
+                imageAlt="Pessoas realizando treinamento de primeiros socorros"
+                iconAlt="Icone de escudo"
+              />
+            </div>
           </div>
         </section>
 
-        <section id="planos" className={Style.planos}>
-          <h1>Veja nossos planos!</h1>
-
+        {/* Seção Planos */}
+        <section id="planos" className={Style.planos} data-aos="fade-up">
+          <h1 data-aos="fade-up" data-aos-delay="200">
+            Veja nossos planos!
+          </h1>
           <div className={Style.containerPlanos}>
-            <CardPlanos
-              title="Plano Care"
-              price="Gratuito!"
-              features={[
-                "Agenda Interativa",
-                "Anamnese do Assistido",
-                "Diario de Monitoramento",
-                "Fórum Comunitario",
-                "Treinamento de Primeiros Socorros",
-              ]}
-              icon={IconPlanoGratuito}
-              link="/auth"
-              buttonText="Obter Agora!"
-            />
+            <div data-aos="fade-up" data-aos-delay="200">
+              <CardPlanos
+                title="Plano Care"
+                price="Gratuito!"
+                features={[
+                  "Agenda Interativa",
+                  "Anamnese do Assistido",
+                  "Diario de Monitoramento",
+                  "Fórum Comunitario",
+                  "Treinamento de Primeiros Socorros",
+                ]}
+                icon={IconPlanoGratuito}
+                link="/auth"
+                buttonText="Obter Agora!"
+              />
+            </div>
 
             {/* ----------------------------------------------------------- */}
 
@@ -438,79 +466,91 @@ function LandingPage() {
 
             {/* ----------------------------------------------------------- */}
 
-            <CardPlanos
-              title="Plano CarePlus"
-              price={<>R$ 34,90/mês</>}
-              icon={IconPlanoCarePlus}
-              features={[
-                "Plano Care + Plano Elo",
-                "Experiência sem Anúncios",
-                "Assistente por IA sem Limites",
-                "Multiplos Perfis de Anamnese",
-              ]}
-              link=""
-              buttonText="Obter Agora!"
-            />
+            <div data-aos="fade-up" data-aos-delay="600">
+              <CardPlanos
+                title="Plano CarePlus"
+                price={<>R$ 34,90/mês</>}
+                icon={IconPlanoCarePlus}
+                features={[
+                  "Plano Care + Plano Elo",
+                  "Experiência sem Anúncios",
+                  "Assistente por IA sem Limites",
+                  "Multiplos Perfis de Anamnese",
+                ]}
+                link=""
+                buttonText="Obter Agora!"
+              />
+            </div>
           </div>
         </section>
 
-        <section id="avaliacoes" className={Style.avaliacoes}>
-          <h1>
+        {/* Seção Avaliações */}
+        <section id="avaliacoes" className={Style.avaliacoes} data-aos="fade-up">
+          <h1 data-aos="fade-up" data-aos-delay="200">
             Confira algumas avaliações de <br /> usuários da Zeelus!
           </h1>
-
           <div className={Style.containerAvaliacao}>
-            <CardAvaliacao
-              avatar={AvatarAvaliacao1}
-              title="Facilidade que Transforma!"
-              rating={5}
-              name="Yuri Ramos"
-              quoteIcon={IconAspa}
-            >
-              Plataforma completa! A Zeelus acompanha rotinas, treinamentos e
-              documentos em um só lugar. Meu dia a dia ficou muito mais leve.
-              Recomendo!
-            </CardAvaliacao>
-            <CardAvaliacao
-              avatar={AvatarAvaliacao2}
-              title="Tecnologia que acolhe de verdade!"
-              rating={5}
-              name="Velma de Souza"
-              quoteIcon={IconAspa}
-            >
-              Sempre quis um suporte humanizado, e a Zeelus entregou!
-              Ferramentas fáceis e um fórum inspirador. Sinto que tenho apoio de
-              verdade agora!
-            </CardAvaliacao>
-            <CardAvaliacao
-              avatar={AvatarAvaliacao3}
-              title="Soluções que fazem a diferença!"
-              rating={5}
-              name="Yuri Ramos"
-              quoteIcon={IconAspa}
-            >
-              Tudo que um cuidador precisa: organização, segurança e apoio. A
-              Zeelus transformou minha rotina!
-            </CardAvaliacao>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <CardAvaliacao
+                avatar={AvatarAvaliacao1}
+                title="Facilidade que Transforma!"
+                rating={5}
+                name="Yuri Ramos"
+                quoteIcon={IconAspa}
+              >
+                Plataforma completa! A Zeelus acompanha rotinas, treinamentos e
+                documentos em um só lugar. Meu dia a dia ficou muito mais leve.
+                Recomendo!
+              </CardAvaliacao>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="400">
+              <CardAvaliacao
+                avatar={AvatarAvaliacao2}
+                title="Tecnologia que acolhe de verdade!"
+                rating={5}
+                name="Velma de Souza"
+                quoteIcon={IconAspa}
+              >
+                Sempre quis um suporte humanizado, e a Zeelus entregou!
+                Ferramentas fáceis e um fórum inspirador. Sinto que tenho apoio de
+                verdade agora!
+              </CardAvaliacao>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="600">
+              <CardAvaliacao
+                avatar={AvatarAvaliacao3}
+                title="Soluções que fazem a diferença!"
+                rating={5}
+                name="Yuri Ramos"
+                quoteIcon={IconAspa}
+              >
+                Tudo que um cuidador precisa: organização, segurança e apoio. A
+                Zeelus transformou minha rotina!
+              </CardAvaliacao>
+            </div>
           </div>
         </section>
 
-        <section id="parceiros" className={Style.parceiros}>
-          <h2>Parceiros</h2>
-
-          <SliderParceiros logos={sliders} />
+        {/* Seção Parceiros */}
+        <section id="parceiros" className={Style.parceiros} data-aos="fade-up">
+          <h2 data-aos="fade-up" data-aos-delay="200">Parceiros</h2>
+          <div data-aos="fade-up" data-aos-delay="400">
+            <SliderParceiros logos={sliders} />
+          </div>
         </section>
 
-        <section id="faq" className={Style.faq}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195">
+        {/* Seção FAQ */}
+        <section id="faq" className={Style.faq} data-aos="fade-up">
+          <svg data-aos="fade-down" data-aos-delay="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195">
             <path
               fill="#fff"
               fill-opacity="1"
               d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,96C672,107,768,181,864,192C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
             ></path>
           </svg>
-
-          <Faq data={faqData} title={"FAQ"} />
+          <div data-aos="fade-up" data-aos-delay="400">
+            <Faq data={faqData} title={"FAQ"} />
+          </div>
         </section>
       </main>
 
