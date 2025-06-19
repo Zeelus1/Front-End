@@ -9,7 +9,8 @@ import CalendarioPage from "../pages/calendarioPage/CalendarioPage.jsx";
 import ForumPage from "../pages/forumPageInicial/ForumPageInicial.jsx";
 import ForumPageAberto from '../pages/forumPage/ForumPage.jsx';
 import Login from "../pages/cadastroLogin/Login.jsx";
-import Cadastro from "../pages/cadastroLogin/Cadastro.jsx";
+import Cadastro from "../pages/cadastroLogin/Cadastro.jsx"; 
+import PerfilCuidadorPage from "../pages/perfilCuidadorPage/PerfilCuidadorPage.jsx";
 import SobreNos from "../pages/sobreNos/SobreNos.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: "treinamento",
         element: <TreinamentosPage />,
+      },
+      {
+        path: "perfil",
+        element: <PerfilCuidadorPage />,
       },
     ],
   },
