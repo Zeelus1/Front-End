@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap');
+
+:root {
+  --azulDegrade1: #7094E2;
+  --azulDegrade2: #62BAE8;
+  --azulDegrade3: #5DC7EA;
+  --azulProfundo: #004777;
+  --neutroAconchegante: #F5F3EF;
+  --azulSereno: #98D4E8;
+  --verdeEquilibrado: #5B8E7D;
+  --verdeSuave: #A9E5BB;
+  --verdeNeve: #D8F2E5;
+  --verdeDegrade: #A5F2CB;
+  --lilasSerenidade: #C1C8E4;
+  --fonteTitulos: 'Poppins', sans-serif;
+  --fonteCorpo: 'Inter', sans-serif;
+}
+
+.fundoPagina {
+  background-image: url("../../img/texturaFundo.png");
+  background-repeat: repeat;
+  background-size: 250px;
+  min-height: 100vh;
+  font-family: var(--fonteCorpo);
+}
+
 .blocos {
   display: flex;
   margin-left: 4%;
@@ -20,4 +47,32 @@
 .subtituloBlocoInicial {
   font-weight: 400;
   font-size: 25px;
+}
+
+.faqRegistros {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+}
+
+.faqRegistros h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin-bottom: 3rem;
+}
+
+.faqRegistros span[class*="questionText"] {
+  color: #000000 !important;
+}
+
+.faqRegistros div[class*="answerContent"] {
+  color: #000000 !important;
+}
+
+.faqRegistros span[class*="plus"] {
+  color: var(--azulProfundo) !important;
 }

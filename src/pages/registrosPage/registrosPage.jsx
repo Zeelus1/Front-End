@@ -7,6 +7,8 @@ import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro
 import registrosTitulo from "../../img/registrosTitulo.png";
 import CardRegistro from "../../components/cardRegistro/CardRegistro.jsx";
 import ModalRegistro from "../../components/modalRegistro/ModalRegistro.jsx";
+import Faq from "../../components/faq/Faq.jsx";
+import WaveFaq from "../../components/waveFaq/WaveFaq.jsx";
 
 function RegistrosPage() {
   const [modalAberto, setModalAberto] = useState(false);
@@ -80,7 +82,26 @@ function RegistrosPage() {
     setRegistroEditando(null);
   };
 
+  const faqData = [
+    {
+      question: "Como posso adicionar um novo registro?",
+      answer:
+        "Clique no botão '+' no topo da página para registrar um novo momento ou observação.",
+    },
+    {
+      question: "Consigo editar registros já salvos?",
+      answer:
+        "Sim! Use o ícone de lápis em cada card para editar os dados inseridos.",
+    },
+    {
+      question: "Meus registros ficam salvos por quanto tempo?",
+      answer:
+        "Todos os registros permanecem disponíveis enquanto você estiver usando a plataforma.",
+    },
+  ];
+
   return (
+  <div className={Style.fundoPagina}>
     <main>
       <section>
         <BlocoInicial
@@ -120,14 +141,24 @@ function RegistrosPage() {
           />
         ))}
       </section>
+
       <ModalRegistro
         aberto={modalAberto}
         onClose={() => setModalAberto(false)}
         onSalvar={handleSalvarRegistro}
         registro={registroEditando}
       />
+
+      <WaveFaq />
+      <Faq
+        data={faqData}
+        title="Dúvidas frequentes"
+        className={Style.faqRegistros}
+      />
     </main>
-  );
+  </div>
+);
+
 }
 
 export default RegistrosPage;
