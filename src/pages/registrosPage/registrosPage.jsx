@@ -4,7 +4,6 @@ import BlocoInicial from "../../components/blocoinicial/BlocoInicial.jsx";
 import coracaoSorrindo from "../../img/coracaoSorrindo.png";
 import CampoBusca from "../../components/campoBusca/CampoBusca.jsx";
 import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro.jsx";
-import registrosTitulo from "../../img/registrosTitulo.png";
 import CardRegistro from "../../components/cardRegistro/CardRegistro.jsx";
 import ModalRegistro from "../../components/modalRegistro/ModalRegistro.jsx";
 import Faq from "../../components/faq/Faq.jsx";
@@ -120,12 +119,8 @@ function RegistrosPage() {
         <BotaoAddRegistro onClick={handleAdd} />
       </div>
 
-      <div>
-        <img
-          src={registrosTitulo}
-          alt="Texto degradê em tons de azul escrito 'Registros'"
-          className={Style.titulo}
-        />
+      <div className={Style.tituloRegistros}>
+        <h1>Registros</h1>
       </div>
 
       <section className={Style.listaRegistros}>

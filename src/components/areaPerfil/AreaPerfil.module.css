@@ -28,7 +28,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image:
+  background-image: 
     url("../../img/texturaFundo2.png"),
     linear-gradient(180deg, var(--azulDegrade1), var(--azulDegrade2), var(--azulDegrade3));
   background-repeat: repeat, no-repeat;
@@ -43,29 +43,6 @@
   left: 0;
   width: 100%;
   z-index: 1;
-}
-
-.topBar {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 1rem 1.2rem;
-  z-index: 2;
-}
-
-.btnVoltar,
-.btnOpcoes {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.btnVoltar img,
-.btnOpcoes img {
-  width: 40px;
-  height: 40px;
 }
 
 .campoPerfil {
@@ -85,8 +62,8 @@
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--neutroAconchegante);
@@ -103,24 +80,65 @@
 }
 
 .nome {
-  font-size: 2rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 700;
   color: #000000;
   font-family: var(--fonteTitulos);
 }
 
-.arroba {
-  font-size: 1rem;
-  color: var(--azulProfundo);
-  margin-top: 0.2rem;
-  font-weight: 700;
-}
-
 .bio {
   margin-top: 2rem;
-  font-size: 1rem;
+  font-size: clamp(1.4rem, 3vw, 2rem);
   color: #000000;
   max-width: 90%;
   line-height: 1.4;
   font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .campoPerfil {
+    margin-left: 5%;
+    gap: 1rem;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .campoPerfil {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .perfilInfo {
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .bio {
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .campoPerfil {
+    padding: 1rem;
+  }
 }

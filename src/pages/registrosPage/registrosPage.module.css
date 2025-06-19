@@ -29,6 +29,7 @@
   display: flex;
   margin-left: 4%;
   margin-right: 4%;
+  gap: 1rem;
 }
 
 .titulo {
@@ -47,6 +48,16 @@
 .subtituloBlocoInicial {
   font-weight: 400;
   font-size: 25px;
+}
+
+.tituloRegistros {
+  font-size: 1.7rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  color: var(--azulProfundo);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .faqRegistros {
@@ -75,4 +86,47 @@
 
 .faqRegistros span[class*="plus"] {
   color: var(--azulProfundo) !important;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .blocos {
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 5%;
+  }
+
+  .titulo {
+    width: 140px;
+    margin: 20px auto 10px;
+  }
+
+  .subtituloBlocoInicial {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .faqRegistros h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    width: 120px;
+  }
+
+  .subtituloBlocoInicial {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+
+  .faqRegistros h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
 }
