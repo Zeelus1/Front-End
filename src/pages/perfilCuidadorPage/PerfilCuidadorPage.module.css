@@ -92,3 +92,43 @@
 .faqPerfil span[class*="plus"] {
   color: var(--azulProfundo) !important;
 }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .faqPerfil h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .contentBox {
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .navContainer button {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faqPerfil h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .navContainer button {
+    font-size: 0.95rem;
+  }
+
+  .contentBox {
+    padding: 1.2rem;
+  }
+}
