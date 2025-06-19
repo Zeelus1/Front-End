@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap");
+
+:root {
+  --azulDegrade1: #7094e2;
+  --azulDegrade2: #62bae8;
+  --azulDegrade3: #5dc7ea;
+  --azulProfundo: #004777;
+  --neutroAconchegante: #f5f3ef;
+  --azulSereno: #98d4e8;
+  --verdeEquilibrado: #5b8e7d;
+  --verdeSuave: #a9e5bb;
+  --verdeNeve: #d8f2e5;
+  --lilasSerenidade: #c1c8e4;
+  --fonteTitulos: "Poppins", sans-serif;
+  --fonteCorpo: "Inter", sans-serif;
+}
+
+.areaPerfilContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  font-family: var(--fonteCorpo);
+}
+
+.areaPerfilContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    url("../../img/texturaFundo2.png"),
+    linear-gradient(180deg, var(--azulDegrade1), var(--azulDegrade2), var(--azulDegrade3));
+  background-repeat: repeat, no-repeat;
+  background-size: contain, cover;
+  background-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.waveImg {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  z-index: 2;
+}
+
+.btnVoltar,
+.btnOpcoes {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btnVoltar img,
+.btnOpcoes img {
+  width: 40px;
+  height: 40px;
+}
+
+.campoPerfil {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-left: 10%;
+  padding: 2rem 0;
+  position: relative;
+  gap: 1.5rem;
+  z-index: 2;
+  margin-top: 8rem;
+}
+
+.avatarPerfil {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--neutroAconchegante);
+  background-color: var(--neutroAconchegante);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.perfilInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin-top: 1%;
+}
+
+.nome {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000000;
+  font-family: var(--fonteTitulos);
+}
+
+.arroba {
+  font-size: 1rem;
+  color: var(--azulProfundo);
+  margin-top: 0.2rem;
+  font-weight: 700;
+}
+
+.bio {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #000000;
+  max-width: 90%;
+  line-height: 1.4;
+  font-weight: 500;
+}

@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap');
+
+:root {
+  --azulDegrade1: #7094E2;
+  --azulDegrade2: #62BAE8;
+  --azulDegrade3: #5DC7EA;
+  --azulProfundo: #004777;
+  --neutroAconchegante: #F5F3EF;
+  --azulSereno: #98D4E8;
+  --verdeEquilibrado: #5B8E7D;
+  --verdeSuave: #A9E5BB;
+  --verdeNeve: #D8F2E5;
+  --verdeDegrade: #A5F2CB;
+  --lilasSerenidade: #C1C8E4;
+  --fonteTitulos: 'Poppins', sans-serif;
+  --fonteCorpo: 'Inter', sans-serif;
+}
+
+.pageContainer {
+  background-image: url("../../img/texturaFundo.png");
+  background-repeat: repeat;
+  background-size: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  font-family: var(--fonteCorpo);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 1.8rem 0 1.2rem;
+}
+
+.navContainer button {
+  background: none;
+  border: none;
+  font-size: 1.05rem;
+  font-family: var(--fonteTitulos);
+  color: #000000b3;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.navContainer .active {
+  color: var(--azulProfundo);
+  border-color: var(--azulProfundo);
+  font-weight: 700;
+}
+
+.contentBox {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.faqPerfil {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+}
+
+.faqPerfil h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin-bottom: 3rem;
+}
+
+.faqPerfil span[class*="questionText"] {
+  color: #000000 !important;
+}
+
+.faqPerfil div[class*="answerContent"] {
+  color: #000000 !important;
+}
+
+.faqPerfil span[class*="plus"] {
+  color: var(--azulProfundo) !important;
+}
