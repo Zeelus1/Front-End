@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { X, Send, Plus, Mic, MicOff, AlertCircle } from 'lucide-react';
+import { X, Send, Plus, Mic, MicOff, AlertCircle, Volume2, Square, Pause, Play } from 'lucide-react';
 import styles from './ChatZee.module.css';
 import mascote from "../../img/mascoteZeeIA.png";
 import promptGemini from '../../middleware/geminiApi.js';
@@ -32,6 +32,11 @@ const ChatZee = () => {
     supported: false,
     message: ''
   });
+  const [speakingId, setSpeakingId] = useState(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const synthRef = useRef(window.speechSynthesis);
+  const utteranceRef = useRef(null);
 
   // Sempre rola para a última mensagem
   useEffect(() => {
@@ -208,6 +213,68 @@ const ChatZee = () => {
     }
   }, [isOpen]);
 
+  // Função para ler mensagem do bot
+  const lerMensagem = (msg) => {
+    if (!('speechSynthesis' in window)) {
+      alert('Seu navegador não suporta leitura em voz alta.');
+      return;
+    }
+    if (isSpeaking) {
+      pararLeitura();
+    }
+    const utterance = new window.SpeechSynthesisUtterance(msg.text);
+    utterance.lang = 'pt-BR';
+    utterance.onstart = () => {
+      setSpeakingId(msg.id);
+      setIsSpeaking(true);
+      setIsPaused(false);
+    };
+    utterance.onend = () => {
+      setSpeakingId(null);
+      setIsSpeaking(false);
+      setIsPaused(false);
+    };
+    utterance.onerror = () => {
+      setSpeakingId(null);
+      setIsSpeaking(false);
+      setIsPaused(false);
+    };
+    utterance.onpause = () => {
+      setIsPaused(true);
+    };
+    utterance.onresume = () => {
+      setIsPaused(false);
+    };
+    utteranceRef.current = utterance;
+    synthRef.current.speak(utterance);
+  };
+
+  // Função para parar leitura
+  const pararLeitura = () => {
+    if (synthRef.current && synthRef.current.speaking) {
+      synthRef.current.cancel();
+      setSpeakingId(null);
+      setIsSpeaking(false);
+      setIsPaused(false);
+    }
+  };
+
+  // Função para pausar leitura
+  const pausarLeitura = () => {
+    if (synthRef.current && synthRef.current.speaking && !synthRef.current.paused) {
+      synthRef.current.pause();
+      setIsPaused(true);
+    }
+  };
+
+  // Função para retomar leitura
+  const retomarLeitura = () => {
+    if (synthRef.current && synthRef.current.paused) {
+      synthRef.current.resume();
+      setIsPaused(false);
+    }
+  };
+
   return (
     <div className={styles.container}>
       {isOpen ? (
@@ -237,6 +304,51 @@ const ChatZee = () => {
               >
                 <div className={`${styles.messageBubble} ${msg.isBot ? styles.botBubble : styles.userBubble}`}>
                   <p>{msg.text}</p>
+                  {/* Botões de ouvir/parar/pausar/retomar para mensagens do bot */}
+                  {msg.isBot && (
+                    <div className={styles.speakControls}>
+                      <button
+                        type="button"
+                        className={styles.speakButton}
+                        aria-label={speakingId === msg.id && isSpeaking ? 'Parar leitura' : 'Ouvir resposta'}
+                        title={speakingId === msg.id && isSpeaking ? 'Parar leitura' : 'Ouvir resposta'}
+                        onClick={() =>
+                          speakingId === msg.id && isSpeaking ? pararLeitura() : lerMensagem(msg)
+                        }
+                        disabled={isRecording || isProcessing}
+                        tabIndex={0}
+                      >
+                        {speakingId === msg.id && isSpeaking ? <Square size={18} /> : <Volume2 size={18} />}
+                      </button>
+                      {/* Botão de pausa/retomar */}
+                      {speakingId === msg.id && isSpeaking && !isPaused && (
+                        <button
+                          type="button"
+                          className={styles.speakButton}
+                          aria-label="Pausar leitura"
+                          title="Pausar leitura"
+                          onClick={pausarLeitura}
+                          disabled={isRecording || isProcessing}
+                          tabIndex={0}
+                        >
+                          <Pause size={18} />
+                        </button>
+                      )}
+                      {speakingId === msg.id && isSpeaking && isPaused && (
+                        <button
+                          type="button"
+                          className={styles.speakButton}
+                          aria-label="Retomar leitura"
+                          title="Retomar leitura"
+                          onClick={retomarLeitura}
+                          disabled={isRecording || isProcessing}
+                          tabIndex={0}
+                        >
+                          <Play size={18} />
+                        </button>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
