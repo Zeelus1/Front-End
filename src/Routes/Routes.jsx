@@ -11,6 +11,7 @@ import ForumPageAberto from '../pages/forumPage/ForumPage.jsx';
 import Login from "../pages/cadastroLogin/Login.jsx";
 import Cadastro from "../pages/cadastroLogin/Cadastro.jsx";
 import SobreNos from "../pages/SobreNos/SobreNos.jsx";
+import PlanosPremium from "../pages/planosPremium/PlanosPremium.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
 
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
       {
         path: "treinamento",
         element: <TreinamentosPage />,
+      },
+      {
+        path: "planospremium",
+        element: <PlanosPremium />,
       },
     ],
   },
