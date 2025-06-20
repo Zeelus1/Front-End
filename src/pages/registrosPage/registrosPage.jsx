@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Style from "./RegistrosPage.module.css";
+import Style from "./registrosPage.module.css";
 import BlocoInicial from "../../components/blocoinicial/BlocoInicial.jsx";
 import coracaoSorrindo from "../../img/coracaoSorrindo.png";
 import CampoBusca from "../../components/campoBusca/CampoBusca.jsx";
