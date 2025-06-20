@@ -208,12 +208,6 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.botoesModal {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 3.5rem;
-}
 
 .botaoSalvar,
 .botaoCancelar {
@@ -232,6 +226,7 @@
   background: linear-gradient(90deg, var(--azul-escuro) 0%, var(--azul-degrade) 100%);
   color: white;
   border: none;
+  margin: 2.5px;
 }
 
 .botaoSalvar:hover {
@@ -244,6 +239,7 @@
   background: transparent;
   color: var(--azul-escuro);
   border: 2px solid var(--azul-claro);
+  margin: 2.5px;
 }
 
 .botaoCancelar:hover {
