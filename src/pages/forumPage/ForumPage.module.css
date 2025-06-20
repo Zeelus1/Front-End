@@ -34,7 +34,30 @@
   margin-bottom: 32px;
 }
 
-.faq {
-  background: linear-gradient(180deg, rgba(0, 71, 119, 1) 50%, rgba(0, 132, 221, 1) 100%);
-  background-image: url("../../img/fundoLand.png"), linear-gradient(180deg, rgba(0, 71, 119, 1) 50%, rgba(0, 132, 221, 1) 100%);
+.faqForumPage {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+}
+
+.faqForumPage h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin-bottom: 3rem;
+}
+
+.faqForumPage span[class*="questionText"] {
+  color: #000000 !important;
+}
+
+.faqForumPage div[class*="answerContent"] {
+  color: #000000 !important;
+}
+
+.faqForumPage span[class*="plus"] {
+  color: var(--azulProfundo) !important;
 }

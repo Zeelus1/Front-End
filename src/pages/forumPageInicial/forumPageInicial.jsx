@@ -7,12 +7,38 @@ import BlocoInicial from "../../components/blocoinicial/BlocoInicial.jsx";
 import TituloForum from "../../components/tituloForum/TituloForum.jsx";
 import PostCard from "../../components/postcard/PostCard.jsx";
 
+import Faq from "../../components/faq/Faq.jsx";
+import WaveFaq from "../../components/waveFaq/WaveFaq.jsx";
+
 import ImgBalaoDeFala from "../../img/baloesdefala.png"
 import User1 from "../../img/user4.png";
 import User2 from "../../img/user5.png";
 import User3 from "../../img/3dAvatar.png";
 
 import { Link } from 'react-router';
+
+const faqData = [
+  {
+    question: "Como funcionam as regras de moderação no Fórum Zeelus?",
+    answer:
+      "As regras de moderação são projetadas para garantir um ambiente respeitoso e seguro. Isso inclui proibir",
+  },
+  {
+    question: "Posso compartilhar experiências pessoais no fórum?",
+    answer:
+      "Sim, o fórum é um espaço para compartilhar experiências pessoais, dicas e conselhos relacionados ao cuidado e bem-estar.",
+  },
+  {
+    question: "Como faço para denunciar uma postagem ou um comentário ofensivo?",
+    answer:
+      "Você pode denunciar postagens ou comentários clicando no ícone de denúncia localizado próximo ao conteúdo.",
+  },
+  {
+    question: "Como posso encontrar postagens sobre um tema específico?",
+    answer:
+      "Você pode usar a barra de busca para procurar por palavras-chave relacionadas ao tema que deseja explorar.",
+  }
+];
 
 const forumPageInicial = () => {
   return (
@@ -34,7 +60,7 @@ const forumPageInicial = () => {
 
       <TituloForum>Postagens em Destaque!</TituloForum>
 
-      <Link to="/home/post">
+      <Link to="/home/post" className={Style.linkSemEstilo}>
         <PostCard
           autorNome="José Conceição"
           data="23/12/2024"
@@ -43,6 +69,9 @@ const forumPageInicial = () => {
           mostrarAviso={false}
           avatar={User3}
           className="cardSombraLateral"
+          likes={12}
+          comentarios={6}
+          favoritos={8}
         />
       </Link>
 
@@ -54,6 +83,9 @@ const forumPageInicial = () => {
         mostrarAviso={false}
         avatar={User1}
         className="cardSombraLateral"
+        likes={18}
+        comentarios={21}
+        favoritos={15}
       />
 
       <PostCard
@@ -64,8 +96,17 @@ const forumPageInicial = () => {
         mostrarAviso={false}
         avatar={User2}
         className="cardSombraLateral"
+        likes={15}
+        comentarios={5}
+        favoritos={10}
       />
 
+      <WaveFaq />
+      <Faq
+        data={faqData}
+        title="Dúvidas frequentes"
+        className={Style.faqForumPageInicial}
+      />
     </div>
   )
 }
