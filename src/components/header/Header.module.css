@@ -111,13 +111,13 @@
   width: var(--avatar-size);
   height: var(--avatar-size);
   border-radius: 50%;
-  background-color: #eee;
+  background-color: #f5f3ef;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   transition: transform var(--transition-speed), box-shadow var(--transition-speed);
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 2px solid #f5f3ef;
 }
 
 .avatar:hover {

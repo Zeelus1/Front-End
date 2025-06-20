@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ModalRegistro.css";
+import styles from "./ModalRegistro.module.css";
 
 function ModalRegistro({ aberto, onClose, onSalvar, registro }) {
   const [titulo, setTitulo] = useState("");
@@ -39,32 +39,48 @@ function ModalRegistro({ aberto, onClose, onSalvar, registro }) {
   if (!aberto) return null;
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className={styles["modal-overlay"]}>
+      <div className={styles["modal-content"]}>
         <h2>{registro ? "Editar registro" : "Registrar cuidado"}</h2>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="tituloRegistro" className={styles["sr-only"]}>
+            Título do registro
+          </label>
           <input
+            id="tituloRegistro"
             type="text"
             placeholder="Título"
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
             required
           />
+
+          <label htmlFor="dataRegistro" className={styles["sr-only"]}>
+            Data do registro
+          </label>
           <input
+            id="dataRegistro"
             type="text"
             placeholder="Data"
             value={data}
             readOnly
           />
 
+          <label htmlFor="descricaoRegistro" className={styles["sr-only"]}>
+            Descrição do registro
+          </label>
           <textarea
+            id="descricaoRegistro"
             placeholder="Descrição"
             value={descricao}
             onChange={(e) => setDescricao(e.target.value)}
             required
           />
-          <div className="botoes">
-            <button type="submit" className="botaoSalvar">Salvar registro</button>
+
+          <div className={styles.botoes}>
+            <button type="submit" className={styles.botaoSalvar}>
+              Salvar registro
+            </button>
             <button type="button" onClick={onClose}>
               Cancelar
             </button>

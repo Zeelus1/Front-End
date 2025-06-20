@@ -17,50 +17,55 @@
   --fonteCorpo: 'Inter', sans-serif;
 }
 
-.fundoPagina {
+.pageContainer {
   background-image: url("../../img/texturaFundo.png");
   background-repeat: repeat;
   background-size: 250px;
-  min-height: 100vh;
-  font-family: var(--fonteCorpo);
-}
-
-.blocos {
-  display: flex;
-  margin-left: 4%;
-  margin-right: 4%;
-  gap: 1rem;
-}
-
-.titulo {
-  margin: 30px 0 10px 5%;
-  width: 160px;
-  height: auto;
-}
-
-.listaRegistros {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  position: relative;
+  font-family: var(--fonteCorpo);
 }
 
-.subtituloBlocoInicial {
-  font-weight: 400;
-  font-size: 25px;
+.navContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 1.8rem 0 1.2rem;
 }
 
-.tituloRegistros {
-  font-size: 1.7rem;
-  font-weight: 700;
+.navContainer button {
+  background: none;
+  border: none;
+  font-size: 1.05rem;
   font-family: var(--fonteTitulos);
-  color: var(--azulProfundo);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  text-align: center;
+  color: #000000b3;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
 }
 
-.faqRegistros {
+.navContainer .active {
+  color: var(--azulProfundo);
+  border-color: var(--azulProfundo);
+  font-weight: 700;
+}
+
+.contentBox {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  width: 90%;
+  max-width: 600px;
+  border-radius: 16px;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.faqPerfil {
   background-image:
     url("../../img/texturaFundo.png"),
     linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
@@ -69,64 +74,61 @@
   background-position: top left, center;
 }
 
-.faqRegistros h2 {
+.faqPerfil h2 {
   font-size: 3rem;
   font-weight: 700;
   font-family: var(--fonteTitulos);
   margin-bottom: 3rem;
 }
 
-.faqRegistros span[class*="questionText"] {
+.faqPerfil span[class*="questionText"] {
   color: #000000 !important;
 }
 
-.faqRegistros div[class*="answerContent"] {
+.faqPerfil div[class*="answerContent"] {
   color: #000000 !important;
 }
 
-.faqRegistros span[class*="plus"] {
+.faqPerfil span[class*="plus"] {
   color: var(--azulProfundo) !important;
 }
 
-/* RESPONSIVIDADE */
-
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  .blocos {
-    flex-direction: column;
-    align-items: stretch;
-    margin: 0 5%;
-  }
-
-  .titulo {
-    width: 140px;
-    margin: 20px auto 10px;
-  }
-
-  .subtituloBlocoInicial {
-    font-size: 22px;
-    text-align: center;
-    margin-top: 0.5rem;
-  }
-
-  .faqRegistros h2 {
+  .faqPerfil h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     text-align: center;
   }
+
+  .contentBox {
+    padding: 1.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .navContainer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .navContainer button {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .titulo {
-    width: 120px;
-  }
-
-  .subtituloBlocoInicial {
-    font-size: 1.1rem;
-    padding: 0 10px;
-  }
-
-  .faqRegistros h2 {
+  .faqPerfil h2 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
+  }
+
+  .navContainer button {
+    font-size: 0.95rem;
+  }
+
+  .contentBox {
+    padding: 1.2rem;
   }
 }

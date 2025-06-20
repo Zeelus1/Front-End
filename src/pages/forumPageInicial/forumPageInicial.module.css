@@ -1,5 +1,5 @@
 .subtituloBlocoInicial {
-  font-weight: 300;
+  font-weight: 400;
   font-family: var(--font-title);
   font-size: 25px;
   letter-spacing: 0.5px;
@@ -10,4 +10,59 @@
   display: flex;
   margin-left: 4%;
   margin-right: 4%;
+}
+
+.linkSemEstilo {
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none !important;
+  display: block;
+  width: 100%;
+  cursor: default !important;
+}
+
+.linkSemEstilo:focus,
+.linkSemEstilo:active,
+.linkSemEstilo:visited {
+  text-decoration: none;
+}
+
+.linkSemEstilo:hover {
+  text-decoration: none;
+}
+
+.linkSemEstilo > * {
+  cursor: pointer;
+}
+
+.linkSemEstilo {
+  cursor: default;
+}
+
+.faqForumPageInicial {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+}
+
+.faqForumPageInicial h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin-bottom: 3rem;
+}
+
+.faqForumPageInicial span[class*="questionText"] {
+  color: #000000 !important;
+}
+
+.faqForumPageInicial div[class*="answerContent"] {
+  color: #000000 !important;
+}
+
+.faqForumPageInicial span[class*="plus"] {
+  color: var(--azulProfundo) !important;
 }

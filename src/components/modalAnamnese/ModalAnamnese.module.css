@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --azul-escuro: #004777;
+  --azul-claro: #98d4e8;
+  --branco-neve: #f5f3ef;
+  --verde-claro: #d8f2e5;
+  --cinza-texto: #333333;
+  --azul-degrade: #0084dd;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --inter: 'Inter', sans-serif;
+  --poppins: 'Poppins', sans-serif;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+
+.modalContent {
+  background: var(--branco-neve);
+  padding: 3rem;
+  border-radius: 24px;
+  width: 95%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  font-family: var(--inter);
+  animation: fadeIn 0.3s ease;
+  border: 1px solid rgba(152, 212, 232, 0.2);
+}
+
+.modalContent h2 {
+  font-size: 2.8rem;
+  background: linear-gradient(90deg, var(--azul-escuro) 0%, var(--azul-degrade) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+  font-family: var(--poppins);
+  text-align: center;
+  font-weight: 600;
+}
+
+.formSection {
+  background: linear-gradient(145deg, #ffffff, #f5f5f5);
+  border-radius: 20px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(152, 212, 232, 0.3);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    inset 0 -2px 4px rgba(255, 255, 255, 0.7),
+    inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  animation: inputFadeIn 0.3s ease-out;
+  position: relative;
+}
+
+.formSection h3 {
+  font-size: 2rem;
+  color: var(--azul-escuro);
+  margin-bottom: 1.8rem;
+  font-family: var(--poppins);
+  font-weight: 600;
+}
+
+.formGroup {
+  margin-bottom: 2.2rem;
+  position: relative;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--cinza-texto);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  font-family: var(--inter);
+  transition: all 0.3s ease;
+}
+
+/* Estilos base para inputs e textareas */
+.formSection input,
+.formSection textarea,
+.formSection select {
+  width: 100%;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.6rem;
+  border: 2px solid rgba(152, 212, 232, 0.3);
+  border-radius: 12px;
+  font-size: 1.6rem;
+  color: var(--cinza-texto);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.9);
+  font-family: var(--inter);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.02),
+    inset 0 1px 2px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(8px);
+  will-change: transform;
+  letter-spacing: 0.2px;
+}
+
+/* Hover state */
+.formSection input:hover,
+.formSection textarea:hover,
+.formSection select:hover {
+  border-color: var(--azul-claro);
+  background-color: rgba(152, 212, 232, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Focus state */
+.formSection input:focus,
+.formSection textarea:focus,
+.formSection select:focus {
+  outline: none;
+  border-color: var(--azul-escuro);
+  box-shadow: 
+    0 4px 12px rgba(0, 71, 119, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Placeholder styles */
+.formSection input::placeholder,
+.formSection textarea::placeholder {
+  color: #999;
+  opacity: 0.7;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+/* Textarea específico */
+.formSection textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* Select específico */
+.formSection select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23004777' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1.5rem center;
+  background-size: 1.5rem;
+  padding-right: 4rem;
+}
+
+/* Estados de validação */
+.formSection input:valid,
+.formSection textarea:valid,
+.formSection select:valid {
+  border-color: #00c853;
+  background-color: rgba(0, 200, 83, 0.02);
+}
+
+.formSection input:invalid,
+.formSection textarea:invalid,
+.formSection select:invalid {
+  border-color: #ff4646;
+  background-color: rgba(255, 70, 70, 0.02);
+}
+
+/* Estilo para inputs com erro */
+.formGroup.error input,
+.formGroup.error textarea {
+  border-color: #ff4646;
+  background-color: rgba(255, 70, 70, 0.02);
+}
+
+.formGroup.error label {
+  color: #ff4646;
+}
+
+/* Estilo para inputs válidos */
+.formGroup.valid input,
+.formGroup.valid textarea {
+  border-color: #00c853;
+  background-color: rgba(0, 200, 83, 0.02);
+}
+
+/* Estilo para inputs desabilitados */
+.formGroup input:disabled,
+.formGroup textarea:disabled {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Animação suave ao digitar */
+.formGroup input,
+.formGroup textarea {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.botaoSalvar,
+.botaoCancelar {
+  padding: 1.4rem 3rem;
+  border-radius: 50px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--poppins);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.botaoSalvar {
+  background: linear-gradient(90deg, var(--azul-escuro) 0%, var(--azul-degrade) 100%);
+  color: white;
+  border: none;
+  margin: 2.5px;
+}
+
+.botaoSalvar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 71, 119, 0.2);
+  filter: brightness(110%);
+}
+
+.botaoCancelar {
+  background: transparent;
+  color: var(--azul-escuro);
+  border: 2px solid var(--azul-claro);
+  margin: 2.5px;
+}
+
+.botaoCancelar:hover {
+  background: rgba(152, 212, 232, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  border-color: var(--azul-escuro);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilização da scrollbar */
+.modalContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: rgba(152, 212, 232, 0.1);
+  border-radius: 4px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: var(--azul-claro);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+  background: var(--azul-escuro);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 2rem;
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .modalContent h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .formSection {
+    padding: 1.8rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .formSection h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.8rem;
+  }
+
+  .formGroup label {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .formSection input,
+  .formSection textarea,
+  .formSection select {
+    font-size: 1.4rem;
+    padding: 1.2rem 1.4rem;
+  }
+
+  .botoesModal {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .botaoSalvar,
+  .botaoCancelar {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalOverlay {
+    padding: 16px;
+  }
+
+  .modalContent {
+    padding: 1.5rem;
+  }
+
+  .modalContent h2 {
+    font-size: 2rem;
+  }
+
+  .formSection {
+    padding: 1.5rem;
+  }
+
+  .formSection h3 {
+    font-size: 1.6rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+
+  .formGroup label {
+    font-size: 1.3rem;
+  }
+
+  .formSection input,
+  .formSection textarea,
+  .formSection select {
+    font-size: 1.3rem;
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* Animações suaves */
+@keyframes inputFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Feedback visual ao digitar */
+.formSection input:not(:placeholder-shown),
+.formSection textarea:not(:placeholder-shown),
+.formSection select:not(:placeholder-shown) {
+  background-color: rgba(152, 212, 232, 0.05);
+  border-color: var(--azul-claro);
+}
+
+/* Melhorar acessibilidade */
+.formSection input:focus-visible,
+.formSection textarea:focus-visible,
+.formSection select:focus-visible {
+  outline: 2px solid var(--azul-escuro);
+  outline-offset: 2px;
+}
+
+/* Estilo para labels */
+.formSection label {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--cinza-texto);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.formSection input:focus + label,
+.formSection textarea:focus + label,
+.formSection select:focus + label {
+  color: var(--azul-escuro);
+} 

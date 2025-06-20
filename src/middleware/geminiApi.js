@@ -20,7 +20,7 @@ async function promptGemini(text) {
 
     try {
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash-lite",
+            model: "gemini-2.0-flash",
             contents: textPrompt,
         });
 

@@ -1,0 +1,25 @@
+:root {
+  --verdeNeve: #d8f2e5;
+  --verdeDegrade: #a5f2cb;
+  --neutroAconchegante: #f5f3ef;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  background-image: url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeNeve));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center center;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
