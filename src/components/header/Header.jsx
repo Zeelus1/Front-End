@@ -104,7 +104,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="" onClick={toggleMenu}>
+              <Link to="/home/perfil" onClick={toggleMenu}>
                 Perfil
               </Link>
             </li>
