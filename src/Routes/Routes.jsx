@@ -69,8 +69,8 @@ const router = createBrowserRouter([
         element: <ForumPage />,
       },
       {
-        path: "post", // ou outro caminho desejado
-        element: <ForumPageAberto />, // Página do post aberto
+        path: "post",
+        element: <ForumPageAberto />, 
       },
       {
         path: "treinamento",
