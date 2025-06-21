@@ -89,7 +89,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/home/treinamento" onClick={toggleMenu}>
+              <Link to="/home/treinamentos" onClick={toggleMenu}>
                 Treinamento
               </Link>
             </li>
@@ -156,7 +156,7 @@ function Header() {
           </li>
           <li className={Style.liLink}>
             <Link
-              to="/home/treinamento"
+              to="/home/treinamentos"
               className={activeLink === "treinamento" ? Style.active : ""}
             >
               Treinamento
