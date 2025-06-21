@@ -14,6 +14,7 @@ import PerfilCuidadorPage from "../pages/perfilCuidadorPage/PerfilCuidadorPage.j
 import SobreNos from "../pages/sobreNos/SobreNos.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
+import HomePage from "../pages/homePage/Homepage.jsx";
 
 
 const router = createBrowserRouter([
@@ -40,9 +41,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: (
-          <>
-            <p>teste testado funcionando</p>
-          </>
+          <HomePage/>
         ),
       },
       {

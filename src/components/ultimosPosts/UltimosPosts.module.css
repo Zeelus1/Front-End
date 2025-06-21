@@ -1,0 +1,87 @@
+.card {
+  background-color: #e1f4f9;
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 550px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
+}
+
+.tituloCard {
+  color: var(--azulProfundo);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.descricao {
+  color: #444;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.post {
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.8rem;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nomeData {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.tituloPost {
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.textoPost {
+  font-size: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.reacoes {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.botao {
+  background: var(--azulProfundo);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background-color: #003366;
+}

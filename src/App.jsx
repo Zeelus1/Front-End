@@ -4,7 +4,7 @@ import Footer from "./components/footer/Footer";
 import ChatZee from "./components/chatZee/ChatZee";
 
 function Home() {
-  
+
   return (
     <>
       <Header/>
