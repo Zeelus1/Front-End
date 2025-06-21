@@ -120,3 +120,31 @@
     font-size: 0.89rem;
   }
 }
+
+.faqtreinamentosPage {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+}
+
+.faqtreinamentosPage h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin-bottom: 3rem;
+}
+
+.faqtreinamentosPage span[class*="questionText"] {
+  color: #000000 !important;
+}
+
+.faqtreinamentosPage div[class*="answerContent"] {
+  color: #000000 !important;
+}
+
+.faqtreinamentosPage span[class*="plus"] {
+  color: var(--azulProfundo) !important;
+}

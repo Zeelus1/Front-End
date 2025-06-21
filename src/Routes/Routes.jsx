@@ -74,7 +74,7 @@ const router = createBrowserRouter([
         element: <ForumPageAberto />, 
       },
       {
-        path: "treinamento",
+        path: "treinamentos",
         element: <TreinamentosPage />,
       },
       {
