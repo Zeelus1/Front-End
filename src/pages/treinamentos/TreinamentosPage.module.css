@@ -14,22 +14,35 @@
   list-style-position: inside;
   margin: 0;
   font-family: var(--font-text);
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .botaoGradient {
   background: linear-gradient(to right, #004777, #0084DD);
   color: white;
-  padding: 1rem 2rem;
+  padding: 0.7rem 1.2rem;
   border: none;
   border-radius: 20px;
-  font-size: 36px;
+  font-family: var(--font-title);
+  font-size: 20px;
   font-weight: bold;
-  width: 20%;
+  width: auto; 
+  min-width: 120px;
   margin: 1rem auto 0 auto;
   cursor: pointer;
   display: block;
+  text-align: center;
+  white-space: normal;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.botaoGradient:hover, .botaoGradient:focus {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+  filter: brightness(0.95) saturate(1.2);
+  outline: none;
 }
 
 .botaoGradient:disabled {
@@ -51,107 +64,87 @@
   background-color: white;
   border-radius: 50px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 2.5rem 2.5rem; /* aumente o padding lateral */
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   font-family: var(--font-text);
 }
 
-@media (max-width: 768px) {
-  .lista {
-    grid-template-columns: 1fr;
-    font-size: 18px;
-    gap: 0.75rem;
-  }
-
-  .botaoGradient {
-    width: 100%;
-    font-size: 20px;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .cardInterno {
-    padding: 1rem;
-    font-size: 18px;
-  }
-
-  .accordionItem {
-    margin: 2rem 1rem;
-  }
-
+@media (max-width: 1000px) {
   .title {
     font-size: 28px;
-    text-align: center;
   }
-
-  .header ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .imagem {
     width: 60px;
-    margin: 0;
+  }
+  .header {
+    padding: 0.9rem;
+  }
+  .content {
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 1002px) {
-  .botaoGradient {
-    width: 100%;
-    font-size: 28px;
-    padding: 0.9rem 1.5rem;
-    white-space: normal;
-    text-align: center;
+@media (max-width: 768px) {
+  .title {
+    font-size: 22px;
   }
-
-  .lista {
-    grid-template-columns: repeat(2, 1fr);
-    font-size: 18px;
+  .imagem {
+    width: 44px;
   }
-}
-
-@media (max-width: 997px) {
-  .botaoGradient {
-    font-size: 26px;
+  .header {
+    padding: 0.7rem;
   }
-
-  .lista {
-    font-size: 17px;
+  .content {
+    padding: 0.9rem 0.9rem;
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 910px) {
-  .botaoGradient {
-    font-size: 24px;
-    padding: 0.8rem 1.2rem;
+@media (max-width: 500px) {
+  .title {
+    font-size: 19px;
   }
-
-  .lista {
-    font-size: 16px;
+  .imagem {
+    width: 25px;
+  }
+  .header {
+    padding: 0.6rem;
+  }
+  .content {
+    padding: 0.7rem 0.5rem;
+    font-size: 0.89rem;
   }
 }
 
-@media (max-width: 600px) {
-  .botaoGradient {
-    width: 100%;
-    font-size: 20px;
-    padding: 0.75rem 1rem;
-    text-align: center;
-    white-space: normal;
-  }
+.faqtreinamentosPage {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+}
 
-  .lista {
-    grid-template-columns: 1fr;
-    font-size: 16px;
-    gap: 0.5rem;
-  }
+.faqtreinamentosPage h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin-bottom: 3rem;
+}
 
-  .cardInterno {
-    padding: 1.5rem;
-  }
+.faqtreinamentosPage span[class*="questionText"] {
+  color: #000000 !important;
+}
+
+.faqtreinamentosPage div[class*="answerContent"] {
+  color: #000000 !important;
+}
+
+.faqtreinamentosPage span[class*="plus"] {
+  color: var(--azulProfundo) !important;
 }

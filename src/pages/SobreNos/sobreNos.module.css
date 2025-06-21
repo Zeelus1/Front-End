@@ -5,21 +5,42 @@
 }
 
 .hero {
-  position: relative;
+  /* position: relative;
   width: 100%;
-  height: 340px;
-  background: #222;
+  height: 900px; 
+  background: #ffffff;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: center; */
+  background-image: url('../../img/equipeZeelus.jpg');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  padding-top: 40px;
+  position: relative;
+}
+.title{
+  text-align: center;
+  font-size: 9rem;
+  /* Cor de texto em degrade */
+  background: linear-gradient(90deg, #004777, #0084DD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subtitle{
+  color: #fff;
+}
+.vectorSection{
+  position: absolute;
+bottom: 0;
 }
 
 .bannerImage {
   width: 100%;
-  height: 340px;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(0.7);
   position: absolute;
   left: 0;
   top: 0;
@@ -27,27 +48,33 @@
 }
 
 .heroText {
-  position: relative;
-  z-index: 2;
-  text-align: center;
+  position: absolute;
+  top: 40px;         /* Distância do topo */
+  left: 0;
   width: 100%;
+  text-align: center;
+  z-index: 2;
   color: #fff;
-  margin-bottom: 40px;
 }
 
 .heroText h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 10rem;   
+  font-weight: 800;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
 .heroText h1 span {
-  color: #7ee0f6;
+    background: linear-gradient(90deg, #004777, #0084DD);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .heroText p {
-  font-size: 1.3rem;
-  margin-top: 8px;
+  font-size: 3rem;
+  margin-top: 0;
+  font-weight: 500;
 }
 
 .accessIcon {
@@ -59,6 +86,7 @@
 }
 
 .accessIcon2 {
+
   position: absolute;
   right: 24px;
   bottom: 24px;
@@ -67,9 +95,10 @@
 }
 
 .waveSection {
+  background-color: #fff;
   position: relative;
   width: 100%;
-  height: 60px;
+  height: 100px;
   background: transparent;
   margin-top: -5px;
 }
@@ -92,14 +121,22 @@
 
 .card {
   background: #fff;
-  border: 2px solid #1e90ff33;
+  border: 3px solid #004777;
   border-radius: 16px;
-  width: 220px;
-  height: 180px;
+  width: 430px;
+  height: 430px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 12px #0001;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0; 
+  min-width: 430px;
+  min-height: 430px;
+  max-width: 430px;
+  max-height: 430px;
 }
 
 .heartIcon {
@@ -108,26 +145,35 @@
 }
 
 .cardText {
+  width: 720px;
+  height: 430px;
   background: #fff;
-  border: 2px solid #1e90ff88;
+  border: 3px solid #004777;
   border-radius: 16px;
-  padding: 20px 28px;
+  padding: 40px 60px;
   min-width: 320px;
   box-shadow: 0 2px 12px #0001;
+  margin-bottom: 126px;
+  min-height: 430px;
+  max-height: 430px;
+  min-width: 720px;
+  max-width: 720px;
 }
 
 .cardText h2 {
-  font-size: 1.5rem;
+  font-size: 5rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .cardText h2 span {
-  color: #7ee0f6;
+  background: linear-gradient(90deg, #004777, #0084DD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cardText p {
-  font-size: 1rem;
+  font-size: 2.2rem;
   color: #222;
   margin-bottom: 8px;
 }
@@ -141,14 +187,266 @@
 .div3 {
   position: absolute;
   /* top: 360px; */
-  bottom: -10px;
+  bottom: -30px;
   left: 0;
   width: 100%;
+  z-index: 9000;
+}
+
+
+.zeelusMoveSection {
+  position: relative;
+  padding: 80px 0 60px 0;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.zeelusBg {
+  position: absolute;
+  inset: 0;
+  background: url('../../img/equipeApontando.jpg') center center/cover no-repeat;
+  z-index: 0;
+  filter: blur(4px);
+}
+
+.zeelusOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
   z-index: 1;
 }
 
-.div3 img {
-  width: 100%;
-  height: auto;
-  display: block;
+.zeelusTitle {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 56px;
+  text-align: center;
+  text-shadow: 0 6px 24px rgba(0,0,0,0.55), 0 2px 8px #1e90ff;
+  letter-spacing: 2px;
+  font-family: var(--font-title, 'Poppins');
+}
+
+.zeelusHighlight {
+  color: #1e90ff;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: var(--font-title, 'Poppins');
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+
+.zeelusCardsContainer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.zeelusCard {
+  background: #fff;
+  border: 3px solid #004777;
+  border-radius: 22px;
+  width: 370px;
+  min-height: 410px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.zeelusCard:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+}
+
+.zeelusCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: #fff;
+  padding: 36px 28px 18px 28px;
+  font-size: 3.5rem;
+}
+
+.zeelusIcon {
+  width: 64px;
+  height: 64px;
+}
+
+.zeelusCardSubtitle {
+  background: linear-gradient(90deg, #004777, #0084DD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Para compatibilidade */
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.zeelusCardBody {
+  background: linear-gradient(0deg, #004777 0%, #0084DD 100%);
+  color: #fff;
+  font-size: 2.2rem;
+  padding: 32px;
+  flex: 1;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+.teamSectionFrame {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  
+}
+
+.teamSection {
+  position: relative;
+  overflow: hidden;
+  background: #A9E5BB;
+  padding: 56px 0 40px 0;
+  text-align: center;
+  z-index: 1;
+}
+
+.teamTitle,
+.teamGrid {
+  position: relative;
+  z-index: 1;
+}
+
+.teamTitle {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 38px;
+  color: #ffffff;
+}
+
+.teamHighlight {
+  color: #3ec6e0;
+  font-weight: 700;
+}
+
+.zeelusHighlight {
+  color: #3ec6e0;
+  font-weight: 700;
+}
+
+.teamGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.teamCard {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(62, 198, 224, 0.10), 0 1.5px 6px rgba(34, 34, 59, 0.07);
+  padding: 38px 18px 28px 18px;
+  width: 280px;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  justify-content: space-between;
+}
+
+.teamPhoto {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 22px;
+  background: #eaf6fa;
+}
+
+.teamName {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #22223b;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.teamRole {
+  font-size: 1.08rem;
+  color: #3ec6e0;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.teamLinks {
+  display: flex;
+  gap: 22px;
+  margin-top: auto;
+  justify-content: center;
+}
+
+.teamLinks img {
+  width: 36px;
+  height: 36px;
+  transition: filter 0.2s, transform 0.2s;
+  filter: grayscale(0.2);
+}
+
+.teamLinks img:hover {
+  filter: grayscale(0) brightness(1.2);
+  transform: scale(1.12);
+}
+
+/* Responsivo */
+@media (max-width: 1050px) {
+  .teamCard {
+    width: 96vw;
+    max-width: 340px;
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 700px) {
+  .teamCard {
+    width: 98vw;
+    max-width: 380px;
+    padding: 22px 8px 18px 8px;
+    min-height: 320px;
+  }
+  .teamPhoto {
+    width: 100px;
+    height: 100px;
+  }
+  .teamName {
+    font-size: 1.1rem;
+  }
+  .teamRole {
+    font-size: 1rem;
+  }
+  .teamLinks img {
+    width: 32px;
+    height: 32px;
+  }
 }

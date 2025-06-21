@@ -11,10 +11,12 @@ import ForumPageAberto from '../pages/forumPage/ForumPage.jsx';
 import Login from "../pages/cadastroLogin/Login.jsx";
 import Cadastro from "../pages/cadastroLogin/Cadastro.jsx"; 
 import PerfilCuidadorPage from "../pages/perfilCuidadorPage/PerfilCuidadorPage.jsx";
+import PrimeirosSocorrosPage from "../pages/primeirosSocorros/primeirosSocorros.jsx";
 import SobreNos from "../pages/sobreNos/SobreNos.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
 import HomePage from "../pages/homePage/Homepage.jsx";
+import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 
 
 const router = createBrowserRouter([
@@ -31,6 +33,11 @@ const router = createBrowserRouter([
   {
     path: "/cadastro",
     element: <Cadastro />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/home/treinamentos/primeirossocorros",
+    element: <PrimeirosSocorrosPage />,
     errorElement: <ErrorPage />,
   },
   {
@@ -68,16 +75,20 @@ const router = createBrowserRouter([
         element: <ForumPage />,
       },
       {
-        path: "post", // ou outro caminho desejado
-        element: <ForumPageAberto />, // Página do post aberto
+        path: "post",
+        element: <ForumPageAberto />, 
       },
       {
-        path: "treinamento",
+        path: "treinamentos",
         element: <TreinamentosPage />,
       },
       {
         path: "perfil",
         element: <PerfilCuidadorPage />,
+      },
+      {
+        path: "anamnese",
+        element: <Anamnesia/>,
       },
     ],
   },

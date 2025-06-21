@@ -44,3 +44,42 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    height: 40px;
+  }
+
+  .input {
+    height: 45px;
+    font-size: 14px;
+    padding-left: 38px;
+  }
+
+  .icone {
+    width: 18px;
+    height: 18px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+  }
+
+  .input {
+    height: 40px;
+    font-size: 13px;
+    padding-left: 35px;
+  }
+
+  .icone {
+    width: 16px;
+    height: 16px;
+    left: 8px;
+  }
+}

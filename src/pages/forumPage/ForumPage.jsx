@@ -3,10 +3,10 @@ import Style from "./ForumPage.module.css";
 import PostCard from "../../components/postcard/PostCard.jsx";
 import TituloForum from "../../components/tituloForum/TituloForum.jsx";
 import CommentsSection from "../../components/commentssection/CommentsSection.jsx";
-import ShortPostCard from "../../components/shortpostcard/ShortPostCard.jsx";0
+import ShortPostCard from "../../components/shortpostcard/ShortPostCard.jsx"; 0
 
 import Faq from "../../components/faq/Faq.jsx";
-import IconInterrogacao from "../../icons/pontoInterrogacaoFAQ.png";
+import WaveFaq from "../../components/waveFaq/WaveFaq.jsx";
 
 import User4 from "../../img/user4.png";
 import User5 from "../../img/user5.png";
@@ -81,6 +81,9 @@ export default function ForumPage() {
         texto="Meu filho tem muita sensibilidade a estímulos sensoriais e sempre fica sobrecarregado em ambientes lotados e barulhentos. Qualquer shopping, parque ou festa vira um grande desafio para ele. Ele pode ficar irritado, ansioso e até querer sair correndo da situação. Já tentei algumas estratégias, mas gostaria de ouvir o que funcionou para vocês!
         Alguém tem dicas práticas que ajudaram crianças (ou até adultos) a gerenciar essa sobrecarga? Vale tudo: desde fones de ouvido com cancelamento de ruído, técnicas de respiração, formas de preparar ele antes de sair de casa...
         Se puderem compartilhar suas experiências, eu ficaria muito grato! 🙏 "
+        likes={12}
+        comentarios={6}
+        favoritos={8}
       />
 
       <TituloForum>Mostre seu Apoio Aqui!</TituloForum>
@@ -109,15 +112,12 @@ export default function ForumPage() {
       <section id="faq" className={Style.faq}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195"><path fill="#F5F3EF" fill-opacity="1" d="M0,160L48,165.3C96,171,192,181,288,160C384,139,480,85,576,96C672,107,768,181,864,192C960,203,1056,149,1152,133.3C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 
-        <Faq
-          data={faqData}
-          title="FAQ"
-          className={Style.faq}
-          itemClassName={Style['faq-item']}
-          questionClassName={Style['faq-question']}
-          answerClassName={Style['faq-answer']}
-          toggleClassName={Style['faq-toggle']}
-        />
+      <WaveFaq />
+      <Faq
+        data={faqData}
+        title="Dúvidas frequentes"
+        className={Style.faqForumPage}
+      />
 
       </section>
     </div>
