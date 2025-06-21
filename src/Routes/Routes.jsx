@@ -14,6 +14,7 @@ import PerfilCuidadorPage from "../pages/perfilCuidadorPage/PerfilCuidadorPage.j
 import SobreNos from "../pages/sobreNos/SobreNos.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
+import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 
 
 const router = createBrowserRouter([
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "perfil",
         element: <PerfilCuidadorPage />,
+      },
+      {
+        path: "anamnese",
+        element: <Anamnesia/>,
       },
     ],
   },
