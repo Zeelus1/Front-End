@@ -15,6 +15,7 @@ import PrimeirosSocorrosPage from "../pages/primeirosSocorros/primeirosSocorros.
 import SobreNos from "../pages/sobreNos/SobreNos.jsx";
 import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
+import HomePage from "../pages/homePage/Homepage.jsx";
 import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 
 
@@ -47,9 +48,7 @@ const router = createBrowserRouter([
       {
         path: "",
         element: (
-          <>
-            <p>teste testado funcionanando</p>
-          </>
+          <HomePage/>
         ),
       },
       {

@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap');
+
+:root {
+  --azulDegrade1: #7094E2;
+  --azulDegrade2: #62BAE8;
+  --azulDegrade3: #5DC7EA;
+  --azulProfundo: #004777;
+  --neutroAconchegante: #F5F3EF;
+  --azulSereno: #98D4E8;
+  --verdeEquilibrado: #5B8E7D;
+  --verdeSuave: #A9E5BB;
+  --verdeNeve: #D8F2E5;
+  --verdeDegrade: #A5F2CB;
+  --lilasSerenidade: #C1C8E4;
+  --fonteTitulos: 'Poppins', sans-serif;
+  --fonteCorpo: 'Inter', sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.tituloHome {
+  font-family: var(--fonteTitulos);
+  font-size: 1.5rem;
+  color: var(--azulProfundo);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  padding: 20px 16px;
+}
+
+.fullWidthImagemContainer {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 2rem;
+}
+
+.fullWidthImagem {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bannerFrase,
+.fraseImagemContainer {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.bannerImagem {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bannerTexto {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: var(--fonteTitulos);
+  padding: 0 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.azulDestaque {
+  color: var(--azulDegrade1);
+}
+
+/* Removido seletor inválido: src/img/ondaHome.png */
+
+.ondaHomeContainer {
+  position: relative;
+  width: 100%;
+  margin-top: -210px; /* Sobreposição suave da onda na parte inferior da imagem */
+  z-index: 0;
+}
+
+.ondaHome {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 0;
+}
