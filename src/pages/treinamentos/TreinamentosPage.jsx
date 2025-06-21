@@ -65,7 +65,7 @@ function TreinamentosPage() {
           </ul>
         </div>
 
-        <Link to="/home/primeiros-socorros">
+        <Link to="/home/treinamentos/primeirossocorros">
           <button className={Style.botaoGradient}>Começar</button>
         </Link>
       </AccordionItem>
