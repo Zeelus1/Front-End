@@ -17,6 +17,7 @@ import { CustomProvider } from "rsuite";
 import { ptBR } from 'rsuite/esm/locales/index.js';
 import HomePage from "../pages/homePage/Homepage.jsx";
 import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
+import PlanosPremium from "../pages/planosPremium/PlanosPremium.jsx";
 
 
 const router = createBrowserRouter([
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/planospremium",
+    element: <PlanosPremium />,
     errorElement: <ErrorPage />,
   },
   {

@@ -1,0 +1,144 @@
+.secaocard {
+    border: solid 2px blue;
+    /* background com gradiente de cima para baixo */
+    background: linear-gradient(to bottom, #7094E2 0%, #3D517C 100%);
+    background-image: url("../../img/fundoLand.png"), linear-gradient(to bottom, #7094E2 0%, #3D517C 100%);
+    background-repeat: repeat;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+.secaocard h1 {
+    color: #fff;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+    margin-top: 20px;
+    width: 70%;
+    max-width: 900px;
+
+
+}
+
+.containerPlanos {
+    display:flex;
+    gap: 15px;
+    flex-wrap: wrap; 
+    justify-content: center;
+   
+}
+
+.cardPlanos {
+    width: 95vw;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    align-items: center;
+    background: #004777;
+    background: linear-gradient(135deg, #D5E9FF 31%, #004777 31%, #004777 73%, #D5E9FF 73%);
+    position: relative;
+    bottom: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    .cardPlanos {
+        bottom: 0px;
+    }
+}
+
+.box {
+    background-color: #D5E9FF;
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px 0px 20px 20px;
+}
+
+.otherBox {
+    background-color: #D5E9FF;
+    width: 100%;
+    border-radius: 20px 20px 20px 0px;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .cardPlanos:hover {
+        transform: scale(1);
+    }
+}
+
+.cardPlanos h2 {
+    color: #004777;
+    text-align: center;
+    font-family: var(--font-text);
+    font-size: 2.5rem;
+}
+
+.cardPlanos .boxPlanos {
+    background-color: #004777;
+    height: 100%;
+    border-radius: 20px 0px 20px 0px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    color: #fff;
+}
+
+.boxPlanos h3 {
+    font-family: var(--font-title);
+    font-size: 2.5rem;
+}
+
+.boxPlanos ul {
+    list-style: none;
+    padding-left: 0;
+    width: 350px;
+}
+
+.boxPlanos li {
+    position: relative;
+    padding-left: 40px;
+    font-family: var(--font-text);
+    font-size: 2.4rem;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 600px) {
+    .boxPlanos li {
+        padding-left: 30px;
+    }
+}
+
+.boxPlanos li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: url("../../icons/icon-park-solid_check-one-light.png");
+    background-size: contain;
+}
+
+.boxPlanos button {
+    width: 100%;
+}
+
+.boxPlanos .moldura {
+    height: 65px;
+    width: 65px;
+}
+
+.boxPlanos .moldura img {
+    width: 100%;
+    height: 100%;
+}
