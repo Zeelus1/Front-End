@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./AbasPerfilCuidador.module.css";
+import { Link } from "react-router";
 import CardAnamnese from "../cardAnamnese/CardAnamnese.jsx";
 import iconeForum from "../../img/iconeForum.png";
 import iconeCurtida from "../../img/iconeCurtida.png";
@@ -24,7 +25,9 @@ export default function AbasPerfilCuidador() {
               Compartilhar sua história pode inspirar e apoiar outros
               cuidadores. Publique seu primeiro post!
             </p>
+            <Link to="/home/forum">
             <button className={styles.btnCriarPost}>Criar um Post</button>
+            </Link>
           </div>
         );
       case "anamnese":
