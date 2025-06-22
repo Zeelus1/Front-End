@@ -8,8 +8,25 @@ import IconPlanoCarePlus from "../../icons/coracaoPlanoCarePlus.png";
 import Style from './Planospremium.module.css'
 import { Link } from 'react-router';
 import ButtonStart from '../../components/buttonStart/ButtonStart.jsx';
+import Faq from "../../components/faq/Faq.jsx";
+
 
 function PlanosPremium() {
+  const faqData = [
+    {
+      question: "Como funciona o plano gratuito?",
+      answer: "O plano gratuito oferece acesso limitado a alguns recursos da plataforma."
+    },
+    {
+      question: "Quais são os benefícios do plano Elo?",
+      answer: "O plano Elo inclui recursos adicionais, como exportação de relatórios e IA personalizada."
+    },
+    {
+      question: "Posso mudar de plano depois?",
+      answer: "Sim, você pode mudar de plano a qualquer momento nas configurações da sua conta."
+    }
+  ];
+
   return (
     <>
       <Header />
@@ -19,7 +36,7 @@ function PlanosPremium() {
             Na Zeelus, seu bem-estar é a nossa prioridade. Com planos criados especialmente para você, oferecemos o acolhimento necessário para trazer mais leveza ao seu dia!
           </h1>
 
-          <div className= {Style.containerPlanos}>
+          <div className={Style.containerPlanos}>
             <CardPlanos
               title="Plano Care"
               price="Gratuito!"
@@ -81,7 +98,10 @@ function PlanosPremium() {
           </div>
         </section>
 
-        <section>
+        <section className={Style.faq}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3D517C" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,133.3C240,128,300,96,360,96C420,96,480,128,540,149.3C600,171,660,181,720,170.7C780,160,840,128,900,112C960,96,1020,96,1080,117.3C1140,139,1200,181,1260,170.7C1320,160,1380,96,1410,64L1440,32L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
+
+          <Faq data={faqData} title={"Dúvidas Frequentes"} titleColor={"#004777"} plusColor={"#000"}showBorder />
 
         </section>
 
