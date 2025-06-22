@@ -1,0 +1,93 @@
+/* /src/components/termosDeUsoModal/TermosDeUsoModal.module.css */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Garante que ficará na frente de tudo */
+  backdrop-filter: blur(5px); /* Efeito de desfoque no fundo */
+}
+
+.modalContent {
+  background-color: var(--white, #fff);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 700px; /* Largura máxima do modal */
+  max-height: 80vh; /* Altura máxima para não ocupar a tela inteira */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--color-7, #004777); /* Azul escuro no cabeçalho */
+  color: var(--white, #fff);
+  border-radius: 20px 20px 0 0;
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  color: var(--white, #fff);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.modalBody {
+  padding: 1.5rem;
+  overflow-y: auto; /* A mágica para a barra de rolagem aparecer se o texto for longo */
+  font-family: var(--font-text);
+  line-height: 1.7;
+  color: #333;
+}
+
+.modalBody h3 {
+  font-family: var(--font-title);
+  color: var(--color-7, #004777);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modalFooter {
+  padding: 1.5rem;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+
+.acceptButton {
+  font-family: var(--font-text);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  background-color: var(--color-primary, #0084DD);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.acceptButton:hover {
+  background-color: #005a99; /* Um tom mais escuro */
+}

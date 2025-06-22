@@ -19,8 +19,8 @@ import HomePage from "../pages/homePage/Homepage.jsx";
 import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 import PlanosPremium from "../pages/planosPremium/PlanosPremium.jsx";
 
-
 const router = createBrowserRouter([
+
   {
     path: "/",
     element: <LandingPage />,
