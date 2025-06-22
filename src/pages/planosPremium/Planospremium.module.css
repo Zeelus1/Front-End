@@ -24,11 +24,11 @@
 }
 
 .containerPlanos {
-    display:flex;
+    display: flex;
     gap: 15px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
-   
+
 }
 
 .cardPlanos {
@@ -141,4 +141,11 @@
 .boxPlanos .moldura img {
     width: 100%;
     height: 100%;
+}
+
+.faq {
+    background: linear-gradient(to bottom, #5DC7EA 0%, #CBF2FF 100%);
+    background-image: url("../../img/fundoLand.png"), linear-gradient(to top, #5DC7EA 0%, #CBF2FF 100%);
+    background-repeat: repeat;
+    width: 100vw;
 }
