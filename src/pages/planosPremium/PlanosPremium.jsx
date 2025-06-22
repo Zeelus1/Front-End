@@ -9,8 +9,7 @@ import Style from './Planospremium.module.css'
 import { Link } from 'react-router';
 import ButtonStart from '../../components/buttonStart/ButtonStart.jsx';
 import Faq from "../../components/faq/Faq.jsx";
-
-
+// --------------------------------------------------------------------------------------------------------------------
 function PlanosPremium() {
   const faqData = [
     {
