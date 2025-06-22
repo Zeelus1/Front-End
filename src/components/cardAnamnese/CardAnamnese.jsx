@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import styles from "./CardAnamnese.module.css";
 
 import fotoMarcia from "../../img/fotoMarcia.jpg";
@@ -14,7 +15,11 @@ export default function CardAnamnese() {
           alt="Foto da pessoa assistida"
           className={styles.foto}
         />
-        <button className={styles.btnAnamnese}>Ver anamnese</button>
+        <Link to="/home/anamnese">
+          <button className={styles.btnAnamnese}>
+            Ver anamnese
+          </button>
+        </Link>
       </div>
 
       <div className={styles.info}>
@@ -39,9 +44,7 @@ export default function CardAnamnese() {
             src={iconeLivroAnamnese}
             alt="Ícone de livro com coração anamnese"
           />
-          <h3 className={styles.nome}>
-            Sobre Márcia:
-          </h3>
+          <h3 className={styles.nome}>Sobre Márcia:</h3>
         </div>
         <p className={styles.descricao}>
           Márcinha enfrenta a Demência há 4 anos, sempre cercada de carinho e
