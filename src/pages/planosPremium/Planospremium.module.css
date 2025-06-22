@@ -1,5 +1,12 @@
+
+/* Estilo para a palavra em destaque no título */
+.highlight {
+  color: #004777;
+  font-weight: 600; /* Opcional: deixa a palavra um pouco mais forte */
+}
+
 .secaocard {
-    border: solid 2px blue;
+    
     /* background com gradiente de cima para baixo */
     background: linear-gradient(to bottom, #7094E2 0%, #3D517C 100%);
     background-image: url("../../img/fundoLand.png"), linear-gradient(to bottom, #7094E2 0%, #3D517C 100%);

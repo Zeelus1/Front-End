@@ -32,9 +32,9 @@ function PlanosPremium() {
       <Header />
       <main>
         <section className={Style.secaocard}>
-          <h1>
-            Na Zeelus, seu bem-estar é a nossa prioridade. Com planos criados especialmente para você, oferecemos o acolhimento necessário para trazer mais leveza ao seu dia!
-          </h1>
+          <h1 className={Style.mainTitle}>
+  Na <span className={Style.highlight}>Zeelus</span>, seu bem-estar é a nossa prioridade. Com planos criados especialmente para você, oferecemos o acolhimento necessário para trazer mais leveza ao seu dia!
+</h1>
 
           <div className={Style.containerPlanos}>
             <CardPlanos
