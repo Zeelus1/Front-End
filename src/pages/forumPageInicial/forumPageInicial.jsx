@@ -1,5 +1,5 @@
 import React from 'react'
-import Style from './ForumPageInicial.module.css'
+import Style from './forumPageInicial.module.css'
 
 import CampoBusca from "../../components/campoBusca/CampoBusca.jsx";
 import BotaoAddRegistro from "../../components/botaoAddRegistro/BotaoAddRegistro.jsx";
