@@ -1,7 +1,5 @@
 import React from 'react';
 import styles from './sobreNos.module.css';
-import VectorSection from "../../img/vectorHomeSection.svg";
-import equipeZeelus from '../../img/equipeZeelus.jpg';
 import ZeelusLogo from '../../img/zeelusLogo512.png';
 import missao from '../../img/missao.png';
 import valores from '../../img/valores.png';
@@ -115,10 +113,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>Andrey Sebastian Justino</h3>
           <p className={styles.teamRole}>Product Owner e Desenvolvedor Full-Stack</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/andreyjustino/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/andrey-sebastian-justino/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/andreyjustino" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/AndreyJustino" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
@@ -129,10 +127,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>Laysla Rayssa Alves dos Santos</h3>
           <p className={styles.teamRole}>Scrum Master e Desenvolvedora Front-End</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/layslaalves/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/laysla-alves/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/layslaalves" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/lrayssz" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
@@ -143,10 +141,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>Lívia Ribeiro Alvarenga</h3>
           <p className={styles.teamRole}>Marketing e Desenvolvedora Front-End</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/liviaalvarenga/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/livia-alvarenga05/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/liviaalvarenga" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/alvarengaLivis" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
@@ -157,10 +155,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>Noah Cardozo da Silva</h3>
           <p className={styles.teamRole}>Designer e Desenvolvedor Front-End</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/noahcardozo/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/noah-cardozo-714224352/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/noahcardozo" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/NoahCardo" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
@@ -171,10 +169,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>William Ferreira dos Santos</h3>
           <p className={styles.teamRole}>Designer UI/UX e Desenvolvedor Full-Stack</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/williamferreira/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/devwilliamferreira/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/williamferreira" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/WillDeev" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
@@ -185,10 +183,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>Rudney Lopes de Souza Junior</h3>
           <p className={styles.teamRole}>Financeiro e Desenvolvedor Back-End</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/rudneysouza/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rudneyjr/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/rudneysouza" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/RudneyJr4" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
@@ -199,10 +197,10 @@ const SobreNos = () => (
           <h3 className={styles.teamName}>Lucas Padula Alves</h3>
           <p className={styles.teamRole}>DataBase Manager e Desenvolvedor Back-End</p>
           <div className={styles.teamLinks}>
-            <a href="https://www.linkedin.com/in/lucaspadula/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/lucas-padula-alves-b72ba52b6/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="LinkedIn" />
             </a>
-            <a href="https://github.com/lucaspadula" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/lucas-padula" target="_blank" rel="noopener noreferrer">
               <img src={github} alt="GitHub" />
             </a>
           </div>
