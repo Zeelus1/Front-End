@@ -1,0 +1,204 @@
+.card {
+  background-color: #D8F2E5;
+  border-radius: 24px;
+  padding: 4.5rem;
+  width: 100%;
+  max-width: 600px;
+  min-height: 650px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+  text-align: left;
+  flex: 1;
+}
+
+.tituloCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  flex-wrap: nowrap;
+}
+
+.icone {
+  width: 90px;
+  height: 90px;
+  vertical-align: middle;
+}
+
+.tituloGradiente {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #184E77, #87CEEB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mensagemExtra {
+  font-size: 2rem;
+  color: #184E77;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.descricao {
+  color: #444;
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.textoGradiente {
+  background: linear-gradient(to right, #184E77, #87CEEB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagemTreinamento {
+  width: 100%;
+  display: block;
+  border-radius: 1rem;
+}
+
+.sombraSobreposta {
+  width: 100%;
+  display: block;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.tituloSombra {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: var(--fonteTitulos);
+}
+
+.sombraComTexto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.botao {
+  display: block;
+  margin: 1.2rem auto 0;
+  background: linear-gradient(to right, #184E77, #71afc7);
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-family: var(--fonteTitulos);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botao:hover {
+  background-color: var(--azulDegrade1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(24, 78, 119, 0.4);
+}
+
+/* --- Responsividade --- */
+
+/* Tablets (até 768px) */
+@media (max-width: 768px) {
+  .card {
+    padding: 3rem 2rem;
+    max-width: 90%;
+    min-height: auto;
+  }
+
+  .tituloCard {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .icone {
+    width: 70px;
+    height: 70px;
+  }
+
+  .tituloGradiente {
+    font-size: 2.2rem;
+  }
+
+  .mensagemExtra {
+    font-size: 1.6rem;
+  }
+
+  .descricao {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .tituloSombra {
+    font-size: 1.6rem;
+    top: 0.8rem;
+    left: 1rem;
+  }
+
+  .botao {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+}
+
+/* Smartphones (até 480px) */
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1rem;
+    max-width: 100%;
+  }
+
+  .tituloCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .icone {
+    width: 50px;
+    height: 50px;
+  }
+
+  .tituloGradiente {
+    font-size: 1.8rem;
+  }
+
+  .mensagemExtra {
+    font-size: 1.2rem;
+  }
+
+  .descricao {
+    font-size: 1.4rem;
+  }
+
+  .tituloSombra {
+    font-size: 1.2rem;
+    top: 0.5rem;
+    left: 0.8rem;
+  }
+
+  .botao {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

@@ -1,43 +1,72 @@
 .card {
-  background-color: #e1f4f9;
+  background-color: #D8F2E5;
   border-radius: 24px;
-  padding: 2.5rem;
+  padding: 3rem; /* diminuído de 4.5rem */
   width: 100%;
-  max-width: 550px;
+  max-width: 520px; /* diminuído de 600px */
+  min-height: 420px; /* diminuído de 500px */
   font-family: 'Inter', sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  text-align: left;
+  flex: 1;
 }
 
 .tituloCard {
-  color: var(--azulProfundo);
-  font-size: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* alinhado à esquerda */
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+  text-align: left; /* alinhamento do texto à esquerda */
+  flex-wrap: nowrap;
+}
+
+.icone {
+  width: 90px;
+  height: 90px;
+  vertical-align: middle;
+}
+
+.tituloGradiente {
+  font-size: 3.2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  background: linear-gradient(to right, #184E77, #87CEEB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .descricao {
   color: #444;
-  font-size: 1.6rem;
-  margin-bottom: 2rem;
+  font-size: 2.0rem;
+  margin-bottom: 2.5rem;
+  text-align: left; /* alinhamento do texto à esquerda */
+}
+
+.textoGradiente {
+  background: linear-gradient(to right, #184E77, #87CEEB);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
 }
 
 .post {
-  background: #fff;
+  background-color: #fff;
   border-radius: 18px;
-  padding: 1.8rem;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
-  margin-bottom: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 2.5rem;
+  text-align: left; /* alinhamento do texto à esquerda */
 }
 
 .usuario {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-.avatar {
+.avatarJose {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -45,43 +74,69 @@
 }
 
 .nomeData {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #333;
+}
+
+.nomeAzulClaro {
+  color: #87CEEB; /* Azul claro */
 }
 
 .tituloPost {
   font-weight: 600;
-  font-size: 1.7rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
   color: #000;
+}
+
+.tituloPostAzulEscuro {
+  font-weight: 600;
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  color: #184E77; /* Azul escuro */
 }
 
 .textoPost {
   font-size: 1.5rem;
   color: #555;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 .reacoes {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.8rem;
   margin-top: 1.2rem;
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   color: #333;
 }
 
 .botao {
-  background: var(--azulProfundo);
-  color: white;
-  border: none;
+  display: block;      /* faz o botão se comportar como bloco */
+  margin: 1.2rem auto 0; /* 1.2rem topo, automático nas laterais (centraliza), 0 embaixo */
+  background: linear-gradient(to right, #184E77, #71afc7);
   padding: 1rem 2rem;
   font-size: 1.7rem;
-  border-radius: 20px;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  font-family: var(--fonteTitulos);
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
+  transition: background-color 0.3s;
 }
 
+
 .botao:hover {
-  background-color: #003366;
+  background-color: var(--azulDegrade1);
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(24, 78, 119, 0.4);
+}
+
+.imagemPost {
+  width: 100%;
+  max-width: 300px; /* para não ultrapassar o card */
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
