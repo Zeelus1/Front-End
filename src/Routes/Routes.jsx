@@ -18,15 +18,11 @@ import { ptBR } from 'rsuite/esm/locales/index.js';
 import HomePage from "../pages/homePage/Homepage.jsx";
 import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 import PlanosPremium from "../pages/planosPremium/PlanosPremium.jsx";
-import PaginaDeTeste from "../pages/testeTeste/testando.jsx";
+
 const router = createBrowserRouter([
 
- {
-  path: "/teste",
-  element: <PaginaDeTeste />, 
-  errorElement: <ErrorPage />,
-},
 
+  
   {
     path: "/",
     element: <LandingPage />,
