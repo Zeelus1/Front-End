@@ -1,6 +1,3 @@
-/* Arquivo: TermosDeUsoModal.module.css */
-/* VERSÃO FINAL POLIDA - FIEL AO PROTÓTIPO */
-
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -16,50 +13,50 @@
 }
 
 .modalContent {
-  background: linear-gradient(to top, #004777, #0084DD); 
+  background: linear-gradient(to right, #004777, #0084DD);
   width: 90%;
   max-width: 650px;
-  
-  /* AJUSTE DE ESTILO: Um raio mais próximo do protótipo */
-  border-radius: 16px; 
-  
+  border-radius: 1.5rem;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  color: white; 
+  color: white;
+  padding: 3px;
   display: flex;
   flex-direction: column;
-  
-  /* AJUSTE DE ESPAÇAMENTO: Padding consistente para criar o efeito de "moldura" */
-  padding: 2rem; 
-  
-  /* AJUSTE DE ESPAÇAMENTO: 'gap' para espaçar os itens internos uniformemente */
-  gap: 1.5rem;
 }
 
 .modalHeader {
   text-align: center;
-  /* AJUSTE DE ESPAÇAMENTO: Removido margin-bottom, pois 'gap' agora controla isso */
+  padding: 1rem;
 }
 
 .title {
-  margin: 0;
+  margin: 1rem 0;
   font-size: 1.8rem;
   font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
+/* O .modalBody agora é um container flexível para o texto e o botão */
 .modalBody {
   background-color: #FFFFFF;
   color: #333333;
-
-  /* AJUSTE DE ESTILO: Raio menor que o contêiner principal para um encaixe melhor */
-  border-radius: 10px; 
-
+  border-radius: 1.5rem;
   padding: 1.5rem;
-  max-height: 45vh;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+.textContainer {
   overflow-y: auto;
+  /* A rolagem agora acontece aqui dentro */
+  flex-grow: 1;
+  /* Faz esta área crescer e ocupar o espaço */
   line-height: 1.6;
+  padding-right: 1rem;
+
 }
 
-.modalBody h3 {
+.textContainer h3 {
   font-size: 1.1rem;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
@@ -67,39 +64,47 @@
   color: #004777;
 }
 
-/* ... Estilização da barra de rolagem ... */
-.modalBody::-webkit-scrollbar {
-  width: 8px;
-}
-.modalBody::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-.modalBody::-webkit-scrollbar-thumb {
-  background-color: #a9a9a9;
-  border-radius: 10px;
-}
-
-.modalFooter {
+.buttonContainer {
   display: flex;
   justify-content: flex-end;
-  /* AJUSTE DE ESPAÇAMENTO: Removido padding-top, pois 'gap' agora controla isso */
+  /* Alinha o botão à direita */
+  padding-top: 1.5rem;
+  /* Espaço entre o texto e o botão */
+  border-top: 1px solid #e0e0e0;
+  /* Linha separadora */
+  margin-top: 1rem;
+  /* Margem para separar do texto */
 }
 
-/* AJUSTE DE ESTILO: Botão idêntico ao protótipo (exceto pelo alinhamento) */
+
 .acceptButton {
-  background-color: #FFFFFF;
-  color: #004777; 
-  border: 1px solid #d1d5db; /* Borda sutil para destacar no fundo azul */
-  border-radius: 50px; /* Para o efeito de "pílula" */
-  padding: 12px 40px;
+  background-color: #004777;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 35px;
   font-size: 1rem;
-  font-weight: bold; /* Deixei em negrito como na imagem */
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .acceptButton:hover {
-  background-color: #f0f0f0; /* Fundo levemente acinzentado no hover */
-  transform: scale(1.05); /* Efeito de crescimento sutil */
+  background-color: #005a99;
+}
+
+
+/* Estilização da barra de rolagem */
+.textContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.textContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.textContainer::-webkit-scrollbar-thumb {
+  background-color: #a9a9a9;
+  border-radius: 10px;
 }
