@@ -1,0 +1,35 @@
+.container {
+  background: #e6faf5;
+  max-width: 95%;
+  width: 100%;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  margin: 10rem auto;
+  box-shadow: 0 2px 8px rgba(0,4,4,0.25);
+  gap: 15rem;
+  box-sizing: border-box;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: #002b45;
+  font-family: var(--font-title, Arial, sans-serif);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon img {
+  width: 30px;
+  height: 30px;
+  gap: 0.5rem;
+}

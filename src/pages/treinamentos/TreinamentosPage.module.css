@@ -19,6 +19,7 @@
 }
 
 .botaoGradient {
+  text-decoration: none;
   background: linear-gradient(to right, #004777, #0084DD);
   color: white;
   padding: 0.7rem 1.2rem;
@@ -54,6 +55,13 @@
 
 .botaoGradient:hover {
   transform: scale(1.05);
+}
+
+.botaoGradient,
+.botaoGradient:focus,
+.botaoGradient:hover,
+.botaoGradient:visited {
+  text-decoration: none;
 }
 
 .botao:hover {
