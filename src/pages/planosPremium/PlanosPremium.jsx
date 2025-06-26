@@ -32,8 +32,8 @@ function PlanosPremium() {
       <main>
         <section className={Style.secaocard}>
           <h1 className={Style.mainTitle}>
-  Na <span className={Style.highlight}>Zeelus</span>, seu bem-estar é a nossa prioridade. Com planos criados especialmente para você, oferecemos o acolhimento necessário para trazer mais leveza ao seu dia!
-</h1>
+            Na <span className={Style.highlight}>Zeelus</span>, seu bem-estar é a nossa prioridade. Com planos criados especialmente para você, oferecemos o acolhimento necessário para trazer mais leveza ao seu dia!
+          </h1>
 
           <div className={Style.containerPlanos}>
             <CardPlanos
@@ -98,9 +98,8 @@ function PlanosPremium() {
         </section>
 
         <section className={Style.faq}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3D517C" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,133.3C240,128,300,96,360,96C420,96,480,128,540,149.3C600,171,660,181,720,170.7C780,160,840,128,900,112C960,96,1020,96,1080,117.3C1140,139,1200,181,1260,170.7C1320,160,1380,96,1410,64L1440,32L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path></svg>
-
-          <Faq data={faqData} title={"Dúvidas Frequentes"} titleColor={"#004777"} plusColor={"#000"}showBorder />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3D517C" fill-opacity="1" d="M0,192L48,170.7C96,149,192,107,288,90.7C384,75,480,85,576,117.3C672,149,768,203,864,229.3C960,256,1056,256,1152,245.3C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+          <Faq data={faqData} title={"Dúvidas Frequentes"} titleColor={"#004777"} plusColor={"#000"} showBorder />
 
         </section>
 
