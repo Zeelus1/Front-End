@@ -4,12 +4,14 @@ import LabelInput from "../../components/labelInput/LabelInput";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
 import { Link } from "react-router";
 import FamiliaTresPessoas from "../../img/familiaTresPessoas.png";
+import TermosDeUsoModal from "../../components/termosdeUso/TermosDeUsoModal.jsx"; // Importação do modal
 
 function Cadastro() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [aceitou, setAceitou] = useState(false);
+  const [showTermos, setShowTermos] = useState(false); // Estado para o modal
 
   function handleCadastro(e) {
     e.preventDefault();
@@ -32,6 +34,9 @@ function Cadastro() {
           <img src={ZeelusLogo} alt="Logo da plataforma Zeelus" />
         </div>
         <h1>Cadastrar</h1>
+        {showTermos && (
+            <TermosDeUsoModal onClose={() => setShowTermos(false)} />
+          )}
         <form
           className={Style.forms}
           onSubmit={handleCadastro}
@@ -80,23 +85,34 @@ function Cadastro() {
                 style={{ marginRight: "8px" }}
               />
               Li e aceito os{" "}
-              <Link to="/termos" target="_blank" rel="noopener noreferrer">
-                Termos de Uso
-              </Link>{" "}
-              e as{" "}
-              <Link to="/privacidade" target="_blank" rel="noopener noreferrer">
-                Políticas de Privacidade
-              </Link>
+              <span
+                style={{
+                  color: "#3498db",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                }}
+                onClick={() => setShowTermos(true)}
+                tabIndex={0}
+                role="button"
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") setShowTermos(true);
+                }}
+              >
+                Termos de Uso e Políticas de Privacidade
+              </span>{" "}
               .
             </label>
           </div>
+          
           <div className={Style.divSubmit}>
             <button type="submit" className={Style.button} disabled={!aceitou}>
               Cadastrar
             </button>
           </div>
           <div className={Style.divTroca}>
-            <p>Já possui conta? <Link to="/login">Faça login</Link></p> 
+            <p>
+              Já possui conta? <Link to="/login">Faça login</Link>
+            </p>
           </div>
         </form>
       </section>
