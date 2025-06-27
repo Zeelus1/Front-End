@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Style from "../cadastroLogin/CadastroLogin.module.css";
 import LabelInput from "../../components/labelInput/LabelInput";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
@@ -10,10 +10,23 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // verifica se o token já existe no localStorage
+    const existingToken = localStorage.getItem("token");
+    if (existingToken) {
+      navigate("/home");
+      return;
+    }
+  }, [navigate]);
+
   function handleLogin(e) {
     e.preventDefault();
 
+    
+
     if (email == "zeelus@mail.com" && password == "zeelus") {
+      // simular token de autenticação em localStorage
+      localStorage.setItem("token", "zeelusToken");
       navigate("/home");
     }
   }

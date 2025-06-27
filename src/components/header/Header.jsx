@@ -17,6 +17,15 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    // verificar se tem token no localStorage
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Redirecionar para a página de login se não houver token
+      window.location.href = "/login";
+    }
+  })
+
   // Detecta a página atual baseado na URL
   useEffect(() => {
     const pathname = window.location.pathname;
