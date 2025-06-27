@@ -434,7 +434,7 @@ function LandingPage() {
                   "Treinamento de Primeiros Socorros",
                 ]}
                 icon={IconPlanoGratuito}
-                link="/auth"
+                link="/planospremium"
                 buttonText="Obter Agora!"
               />
             </div>
@@ -458,7 +458,7 @@ function LandingPage() {
                 </ul>
               </div>
               <div className={Style.box}>
-                <Link to={""} style={{ width: "80%", display: "block" }}>
+                <Link to={"/planospremium"} style={{ width: "80%", display: "block" }}>
                   <ButtonStart children={"Obter Agora!"} width={"100%"} />
                 </Link>
               </div>
@@ -477,7 +477,7 @@ function LandingPage() {
                   "Assistente por IA sem Limites",
                   "Multiplos Perfis de Anamnese",
                 ]}
-                link=""
+                link="/planospremium"
                 buttonText="Obter Agora!"
               />
             </div>

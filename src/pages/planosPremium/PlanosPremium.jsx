@@ -1,5 +1,4 @@
-import React from 'react'
-import Header from '../../components/header/Header.jsx'
+import { useState, useEffect } from 'react'
 import Footer from '../../components/footer/Footer.jsx'
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
 import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png";
@@ -9,8 +8,56 @@ import Style from './Planospremium.module.css'
 import { Link } from 'react-router';
 import ButtonStart from '../../components/buttonStart/ButtonStart.jsx';
 import Faq from "../../components/faq/Faq.jsx";
+import ButtonMenu from "../../icons/icons8-menu.svg";
+import ButtonClose from "../../icons/icons8-close.svg";
+import Logo from "../../img/zeelusLogo1.png";
+
 // --------------------------------------------------------------------------------------------------------------------
 function PlanosPremium() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      const overlay = document.getElementById("overlay");
+      if (isMenuOpen && e.target === overlay) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const faqData = [
     {
       question: "Como funciona o plano gratuito?",
@@ -28,7 +75,112 @@ function PlanosPremium() {
 
   return (
     <>
-      <Header />
+      <header className={`${Style.header} ${scrolled ? Style.scrolled : ""}`}>
+        <img src={Logo} alt="Logo da zeelus" className={Style.logo} />
+
+        <button
+          className={Style.btn_abrir}
+          onClick={toggleMenu}
+          aria-label="Abrir menu de navegação"
+        >
+          <img src={ButtonMenu} alt="Menu Hambúrguer" className={Style.menu} />
+        </button>
+
+        <div
+          className={`${Style.menu_mobile} ${isMenuOpen ? Style.active : ""}`}
+        >
+          <div className={Style.btn_fechar} onClick={toggleMenu}>
+            <img src={ButtonClose} alt="Fechar menu" />
+          </div>
+
+          <nav className={Style.nav_mobile}>
+            <ul>
+              <li>
+                <Link to="/#home" onClick={toggleMenu}>
+                    Inicio
+                </Link>
+              </li>
+              <li>
+                <Link to="/#funcionalidades" onClick={toggleMenu}>
+                  Soluções
+                </Link>
+              </li>
+              <li>
+                <Link to="/#planos" onClick={toggleMenu}>
+                  Planos
+                </Link>
+              </li>
+              <li>
+                <Link to="/#avaliacoes" onClick={toggleMenu}>
+                  Avaliações
+                </Link>
+              </li>
+              <li>
+                <Link to="/#parceiros" onClick={toggleMenu}>
+                  Parceiros
+                </Link>
+              </li>
+              <li>
+                <Link to="/#faq" onClick={toggleMenu}>FAQ</Link>
+              </li>
+              <li>
+                <Link to="/login" onClick={toggleMenu}>
+                  Entrar
+                </Link>
+              </li>
+              <li>
+                <Link to="/cadastro" onClick={toggleMenu}>
+                  Começar
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        {isMenuOpen && (
+          <div
+            id="overlay"
+            className={`${Style.overlay_menu} ${
+              isMenuOpen ? Style.active : ""
+            }`}
+            onClick={toggleMenu}
+          ></div>
+        )}
+
+        <nav className={Style.nav_desktop}>
+          <ul>
+            <li className={Style.liLink}>
+              <Link to="/#home">Inicio</Link>
+            </li>
+            <li className={Style.liLink}>
+              <Link to="/#funcionalidades">Soluções</Link>
+            </li>
+            <li className={Style.liLink}>
+              <Link to="/#planos">Planos</Link>
+            </li>
+            <li className={Style.liLink}>
+              <Link to="/#avaliacoes">Avaliações</Link>
+            </li>
+            <li className={Style.liLink}>
+              <Link to="/#parceiros">Parceiros</Link>
+            </li>
+            <li className={Style.liLink}>
+              <Link to="/#faq">FAQ</Link>
+            </li>
+            <li>
+              <Link to="/login">
+                <button className={Style.buttonLogin}>Entrar</button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/cadastro">
+                <ButtonStart>Começar</ButtonStart>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
       <main>
         <section className={Style.secaocard}>
           <h1 className={Style.mainTitle}>
