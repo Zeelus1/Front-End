@@ -41,7 +41,7 @@ function Footer() {
 
                     <ul>
                         <li>
-                            <Link to="/sobrenos">
+                            <Link to="/sobrenos" style={{textDecoration: "none", color: "white"}}>
                                 Sobre
                             </Link>
                         </li>

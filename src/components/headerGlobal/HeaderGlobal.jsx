@@ -103,14 +103,17 @@ function HeaderGlobal() {
               <a href="/#faq" onClick={toggleMenu}>FAQ</a>
             </li>
             <li>
-              <a href="/login" onClick={toggleMenu}>
-                Entrar
-              </a>
+              <Link to="/sobrenos" onClick={toggleMenu}>Quem é a Zeelus?</Link>
             </li>
             <li>
-              <a href="/cadastro" onClick={toggleMenu}>
+              <Link to="/login" onClick={toggleMenu}>
+                Entrar
+              </Link>
+            </li>
+            <li>
+              <Link to="/cadastro" onClick={toggleMenu}>
                 Começar
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -146,15 +149,20 @@ function HeaderGlobal() {
           <li className={Style.liLink}>
             <a href="/#faq">FAQ</a>
           </li>
-          <li>
-            <a href="/login">
-              <button className={Style.buttonLogin}>Entrar</button>
-            </a>
+          <li className={Style.liLink}>
+            <Link to="/sobrenos">
+              Quem é a Zeelus?
+            </Link>
           </li>
           <li>
-            <a href="/cadastro">
+            <Link to="/login">
+              <button className={Style.buttonLogin}>Entrar</button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/cadastro">
               <ButtonStart>Começar</ButtonStart>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
