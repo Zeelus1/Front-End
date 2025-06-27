@@ -26,6 +26,12 @@
   transition: all var(--transition-speed);
 }
 
+@media screen and (max-width: 912px) {
+  .header {
+    padding: 0 10px;
+  }
+} 
+
 .header ul {
   list-style: none;
   margin: 0;
@@ -54,7 +60,7 @@
   font-weight: 500;
   color: var(--color-7);
   position: relative;
-  padding: 5px 2px;
+  /* padding: 5px 2px; */
   transition: all var(--transition-speed);
 }
 
@@ -83,6 +89,7 @@
   height: var(--icon-size);
   transition: transform var(--transition-speed);
   vertical-align: middle;
+  padding: 0;
 }
 
 .nav_desktop ul li:not(.liLink) {
@@ -276,8 +283,10 @@
   }
 }
 
+
+
 /* Responsividade */
-@media screen and (max-width: 816px) {
+@media screen and (max-width: 842px) {
   .header {
     padding: 0 15px;
   }
