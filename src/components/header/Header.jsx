@@ -79,6 +79,11 @@ function Header() {
               </Link>
             </li>
             <li>
+              <Link to="/home/anamnese" onClick={toggleMenu}>
+                Anamnese
+              </Link>
+            </li>
+            <li>
               <Link to="/home/registros" onClick={toggleMenu}>
                 Registros
               </Link>
@@ -136,6 +141,14 @@ function Header() {
               className={activeLink === "calendario" ? Style.active : ""}
             >
               Calendário
+            </Link>
+          </li>
+          <li className={Style.liLink}>
+            <Link
+              to="/home/anamnese"
+              className={activeLink === "anamnese" ? Style.active : ""}
+            >
+              Anamnese
             </Link>
           </li>
           <li className={Style.liLink}>

@@ -44,6 +44,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "sobrenos",
+    element: <SobreNos />,
+    errorElement: <ErrorPage />,
+  },
+  {
     path: "/home/treinamentos/primeirossocorros",
     element: <PrimeirosSocorrosPage />,
     errorElement: <ErrorPage />,
@@ -72,11 +77,6 @@ const router = createBrowserRouter([
       {
         path: "registros",
         element: <RegistrosPage />,
-      },
-      {
-        path: "sobrenos",
-        element: <SobreNos />,
-
       },
       {
         path: "forum",

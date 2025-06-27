@@ -14,8 +14,12 @@ import william from '../../img/will.png';
 import rudney from '../../img/rudney.png';
 import lucas from '../../img/padula.png';
 import fundo from '../../img/fundoLand.png';
+import Footer from '../../components/footer/Footer';
+import HeaderGlobal from '../../components/headerGlobal/HeaderGlobal';
 const SobreNos = () => (
   <>
+    <HeaderGlobal/>
+
     <div className={styles.container}>
       <section className={styles.hero}>
         <h1 className={styles.title}>
@@ -208,6 +212,7 @@ const SobreNos = () => (
       </div>
     </section> 
 
+    <Footer/>
 
   </>
 );
