@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Homepage.module.css";
 import BlocoInicial from "../../components/blocoinicial/BlocoInicial.jsx";
 import LembretesHome from "../../components/lembretesHome/LembretesHome.jsx";
@@ -11,11 +10,32 @@ import PerfilAnamnese from "../../components/perfilAnamnese/PerfilAnamnese.jsx";
 import UltimosPosts from "../../components/ultimosPosts/UltimosPosts.jsx";
 import CardTreinamentos from "../../components/cardTreinamentos/CardTreinamentos.jsx";
 import onda2 from "../../img/onda2.png";
-import fundoVerde from "../../img/fundoVerde.png";
-import iconeDuvida from "../../img/iconeDuvida.png";
-import textura from "../../img/textura.png"; // só para confirmar importação, não precisa usar no JSX diretamente
+import Faq from "../../components/faq/Faq.jsx";
 
 function HomePage() {
+  const faqData = [
+    {
+      question: "O que é a Zeelus?",
+      answer:
+        "A Zeelus é uma plataforma inovadora que conecta cuidadores e oferece ferramentas para facilitar a rotina de cuidados, promovendo organização, aprendizado e suporte contínuo.",
+    },
+    {
+      question: "Meus dados estão protegidos?",
+      answer:
+        "Sim! A Zeelus prioriza a segurança e privacidade dos seus dados. Utilizamos tecnologias avançadas de criptografia e seguimos rigorosos protocolos de proteção de dados.",
+    },
+    {
+      question: "Para quem é a Zeelus?",
+      answer:
+        "A Zeelus é ideal para cuidadores formais e informais que buscam uma solução completa para organizar suas atividades, compartilhar experiências e desenvolver suas habilidades no cuidado.",
+    },
+    {
+      question: "Preciso pagar para usar?",
+      answer:
+        "A Zeelus oferece um plano gratuito com diversas funcionalidades essenciais. Também disponibilizamos planos premium com recursos adicionais para quem busca uma experiência ainda mais completa.",
+    },
+  ];
+
   return (
     <div className={styles.fundoTextura}>
       <section>
@@ -43,26 +63,41 @@ function HomePage() {
         <UltimosRegistros />
       </div>
 
-      <div className={styles.fraseImagemContainer}>
-        <img
-          src={fotoHome}
-          alt="Fundo com frase motivacional"
-          className={styles.bannerImagem}
-        />
-        <p className={styles.bannerTexto}>
-          Na <span className={styles.azulDestaque}>Zeelus</span>, celebramos sua
-          coragem, honramos sua dedicação e oferecemos o suporte que você merece
-          por ajudar a construir um mundo mais empático!
-        </p>
-      </div>
+      <section className={styles.bannerSection}>
+        <div className={styles.bannerBackground}>
+          <img
+            src={fotoHome}
+            alt="Fundo com frase motivacional"
+            className={styles.bannerImagem}
+          />
+        </div>
+        
+        <div className={styles.bannerContent}>
+          <p className={styles.bannerTexto}>
+            Na <span className={styles.azulDestaque}>Zeelus</span>, celebramos sua
+            coragem, honramos sua dedicação e oferecemos o suporte que você merece
+            por ajudar a construir um mundo mais empático!
+          </p>
+        </div>
 
-      <div className={styles.ondaHomeContainer}>
-        <img
-          src={ondaHome}
-          alt="Curva decorativa branca"
-          className={styles.ondaHome}
-        />
-      </div>
+        <div className={styles.ondaContainer}>
+          <img
+            src={ondaHome}
+            alt="Curva decorativa branca"
+            className={styles.ondaHome}
+          />
+        </div>
+      </section>
+
+      <br />
+      <br />
+      <br />
+      <br />  {/* tambem não me orgulho de fazer mas não quero mexer em algo pior */}
+      <br /> {/* critique meu metodos e aplauda meus resultados */}
+      <br />  {/* considera o esforço ai vai, da um ponto */}
+      <br />
+      <br />
+      <br />
 
       <PerfilAnamnese />
 
@@ -71,65 +106,18 @@ function HomePage() {
         <CardTreinamentos />
       </div>
 
-      <div className={styles.ondaAbaixoCards}>
-        <img
-          src={onda2}
-          alt="Onda decorativa abaixo dos cards"
-          className={styles.ondaImagem}
-        />
-      </div>
+      
 
       <div className={styles.fundoVerdeSection}>
-        <img
-          src={fundoVerde}
-          alt="Fundo verde decorativo"
-          className={styles.fundoVerdeImagem}
-        />
-
-        <div className={styles.textoSobreFundo}>
-          <h2 className={styles.tituloDuvidas}>Dúvidas frequentes</h2>
-
-          <div className={styles.duvidasLista}>
-            <div className={styles.duvidaItem}>
-              <img
-                src={iconeDuvida}
-                alt="Ícone dúvida"
-                className={styles.iconeDuvida}
-              />
-              <p>Preciso pagar para usar os serviços?</p>
-            </div>
-            <hr className={styles.linhaDivisoria} />
-
-            <div className={styles.duvidaItem}>
-              <img
-                src={iconeDuvida}
-                alt="Ícone dúvida"
-                className={styles.iconeDuvida}
-              />
-              <p>Posso acessar os conteúdos sem internet?</p>
-            </div>
-            <hr className={styles.linhaDivisoria} />
-
-            <div className={styles.duvidaItem}>
-              <img
-                src={iconeDuvida}
-                alt="Ícone dúvida"
-                className={styles.iconeDuvida}
-              />
-              <p>Não sou muito familiar com tecnologia. Vou conseguir usar?</p>
-            </div>
-            <hr className={styles.linhaDivisoria} />
-
-            <div className={styles.duvidaItem}>
-              <img
-                src={iconeDuvida}
-                alt="Ícone dúvida"
-                className={styles.iconeDuvida}
-              />
-              <p>O que posso fazer com o assistente virtual?</p>
-            </div>
-          </div>
+        <div className={styles.ondaTopoContainer}>
+          <img
+            src={onda2}
+            alt="Onda decorativa no topo"
+            className={styles.ondaTopoImagem}
+          />
         </div>
+
+        <Faq data={faqData} plusColor={"black"} questionColor={"black"} title={"Duvidas frequentes"} titleColor={"#004777"} answerColor={"black"}/>
       </div>
     </div>
   );

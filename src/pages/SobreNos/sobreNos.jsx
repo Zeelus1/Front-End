@@ -14,29 +14,48 @@ import william from '../../img/will.png';
 import rudney from '../../img/rudney.png';
 import lucas from '../../img/padula.png';
 import fundo from '../../img/fundoLand.png';
+import Footer from '../../components/footer/Footer';
+import HeaderGlobal from '../../components/headerGlobal/HeaderGlobal';
+import equipeZeelus from '../../img/equipeZeelus.jpg';
+
 const SobreNos = () => (
   <>
+    <HeaderGlobal/>
+
     <div className={styles.container}>
       <section className={styles.hero}>
-        <h1 className={styles.title}>
-          Equipe Zeelus
-        </h1>
-        <h2 className={styles.subtitle}>
-          Uma rede de cuidado para quem cuida!
-        </h2>
-
+        <div className={styles.imageContainer}>
+          <img 
+            src={equipeZeelus} 
+            alt="Equipe Zeelus"
+            className={styles.backgroundImage}
+          />
+        </div>
+        <div className={styles.heroContent}>
+          <h1 className={styles.title}>
+            Equipe <span className={styles.zeelusHighlight}>Zeelus</span>
+          </h1>
+          <h2 className={styles.subtitle}>
+            Uma rede de cuidado para quem cuida!
+          </h2>
+        </div>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className={styles.vectorSection}>
-        <path fill="#fff" fill-opacity="1" d="M0,288L60,272C120,256,240,224,360,218.7C480,213,600,235,720,256C840,277,960,299,1080,293.3C1200,288,1320,256,1380,240L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>
+          <path fill="#fff" fillOpacity="1" d="M0,288L60,272C120,256,240,224,360,218.7C480,213,600,235,720,256C840,277,960,299,1080,293.3C1200,288,1320,256,1380,240L1440,224L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        </svg>
       </section>
 
-
-
-       <section className={styles.content}>
+      <section className={styles.videoSection}>
         <div className={styles.card}>
-          <img
-            src={ZeelusLogo}
-            alt="Ícone coração"
-            className={styles.heartIcon}
+          <iframe 
+            width="100%" 
+            height="100%" 
+            src="https://www.youtube.com/embed/tOyGmNnyRKY?si=eELEDqEcu1skriRi&controls=0" 
+            title="YouTube video player" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerPolicy="strict-origin-when-cross-origin" 
+            allowFullScreen
+            className={styles.videoIframe}
           />
         </div>
         <div className={styles.cardText}>
@@ -53,12 +72,11 @@ const SobreNos = () => (
             Confira nosso comercial ao lado!
           </p>
         </div>
-      </section> 
+      </section>
     </div>
 
-     <section className={styles.zeelusMoveSection}>
+    <section className={styles.zeelusMoveSection}>
       <div className={styles.zeelusBg}></div>
-      <div className={styles.zeelusOverlay}></div>
       <h2 className={styles.zeelusTitle}>
         O que move a <span className={styles.zeelusHighlight}>Zeelus?</span>
       </h2>
@@ -101,6 +119,7 @@ const SobreNos = () => (
         </div>
       </div>
     </section>
+    
     <section className={styles.teamSection}>
       <img src={fundo} alt="" className={styles.teamSectionFrame} />
       <h2 className={styles.teamTitle}>
@@ -208,6 +227,7 @@ const SobreNos = () => (
       </div>
     </section> 
 
+    <Footer/>
 
   </>
 );

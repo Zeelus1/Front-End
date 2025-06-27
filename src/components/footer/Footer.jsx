@@ -2,6 +2,7 @@ import Style from "./Footer.module.css"
 import GithubIcon from "../../icons/github.svg";
 import InstagramIcon from "../../icons/instagram.svg";
 import LinkedInIcon from "../../icons/linkedin.svg";
+import { Link } from "react-router";
 
 function Footer() {
     return (
@@ -40,7 +41,9 @@ function Footer() {
 
                     <ul>
                         <li>
-                            Sobre
+                            <Link to="/sobrenos" style={{textDecoration: "none", color: "white"}}>
+                                Sobre
+                            </Link>
                         </li>
                         <li>
                             E-mail

@@ -1,5 +1,4 @@
-import React from 'react'
-import Header from '../../components/header/Header.jsx'
+import { useState, useEffect } from 'react'
 import Footer from '../../components/footer/Footer.jsx'
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
 import IconPlanoGratuito from "../../icons/coracaoPlanoGratuito.png";
@@ -9,8 +8,57 @@ import Style from './Planospremium.module.css'
 import { Link } from 'react-router';
 import ButtonStart from '../../components/buttonStart/ButtonStart.jsx';
 import Faq from "../../components/faq/Faq.jsx";
+import ButtonMenu from "../../icons/icons8-menu.svg";
+import ButtonClose from "../../icons/icons8-close.svg";
+import Logo from "../../img/zeelusLogo1.png";
+import HeaderGlobal from "../../components/headerGlobal/HeaderGlobal.jsx";
+
 // --------------------------------------------------------------------------------------------------------------------
 function PlanosPremium() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrolled]);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      const overlay = document.getElementById("overlay");
+      if (isMenuOpen && e.target === overlay) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const faqData = [
     {
       question: "Como funciona o plano gratuito?",
@@ -28,7 +76,7 @@ function PlanosPremium() {
 
   return (
     <>
-      <Header />
+      <HeaderGlobal />
       <main>
         <section className={Style.secaocard}>
           <h1 className={Style.mainTitle}>
@@ -91,18 +139,13 @@ function PlanosPremium() {
               link=""
               buttonText="Obter Agora!"
             />
-
-
-
           </div>
         </section>
 
         <section className={Style.faq}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#3D517C" fill-opacity="1" d="M0,192L48,170.7C96,149,192,107,288,90.7C384,75,480,85,576,117.3C672,149,768,203,864,229.3C960,256,1056,256,1152,245.3C1248,235,1344,213,1392,202.7L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
           <Faq data={faqData} title={"Dúvidas Frequentes"} titleColor={"#004777"} plusColor={"#000"} showBorder />
-
         </section>
-
       </main>
       <Footer />
     </>

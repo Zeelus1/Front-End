@@ -2,58 +2,177 @@
   background: #fff;
   min-height: 100vh;
   font-family: 'Inter', Arial, sans-serif;
+  /* padding-top: 80px; Espaço para o header fixo */
 }
 
 .hero {
-  /* position: relative;
-  width: 100%;
-  height: 900px; 
-  background: #ffffff;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center; */
-  background-image: url('../../img/equipeZeelus.jpg');
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  padding-top: 40px;
   position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: #004777;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.heroContent {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .title {
+  color: #fff;
   text-align: center;
-  font-size: 9rem; /* ajuste conforme necessário */
-  background: linear-gradient(90deg, #7094E2, #5DC7EA);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0 auto 12px auto;
-  font-weight: 900;
-  line-height: 1.1;
-  letter-spacing: 1px;
-  width: 100%;
-  max-width: 100vw;
-  overflow-wrap: break-word;
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 20px 0 0 0;
+  padding: 0 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
+
 .subtitle {
   color: #fff;
   text-align: center;
-  font-size: 6rem; /* ajuste conforme desejar */
-  font-weight: 600;
-  margin-top: 24px;
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  padding: 0 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
-@media (max-width: 700px) {
+
+.vectorSection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.videoSection {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 40px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .videoSection {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .cardText {
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 0;
+    min-height: auto;
+  }
+
+  .cardText h2 {
+    font-size: 4rem;
+  }
+
+  .cardText p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: var(--header-height);
+  }
+
+  .backgroundImage {
+    object-fit: contain;
+  }
+
+  .heroContent {
+    top: 60px;
+  }
+
   .title {
+    font-size: 4rem;
+    margin-top: 0;
+  }
+
+  .subtitle {
     font-size: 2.5rem;
   }
-  .subtitle {
-    font-size: 1.2rem;
+
+  .videoSection {
+    padding: 30px 15px;
+  }
+
+  .cardText h2 {
+    font-size: 3rem;
+  }
+
+  .cardText p {
+    font-size: 1.6rem;
   }
 }
-.vectorSection{
-  position: absolute;
-bottom: 0;
+
+@media (max-width: 480px) {
+  .hero {
+    margin-top: var(--header-height);
+  }
+
+  .heroContent {
+    top: 40px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .videoSection {
+    padding: 20px 10px;
+  }
+
+  .cardText {
+    padding: 20px;
+  }
+
+  .cardText h2 {
+    font-size: 2.5rem;
+  }
+
+  .cardText p {
+    font-size: 1.4rem;
+  }
 }
 
 .bannerImage {
@@ -128,34 +247,20 @@ bottom: 0;
   height: 100%;
 }
 
-.content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 32px 16px 0 16px;
-}
-
 .card {
   background: #fff;
   border: 3px solid #004777;
   border-radius: 16px;
-  width: 430px;
-  height: 430px;
+  width: 50%;
+  /* max-width: 400px; */
+  margin: 0 auto;
+  aspect-ratio: 16/9;
   box-shadow: 0 6px 28px rgba(0,0,0,0.13);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
-  align-items: stretch;
-  justify-content: flex-start;
-  padding: 0; 
-  min-width: 430px;
-  min-height: 430px;
-  max-width: 430px;
-  max-height: 430px;
+  position: relative;
 }
 
 .heartIcon {
@@ -163,20 +268,44 @@ bottom: 0;
   height: 90px;
 }
 
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.videoThumbnail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.videoIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .cardText {
-  width: 720px;
-  height: 430px;
+  width: 70%;
   background: #fff;
   border: 3px solid #004777;
   border-radius: 16px;
-  padding: 40px 60px;
-  min-width: 320px;
+  padding: 40px;
   box-shadow: 0 2px 12px #0001;
-  margin-bottom: 126px;
   min-height: 430px;
-  max-height: 430px;
-  min-width: 720px;
-  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cardText h2 {
@@ -215,13 +344,12 @@ bottom: 0;
 
 .zeelusMoveSection {
   position: relative;
-  padding: 80px 0 60px 0;
+  padding: 80px 20px;
   min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  gap: 40px;
 }
 
 .zeelusBg {
@@ -229,13 +357,13 @@ bottom: 0;
   inset: 0;
   background: url('../../img/equipeApontando.jpg') center center/cover no-repeat;
   z-index: 0;
-  filter: blur(4px);
+  filter: blur(2px);
 }
 
 .zeelusOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -243,27 +371,16 @@ bottom: 0;
   position: relative;
   z-index: 2;
   color: #fff;
-  font-size: 4rem;
-  font-weight: 900;
-  margin-bottom: 56px;
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
   text-align: center;
-  text-shadow: 0 6px 24px rgba(0,0,0,0.55), 0 2px 8px #1e90ff;
-  letter-spacing: 2px;
-  font-family: var(--font-title, 'Poppins');
+  font-family: var(--font-title);
 }
 
-.zeelusHighlight {
-  background: linear-gradient(90deg, #004777, #0084DD);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #004777;
-  font-weight: 700;
-  font-size: 4rem;
-  letter-spacing: 2px;
-  font-family: var(--font-title, 'Poppins');
-  background: none;
-  -webkit-background-clip: initial;
-  -webkit-text-fill-color: initial;
+.zeelusTitle span {
+  color: var(--color-7);
+  font-family: var(--font-title);
 }
 
 .zeelusCardsContainer {
@@ -273,62 +390,146 @@ bottom: 0;
   gap: 40px;
   justify-content: center;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .zeelusCard {
   background: #fff;
-  border: 3px solid #004777;
-  border-radius: 22px;
-  width: 370px;
-  min-height: 410px;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.13);
+  border-radius: 16px;
+  width: 350px;
+  min-height: 300px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--color-7);
 }
 
 .zeelusCard:hover {
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.22);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
 .zeelusCardHeader {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 18px;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
   background: #fff;
-  padding: 36px 28px 18px 28px;
-  font-size: 3.5rem;
 }
 
 .zeelusIcon {
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.zeelusCardHeader div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.zeelusCardHeader strong {
+  font-size: 2.4rem;
+  color: #000;
+  font-family: var(--font-title);
+  font-weight: 700;
+  line-height: 1;
 }
 
 .zeelusCardSubtitle {
-  background: linear-gradient(90deg, #004777, #0084DD);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text; /* Para compatibilidade */
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  color: var(--color-7);
+  font-family: var(--font-text);
+  font-weight: 500;
+  line-height: 1;
 }
 
 .zeelusCardBody {
-  background: linear-gradient(0deg, #004777 0%, #0084DD 100%);
+  padding: 24px;
+  font-size: 1.8rem;
+  line-height: 1.6;
   color: #fff;
-  font-size: 2.2rem;
-  padding: 32px;
   flex: 1;
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
-  font-weight: 500;
+  background: linear-gradient(0deg, var(--color-7) 0%, #0084DD 100%);
+  font-family: var(--font-text);
   display: flex;
   align-items: center;
-  line-height: 1.5;
-  letter-spacing: 0.5px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+@media (max-width: 1200px) {
+  .zeelusCardsContainer {
+    gap: 30px;
+  }
+  
+  .zeelusCard {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .zeelusMoveSection {
+    padding: 60px 15px;
+  }
+
+  .zeelusTitle {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+  }
+
+  .zeelusCardsContainer {
+    gap: 20px;
+  }
+
+  .zeelusCard {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .zeelusCardHeader {
+    padding: 20px;
+  }
+
+  .zeelusCardBody {
+    padding: 20px;
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .zeelusMoveSection {
+    padding: 40px 10px;
+  }
+
+  .zeelusTitle {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+
+  .zeelusCard {
+    min-height: 250px;
+  }
+
+  .zeelusCardHeader strong {
+    font-size: 2rem;
+  }
+
+  .zeelusCardSubtitle {
+    font-size: 1.6rem;
+  }
+
+  .zeelusCardBody {
+    font-size: 1.4rem;
+  }
 }
 
 .teamSectionFrame {
@@ -345,15 +546,15 @@ bottom: 0;
 }
 
 .teamSection {
+  background-color: var(--color-1);
   background-image: 
-  url("../../img/texturaFundo2.png"),
-    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
-    background-repeat: repeat, no-repeat;
+    url("../../img/texturaFundo2.png");
+  background-repeat: repeat, no-repeat;
   background-size: 250px, cover;
   background-position: top left, center;
   position: relative;
   overflow: hidden;
-  padding: 56px 0 40px 0;
+  padding: 80px 20px;
   text-align: center;
   z-index: 1;
 }
@@ -365,158 +566,244 @@ bottom: 0;
 }
 
 .teamTitle {
-  font-size: 3.8rem;
+  font-size: 4.5rem;
   font-weight: 700;
-  margin-bottom: 38px;
-  color: #000000;
+  margin-bottom: 60px;
+  color: #000;
+  font-family: var(--font-title);
 }
 
 .teamHighlight {
-  color: #004777;
+  color: var(--color-7);
   font-weight: 700;
+  font-family: var(--font-title);
 }
 
-
+.zeelusHighlight {
+  color: var(--color-7);
+  font-weight: 700;
+  font-family: var(--font-title);
+}
 
 .teamGrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 36px 32px;
-  max-width: 1100px;
+  gap: 40px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .teamCard {
   background: #fff;
   border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(62, 198, 224, 0.13), 0 2px 8px rgba(34, 34, 59, 0.07);
-  padding: 32px 18px 24px 18px;
-  width: 290px;
-  min-height: 370px;
+  box-shadow: 0 8px 30px rgba(0, 71, 119, 0.1);
+  padding: 40px 30px;
+  width: 320px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 6px solid #004777;
-  border-bottom: 0;
-  border-top: 0;
-  border-right: 0;
+  border: 2px solid var(--color-7);
   position: relative;
-  transition: transform 0.18s, box-shadow 0.18s;
-  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .teamCard:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 32px rgba(62, 198, 224, 0.18), 0 4px 16px rgba(34, 34, 59, 0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 71, 119, 0.2);
 }
 
 .teamPhoto {
-  width: 110px;
-  height: 110px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 18px;
-  background: #eaf6fa;
-  border: 0;
+  margin-bottom: 24px;
+  border: 3px solid var(--color-7);
+  padding: 3px;
+  background: #fff;
 }
 
 .teamName {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #004777;
-  margin-bottom: 2px;
-  margin-top: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-7);
+  margin-bottom: 8px;
+  font-family: var(--font-title);
   text-align: center;
 }
 
 .teamRole {
-  font-size: 2rem;
-  color: #22223b;
-  margin-bottom: 18px;
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 24px;
   font-weight: 500;
   text-align: center;
+  font-family: var(--font-text);
+  line-height: 1.4;
 }
 
 .teamLinks {
   display: flex;
-  gap: 18px;
-  margin-top: 18px;
-  justify-content: center;
+  gap: 20px;
+  margin-top: auto;
 }
 
 .teamLinks img {
-  width: 38px;
-  height: 38px;
-  transition: filter 0.2s, transform 0.2s;
-  filter: grayscale(0.2);
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+  opacity: 0.8;
 }
 
 .teamLinks img:hover {
-  filter: grayscale(0) brightness(1.2);
-  transform: scale(1.12);
+  transform: scale(1.15);
+  opacity: 1;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1200px) {
   .teamGrid {
-    gap: 24px 10px;
-    max-width: 98vw;
+    gap: 30px;
   }
-  .teamCard {
-    width: 90vw;
-    max-width: 320px;
-    min-height: 320px;
-    padding: 24px 10px 18px 10px;
-  }
-  .teamPhoto {
-    width: 90px;
-    height: 90px;
-  }
-  .teamName {
-    font-size: 1rem;
-  }
-  .teamRole {
-    font-size: 0.98rem;
-  }
-  .teamLinks img {
-    width: 32px;
-    height: 32px;
+  
+  .teamTitle {
+    font-size: 4rem;
+    margin-bottom: 50px;
   }
 }
 
-@media (max-width: 700px) {
-  .teamGrid {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    max-width: 100vw;
+@media (max-width: 768px) {
+  .teamSection {
+    padding: 60px 15px;
   }
+
+  .teamTitle {
+    font-size: 3.5rem;
+    margin-bottom: 40px;
+  }
+
   .teamCard {
-    width: 96vw;
-    max-width: 98vw;
-    min-width: 0;
-    min-height: 260px;
-    padding: 16px 4px 12px 4px;
+    padding: 30px 20px;
+    width: 300px;
+    min-height: 380px;
   }
+
   .teamPhoto {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 12px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
   }
+
   .teamName {
-    font-size: 0.98rem;
+    font-size: 2.2rem;
   }
+
   .teamRole {
-    font-size: 0.92rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
   }
-  .teamLinks {
-    gap: 12px;
-    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .teamSection {
+    padding: 40px 10px;
   }
+
+  .teamTitle {
+    font-size: 3rem;
+    margin-bottom: 30px;
+  }
+
+  .teamCard {
+    width: 100%;
+    max-width: 280px;
+    min-height: 360px;
+    padding: 25px 15px;
+  }
+
+  .teamPhoto {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+
+  .teamName {
+    font-size: 2rem;
+  }
+
+  .teamRole {
+    font-size: 1.5rem;
+  }
+
   .teamLinks img {
     width: 28px;
     height: 28px;
   }
 }
+
+@media (max-width: 1200px) {
+  .heroContent {
+    /* flex-direction: column; */
+    flex-wrap: wrap-reverse;
+    padding: 40px 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    /* max-width: 400px; */
+  }
+
+  .cardText {
+    width: 100%;
+    max-width: 100%;
+    padding: 30px;
+    margin-bottom: 0;
+    min-height: auto;
+  }
+
+  .cardText h2 {
+    font-size: 4rem;
+  }
+
+  .cardText p {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 30px 15px;
+  }
+
+  .cardText h2 {
+    font-size: 3rem;
+  }
+
+  .cardText p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 20px 10px;
+  }
+
+  .cardText {
+    padding: 20px;
+  }
+
+  .cardText h2 {
+    font-size: 2.5rem;
+  }
+
+  .cardText p {
+    font-size: 1.4rem;
+  }
+}
+
 
