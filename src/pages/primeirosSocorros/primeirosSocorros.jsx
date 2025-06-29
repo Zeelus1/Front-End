@@ -46,7 +46,7 @@ const primeirosSocorros = () => {
         imagem={ImgMonitor}
         textoAlt="Imagem de um monitor com um capelo representando uma aba de vídeo representando a trilha de aprendizagem de primeiros socorros"
       >
-        Bem-vinde à trilhagem de aprendizado Zeelus! <br />
+        Boas-vindas à trilhagem de aprendizado Zeelus! <br />
         <span className={Style.subtituloBlocoInicial}>
           Os vídeos são curtos, mas o que você leva fica pra sempre!
         </span>

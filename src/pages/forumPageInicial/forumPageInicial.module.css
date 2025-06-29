@@ -1,7 +1,7 @@
 .subtituloBlocoInicial {
   font-weight: 400;
   font-family: var(--font-title);
-  font-size: 25px;
+  font-size: 2rem;
   letter-spacing: 0.5px;
   line-height: -50px;
 }
@@ -10,6 +10,7 @@
   display: flex;
   margin-left: 4%;
   margin-right: 4%;
+  gap: 1rem;
 }
 
 .linkSemEstilo {
@@ -65,4 +66,28 @@
 
 .faqForumPageInicial span[class*="plus"] {
   color: var(--azulProfundo) !important;
+}
+
+@media (max-width: 1100px) {
+  .blocos {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 900px) {
+  .blocos {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 700px) {
+  .blocos {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
 }
