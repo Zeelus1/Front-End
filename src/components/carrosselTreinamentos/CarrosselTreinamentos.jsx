@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './CarrosselTreinamentos.module.css';
 import imgTreinamento from '../../img/treinamentosComDaniel.png';
+import ImgSeta from "../../img/seta.png";
 
 const cards = [
   {
@@ -21,52 +22,85 @@ const cards = [
     descricao: 'Momentos críticos exigem ação rápida. Aqui você vai aprender os primeiros passos para ajudar alguém em parada respiratória até que o socorro chegue.',
     imagem: imgTreinamento,
   },
+  {
+    titulo: 'Conduta Eplipsia',
+    tempo: '1min 57s',
+    descricao: 'Entenda o que fazer quando alguém tem uma crise epilética ou uma convulsão. Conhecimento é poder, e saber como agir pode salvar vidas.',
+    imagem: imgTreinamento,
+  },
+  {
+    titulo: 'Conduta de AVC',
+    tempo: '2min 07s',
+    descricao: 'Aprenda a identificar os sinais de um AVC e como agir rapidamente com a técnica SAMU. Cada segundo conta, e sua ação pode fazer toda a diferença na recuperação da pessoa afetada.',
+    imagem: imgTreinamento,
+  },
 ];
 
 // Componente auxiliar para animar o título se necessário
 function TituloAnimado({ texto }) {
-  const ref = useRef();
+  const wrapperRef = useRef(null);
+  const textoRef = useRef(null);
   const [animar, setAnimar] = useState(false);
+  const [distancia, setDistancia] = useState(0);
 
   useEffect(() => {
-    if (ref.current && ref.current.scrollWidth > ref.current.offsetWidth) {
-      setAnimar(true);
-    } else {
-      setAnimar(false);
+    const wrapper = wrapperRef.current;
+    const textoEl = textoRef.current;
+    if (wrapper && textoEl) {
+      if (textoEl.scrollWidth > wrapper.offsetWidth) {
+        setAnimar(true);
+        setDistancia(textoEl.scrollWidth - wrapper.offsetWidth);
+      } else {
+        setAnimar(false);
+        setDistancia(0);
+      }
     }
   }, [texto]);
 
   return (
-    <span
-      ref={ref}
-      className={`${styles.tituloLimitado} ${animar ? styles.animar : ''}`}
-      title={texto}
-    >
-      {texto}
-    </span>
+    <div className={styles.tituloWrapper} ref={wrapperRef}>
+      <span
+        ref={textoRef}
+        className={`${styles.tituloLimitado} ${animar ? styles.animar : ''}`}
+        style={animar ? { '--distancia': `-${distancia}px` } : {}}
+        title={texto}
+      >
+        {texto}
+      </span>
+    </div>
   );
 }
 
 export default function CarrosselTreinamentos() {
   const [start, setStart] = useState(0);
 
-  const prev = () => setStart((s) => (s === 0 ? 0 : s - 1));
-  const next = () => setStart((s) => (s + 3 >= cards.length ? s : s + 1));
+  const prev = () => {
+    if (start === 0) return;
+    setStart((s) => s - 1);
+  };
+
+  const next = () => {
+    if (start + 3 >= cards.length) return;
+    setStart((s) => s + 1);
+  };
+
+  const cardWidth = 350; // igual ao seu CSS
+  const gap = 32; // 2rem em px
 
   return (
     <div className={styles.carrossel}>
-      <button className={styles.seta} onClick={prev} disabled={start === 0}>&lt;</button>
+      <button className={styles.seta} onClick={prev} disabled={start === 0}>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+          <path d="M15 6l-6 6 6 6" stroke="#0070b8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
       <div className={styles.cardsContainer}>
         {cards.slice(start, start + 3).map((card, idx) => (
           <div className={styles.card} key={idx}>
             <img src={card.imagem} alt={card.titulo} className={styles.imagem} />
             <div className={styles.cardInfo}>
               <div className={styles.cardHeader}>
-                <div className={styles.tituloWrapper}>
-                  <strong>
-                    <TituloAnimado texto={card.titulo} />
-                  </strong>
-                </div>
+                <TituloAnimado texto={card.titulo} />
                 <span className={styles.tempo}>{card.tempo}</span>
               </div>
               <p className={styles.descricao}>{card.descricao}</p>
@@ -75,7 +109,11 @@ export default function CarrosselTreinamentos() {
           </div>
         ))}
       </div>
-      <button className={styles.seta} onClick={next} disabled={start + 3 >= cards.length}>&gt;</button>
+      <button className={styles.seta} onClick={next} disabled={start + 3 >= cards.length}>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+          <path d="M9 6l6 6-6 6" stroke="#0070b8" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
     </div>
   );
 }

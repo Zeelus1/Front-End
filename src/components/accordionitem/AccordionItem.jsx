@@ -10,7 +10,7 @@ function AccordionItem({ title, icon, textoAlt, children }) {
       <div className={Style.header} onClick={() => setIsOpen(!isOpen)}>
         <ul>
           <li className={Style.icon}>
-            <img src={icon} alt={textoAlt} />
+            <img src={icon} alt={textoAlt} className={Style.imagem} />
           </li>
           <li
             className={Style.title}>{title}
