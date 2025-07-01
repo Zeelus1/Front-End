@@ -22,13 +22,8 @@ function Login() {
   function handleLogin(e) {
     e.preventDefault();
 
-    
-
-    if (email == "zeelus@mail.com" && password == "zeelus") {
-      // simular token de autenticação em localStorage
-      localStorage.setItem("token", "zeelusToken");
-      navigate("/home");
-    }
+    localStorage.setItem("token", "zeelusToken");
+    navigate("/home");
   }
 
   return (
