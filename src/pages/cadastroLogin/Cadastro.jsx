@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Style from "../cadastroLogin/CadastroLogin.module.css";
 import LabelInput from "../../components/labelInput/LabelInput";
 import ZeelusLogo from "../../img/zeelusLogo1.png";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import FamiliaTresPessoas from "../../img/familiaTresPessoas.png";
 import TermosDeUsoModal from "../../components/termosdeUso/TermosDeUsoModal.jsx"; // Importação do modal
 
@@ -12,11 +12,14 @@ function Cadastro() {
   const [password, setPassword] = useState("");
   const [aceitou, setAceitou] = useState(false);
   const [showTermos, setShowTermos] = useState(false); // Estado para o modal
+  const navigate = useNavigate();
 
   function handleCadastro(e) {
     e.preventDefault();
     if (!aceitou) return;
-    // lógica de cadastro
+    
+    localStorage.setItem("token", "zeelusToken");
+    navigate("/home");
   }
 
   return (
