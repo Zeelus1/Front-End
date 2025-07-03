@@ -17,6 +17,15 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  useEffect(() => {
+    // verificar se tem token no localStorage
+    const token = localStorage.getItem("token");
+    if (!token) {
+      // Redirecionar para a página de login se não houver token
+      window.location.href = "/login";
+    }
+  })
+
   // Detecta a página atual baseado na URL
   useEffect(() => {
     const pathname = window.location.pathname;
@@ -79,6 +88,11 @@ function Header() {
               </Link>
             </li>
             <li>
+              <Link to="/home/anamnese" onClick={toggleMenu}>
+                Anamnese
+              </Link>
+            </li>
+            <li>
               <Link to="/home/registros" onClick={toggleMenu}>
                 Registros
               </Link>
@@ -136,6 +150,14 @@ function Header() {
               className={activeLink === "calendario" ? Style.active : ""}
             >
               Calendário
+            </Link>
+          </li>
+          <li className={Style.liLink}>
+            <Link
+              to="/home/anamnese"
+              className={activeLink === "anamnese" ? Style.active : ""}
+            >
+              Anamnese
             </Link>
           </li>
           <li className={Style.liLink}>

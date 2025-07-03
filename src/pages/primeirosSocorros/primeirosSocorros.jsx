@@ -1,3 +1,4 @@
+
 import React from 'react';
 import styles from './primeirosSocorros.module.css';
 import samu from '../../img/samu.jpg';
@@ -173,5 +174,6 @@ const PrimeirosSocorrosPage = () => (
     
   </main>
 );
+
 
 export default PrimeirosSocorrosPage;

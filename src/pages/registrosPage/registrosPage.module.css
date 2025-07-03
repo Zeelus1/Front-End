@@ -62,11 +62,7 @@
 
 .faqRegistros {
   background-image:
-    url("../../img/texturaFundo.png"),
-    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
-  background-repeat: repeat, no-repeat;
-  background-size: 250px, cover;
-  background-position: top left, center;
+    url("../../img/fundoVerde.png");
 }
 
 .faqRegistros h2 {
@@ -129,4 +125,9 @@
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
+}
+
+.faq{
+  background-image: url("../../img/fundoVerde.png");
+  
 }

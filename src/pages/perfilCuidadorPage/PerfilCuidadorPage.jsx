@@ -30,12 +30,17 @@ export default function PerfilCuidadorPage() {
       <AreaPerfil />
 
       <AbasPerfilCuidador />
-      <WaveFaq />
-      <Faq
-        data={faqData}
-        title="Dúvidas Frequentes"
-        className={styles.faqPerfil}
-      />
+      <section className={styles.faq}>
+        <WaveFaq />
+        <Faq
+          data={faqData}
+          title="Dúvidas Frequentes"
+          answerColor={"#000"}
+          questionColor={"#000"}
+          plusColor={"#004777"}
+          titleColor={"#004777"}
+        />
+      </section>
     </div>
   );
 }

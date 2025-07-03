@@ -47,7 +47,7 @@ const forumPageInicial = () => {
         imagem={ImgBalaoDeFala}
         textoAlt="Imagem de balões de fala coloridos em estilo animado"
       >
-        Seja muito bem-vinde ao Fórum Zeelus! <br />
+        Boas-vindas ao Fórum Zeelus! <br />
         <span className={Style.subtituloBlocoInicial}>
           Pronto para criar novos elos por meio do zelo? Conecte-se com <br /> outros cuidadores, compartilhe experiências e encontre suporte aqui!
         </span>
@@ -101,12 +101,17 @@ const forumPageInicial = () => {
         favoritos={10}
       />
 
-      <WaveFaq />
-      <Faq
-        data={faqData}
-        title="Dúvidas frequentes"
-        className={Style.faqForumPageInicial}
-      />
+      <section className={Style.faq}>
+        <WaveFaq />
+        <Faq
+          data={faqData}
+          title="Dúvidas frequentes"
+          answerColor={"#000"}
+          questionColor={"#000"}
+          plusColor={"#004777"}
+          titleColor={"#004777"}
+        />
+      </section>
     </div>
   )
 }

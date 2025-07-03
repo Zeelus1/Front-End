@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './CardTreinamentos.module.css';
 import iconeTreina from '../../img/iconeTreina.png';
-import engasgo from '../../img/engasgo.png';
+import Engasgo from '../../img/Engasgo.png';
 import sombra from '../../img/sombra.png';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router';
 
 export default function CardTreinamento() {
   return (
@@ -29,7 +29,7 @@ export default function CardTreinamento() {
       <div className={styles.videoContainer}>
         {/* Imagem principal */}
         <img
-          src={engasgo}
+          src={Engasgo}
           alt="Imagem demonstrativa de primeiros socorros para engasgo"
           className={styles.imagemTreinamento}
         />

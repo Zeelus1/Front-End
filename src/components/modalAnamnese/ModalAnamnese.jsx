@@ -112,8 +112,9 @@ function ModalAnamnese({ aberto, onClose, onSalvar, perfilInicial, modoEdicao = 
               required
             >
               <option value="">Selecione o gênero</option>
-              <option value="Homem">Homem</option>
-              <option value="Mulher">Mulher</option>
+              <option value="Homem">Masculino</option>
+              <option value="Mulher">Feminino</option>
+              <option value="Mulher">Não-binario</option>
               <option value="Outro">Outro</option>
             </select>
             <input
