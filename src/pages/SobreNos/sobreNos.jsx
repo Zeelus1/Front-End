@@ -14,9 +14,14 @@ import william from '../../img/will.png';
 import rudney from '../../img/rudney.png';
 import lucas from '../../img/padula.png';
 import fundo from '../../img/fundoLand.png';
+import impacto3 from '../../img/ods3.png';
+import impacto4 from '../../img/ods4.png';
+import impacto8 from '../../img/ods8.png';  
+import impacto10 from '../../img/ods10.png';
 import Footer from '../../components/footer/Footer';
 import HeaderGlobal from '../../components/headerGlobal/HeaderGlobal';
 import equipeZeelus from '../../img/equipeZeelus.jpg';
+
 
 const SobreNos = () => (
   <>
@@ -225,7 +230,40 @@ const SobreNos = () => (
           </div>
         </div>
       </div>
-    </section> 
+    </section>
+     
+    <section className={styles.impactSection}>
+  <h2 className={styles.impactTitle}>
+    Nosso <span className={styles.impactHighlight}>Impacto</span> vai além!
+  </h2>
+  <div className={styles.impactCards}>
+    <div className={styles.impactCard}>
+      <img src={impacto3} alt="Saúde e Bem-Estar" className={styles.impactIcon} />
+      <div className={styles.impactDesc}>
+        Apoia cuidadores e pessoas cuidadas com orientações e lembretes de saúde.
+      </div>
+    </div>
+    <div className={styles.impactCard}>
+      <img src={impacto4} alt="Educação de Qualidade" className={styles.impactIcon} />
+      <div className={styles.impactDesc}>
+        Oferece módulos de treinamento prático para capacitar cuidadores.
+      </div>
+    </div>
+    <div className={styles.impactCard}>
+      <img src={impacto8} alt="Trabalho Decente e Crescimento Econômico" className={styles.impactIcon} />
+      <div className={styles.impactDesc}>
+        Profissionaliza o cuidado informal, gerando certificação e renda extra.
+      </div>
+    </div>
+    <div className={styles.impactCard}>
+      <img src={impacto10} alt="Redução das Desigualdades" className={styles.impactIcon} />
+      <div className={styles.impactDesc}>
+        Disponibiliza recursos e informações de forma equitativa a comunidades remotas.
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <Footer/>
 

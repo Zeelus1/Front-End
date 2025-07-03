@@ -18,7 +18,6 @@ import { ptBR } from 'rsuite/esm/locales/index.js';
 import HomePage from "../pages/homePage/Homepage.jsx";
 import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 import PlanosPremium from "../pages/planosPremium/PlanosPremium.jsx";
-
 const router = createBrowserRouter([
 
 
@@ -41,16 +40,6 @@ const router = createBrowserRouter([
   {
     path: "/cadastro",
     element: <Cadastro />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "sobrenos",
-    element: <SobreNos />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/home/treinamentos/primeirossocorros",
-    element: <PrimeirosSocorrosPage />,
     errorElement: <ErrorPage />,
   },
   {
@@ -98,6 +87,11 @@ const router = createBrowserRouter([
         path: "anamnese",
         element: <Anamnesia/>,
       },
+      
+      {
+      path: "treinamentos/primeirossocorros",
+      element: <PrimeirosSocorrosPage />,
+    },
     ],
   },
 ]);
