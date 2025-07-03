@@ -91,3 +91,7 @@
     align-items: stretch;
   }
 }
+
+.faq{
+  background-image: url("../../img/fundoVerde.png");
+}

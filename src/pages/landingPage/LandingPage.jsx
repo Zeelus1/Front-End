@@ -59,19 +59,19 @@ function LandingPage() {
       image: MaeFilhaBricando,
       title: "01. Crie seu perfil",
       description:
-        "Crie seu perfil na Zeelus e comece a organizar e acompanhar a jornada de cuidado de forma prática e eficiente. Ao cadastrar informações essenciais, você terá acesso a todas as funcionalidades da plataforma para gerenciar melhor o seu dia a dia como cuidador e o de sua pessoa assistida!",
+        "Com a Zeelus, seu elo de cuidado ganha maior organização e praticidade. Comece a gerenciar a rotina de seu assistido ainda hoje!",
     },
     {
       image: MaePaiFilhaJuntos,
       title: "02. Conheça nossa plataforma",
       description:
-        "Explore a Zeelus e descubra como nossa plataforma facilita a rotina de cuidado, com ferramentas intuitivas e recursos para organização, aprendizado e conexão com outros cuidadores!",
+        "Centralize informações importantes e acompanhe a evolução do cuidado de forma intuitiva. Com a Zeelus, tenha tudo o que você precisa em um só lugar!",
     },
     {
       image: MaeFilhaAbracadas,
       title: "03. Faça a diferença",
       description:
-        "Faça a diferença no cuidado de quem você ama com a Zeelus. Ao utilizar nossa plataforma, você terá ferramentas para oferecer mais apoio, organização e aprendizado, tornando a jornada de cuidado mais leve e eficiente, tanto para você quanto para a pessoa assistida!",
+        "Faça a diferença no zelo de quem você ama e o transforme em gestão inteligente. A Zeelus te ajuda a fazer mais por quem ama, com menos estresse!",
     },
   ];
 

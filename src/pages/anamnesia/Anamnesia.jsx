@@ -274,7 +274,7 @@ function Anamnesia() {
                     ></path>
                 </svg>
     
-                <Faq data={faqData} answerColor={"#000"} titleColor={"#004777"} questionColor={"#000"} title={"Dúvidas frequentes"} plusColor={"#004777"} showBorder={true}/>
+                <Faq data={faqData} answerColor={"#000"} titleColor={"#004777"} questionColor={"#000"} title={"Dúvidas frequentes"} plusColor={"#004777"}/>
             </section>
         </>
     )

@@ -347,7 +347,7 @@
 }
 
 .faq {
-    background-image: url(../../img/fundoLand.png);
+    background-image: url("../../img/fundoVerde.png");
     background-size: cover;
     background-position: center;
     background-color: #A5F2CB;

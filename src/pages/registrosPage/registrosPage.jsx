@@ -144,12 +144,18 @@ function RegistrosPage() {
         registro={registroEditando}
       />
 
-      <WaveFaq />
-      <Faq
-        data={faqData}
-        title="Dúvidas frequentes"
-        className={Style.faqRegistros}
-      />
+      <section id="faq" className={Style.faq}>
+        <WaveFaq />
+        <Faq
+          data={faqData}
+          
+          title="Dúvidas frequentes"
+          answerColor={"#000"}
+          questionColor={"#000"}
+          plusColor={"#004777"}
+          titleColor={"#004777"}
+        />
+      </section>
     </main>
   </div>
 );
