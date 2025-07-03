@@ -13,7 +13,7 @@
   border: none;
   border-radius: 20px;
   font-family: var(--font-title);
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   width: auto; 
   min-width: 120px;
@@ -43,14 +43,14 @@
 }
 
 .imagem {
-  width: 20px;
-  height: 20px;
+  width: 72px !important;
+  height: 72px !important;
   margin-right: 1rem;
 }
 
 .title {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 3rem;
   font-family: var(--font-text);
   text-align: center;
   background: linear-gradient(90deg, #004777, #0084DD);
@@ -108,4 +108,85 @@
 .fechado {
   max-height: 0;
   opacity: 0;
+}
+
+/* Responsividade AccordionItem */
+@media (max-width: 1100px) {
+  .accordionItem {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 98vw;
+    margin: 40px auto;
+    border-radius: 40px;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .content {
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .accordionItem {
+    max-width: 99vw;
+    margin: 30px auto;
+    border-radius: 25px;
+  }
+  .header {
+    padding: 0.8rem;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .botaoGradient {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+    min-width: 90px;
+    border-radius: 14px;
+  }
+  .imagem {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.7rem;
+  }
+  .content {
+    padding: 0.8rem 0.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .accordionItem {
+    max-width: 100vw;
+    margin: 15px 0;
+    border-radius: 12px;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    /* ou padding: 0 0.7rem; */
+  }
+  .container {
+    padding: 0.5rem 0.2rem;
+  }
+  .header {
+    padding: 0.5rem 0.2rem;
+  }
+  .title {
+    font-size: 2rem; 
+  }
+  .botaoGradient {
+    font-size: 1rem;
+    padding: 0.4rem 0.5rem;
+    min-width: 70px;
+    border-radius: 10px;
+  }
+  .imagem {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.4rem;
+  }
+  .content {
+    padding: 0.5rem 0.2rem;
+    font-size: 0.9rem;
+  }
 }

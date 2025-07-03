@@ -1,5 +1,6 @@
 import React from "react";  
 import styles from "./LembretesHome.module.css";
+import { Link } from "react-router";
 
 function LembretesHome({ imagem, textoAlt }) {
   return (
@@ -27,9 +28,13 @@ function LembretesHome({ imagem, textoAlt }) {
           8:00 AM
         </div>
 
-        <button className={styles.botao} aria-label="Ir para o meu Calendário/Agenda">
-          Ir para o meu Calendário/Agenda
-        </button>
+        <Link to="/home/calendario">
+          <button className={styles.botao} aria-label="Ir para o meu Calendário/Agenda">
+            Ir para o meu Calendário/Agenda
+          </button>
+        </Link>
+
+        
       </div>
     </section>
   );

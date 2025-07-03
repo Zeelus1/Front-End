@@ -253,11 +253,11 @@ function Calendario() {
                 }}
               >
                 <div
-                  style={{ fontSize: "2rem", fontWeight: 600, marginBottom: 8, fontFamily: "Arial" }}
+                  style={{ fontSize: "2.2rem", fontWeight: 600, marginBottom: 8, fontFamily: "Arial" }}
                 >
                   Ops! Não há nada marcado para este dia.
                 </div>
-                <div style={{ fontSize: "1.2rem", color: "#888", fontFamily: "Arial, Helvetica, sans-serif" }}>
+                <div style={{ fontSize: "1.4rem", color: "#888", fontFamily: "Arial, Helvetica, sans-serif" }}>
                   Clique em "Adicionar Evento" para agendar algum!
                 </div>
               </div>
@@ -265,15 +265,18 @@ function Calendario() {
               eventosDoDia.map((evento, i) => (
                 <li
                   key={evento.id}
-                  style={{ display: "flex", alignItems: "center", gap: 8 }}
                   className={Style.itemEvento}
                 >
-                  {evento.horario} - {evento.titulo}
+                  <span className={Style.itemEventoHorario}>
+                    <svg width="18" height="18" fill="#0084dd" style={{marginRight: 2, verticalAlign: 'middle'}} viewBox="0 0 24 24"><path d="M12 8v5h4v-2h-2V8z"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+                    {evento.horario}
+                  </span>
+                  <span className={Style.itemEventoTitulo}>{evento.titulo}</span>
                   <Button
                     size="xs"
                     appearance="ghost"
                     onClick={() => aoEditarEvento(i)}
-                    style={{ marginLeft: 8 }}
+                    className={Style.itemEventoBtn}
                   >
                     Editar
                   </Button>
@@ -282,6 +285,7 @@ function Calendario() {
                     appearance="ghost"
                     color="red"
                     onClick={() => aoDeletarEvento(i)}
+                    className={Style.itemEventoBtn}
                   >
                     Deletar
                   </Button>

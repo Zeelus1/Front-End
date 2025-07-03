@@ -6,18 +6,16 @@ import "aos/dist/aos.css";
 
 import Style from "./LandingPage.module.css";
 
-import ButtonMenu from "../../icons/icons8-menu.svg";
-import ButtonClose from "../../icons/icons8-close.svg";
 import Carrossel from "../../components/carrossel/Carrossel.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import ButtonStart from "../../components/buttonStart/ButtonStart.jsx";
 import CardFuncionalidades from "../../components/cardFuncionalidades/CardFuncionalidades.jsx";
 import CardPlanos from "../../components/cardPlanos/CardPlanos.jsx";
+import HeaderGlobal from "../../components/headerGlobal/HeaderGlobal.jsx";
 
 import VectorSectionHome from "../../img/vectorHomeSection.svg";
 import ColegasTrabalhandoJunto from "../../img/colegasTrabalhandoJunto.png";
 
-import Logo from "../../img/zeelusLogo1.png";
 import ProaSlider from "../../img/proalogoSlide.png";
 import SenacSlider from "../../img/senacLogoSlider.png";
 import BraileSlider from "../../img/braileLogoSlider.png";
@@ -46,8 +44,6 @@ import CardAvaliacao from "../../components/cardAvaliacao/CardAvaliacao.jsx";
 import Faq from "../../components/faq/Faq.jsx";
 
 function LandingPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [showVideoModal, setShowVideoModal] = useState(false);
 
   useEffect(() => {
@@ -63,19 +59,19 @@ function LandingPage() {
       image: MaeFilhaBricando,
       title: "01. Crie seu perfil",
       description:
-        "Crie seu perfil na Zeelus e comece a organizar e acompanhar a jornada de cuidado de forma prática e eficiente. Ao cadastrar informações essenciais, você terá acesso a todas as funcionalidades da plataforma para gerenciar melhor o seu dia a dia como cuidador e o de sua pessoa assistida!",
+        "Com a Zeelus, seu elo de cuidado ganha maior organização e praticidade. Comece a gerenciar a rotina de seu assistido ainda hoje!",
     },
     {
       image: MaePaiFilhaJuntos,
       title: "02. Conheça nossa plataforma",
       description:
-        "Explore a Zeelus e descubra como nossa plataforma facilita a rotina de cuidado, com ferramentas intuitivas e recursos para organização, aprendizado e conexão com outros cuidadores!",
+        "Centralize informações importantes e acompanhe a evolução do cuidado de forma intuitiva. Com a Zeelus, tenha tudo o que você precisa em um só lugar!",
     },
     {
       image: MaeFilhaAbracadas,
       title: "03. Faça a diferença",
       description:
-        "Faça a diferença no cuidado de quem você ama com a Zeelus. Ao utilizar nossa plataforma, você terá ferramentas para oferecer mais apoio, organização e aprendizado, tornando a jornada de cuidado mais leve e eficiente, tanto para você quanto para a pessoa assistida!",
+        "Faça a diferença no zelo de quem você ama e o transforme em gestão inteligente. A Zeelus te ajuda a fazer mais por quem ama, com menos estresse!",
     },
   ];
 
@@ -104,161 +100,9 @@ function LandingPage() {
     },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 50;
-      if (isScrolled !== scrolled) {
-        setScrolled(isScrolled);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scrolled]);
-
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      const overlay = document.getElementById("overlay");
-      if (isMenuOpen && e.target === overlay) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-      document.body.style.overflow = "auto";
-    };
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 910);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <>
-      <header className={`${Style.header} ${scrolled ? Style.scrolled : ""}`}>
-        <img src={Logo} alt="Logo da zeelus" className={Style.logo} />
-
-        <button
-          className={Style.btn_abrir}
-          onClick={toggleMenu}
-          aria-label="Abrir menu de navegação"
-        >
-          <img src={ButtonMenu} alt="Menu Hambúrguer" className={Style.menu} />
-        </button>
-
-        <div
-          className={`${Style.menu_mobile} ${isMenuOpen ? Style.active : ""}`}
-        >
-          <div className={Style.btn_fechar} onClick={toggleMenu}>
-            <img src={ButtonClose} alt="Fechar menu" />
-          </div>
-
-          <nav className={Style.nav_mobile}>
-            <ul>
-              <li>
-                <a href="#home" onClick={toggleMenu}>
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="#funcionalidades" onClick={toggleMenu}>
-                  Soluções
-                </a>
-              </li>
-              <li>
-                <a href="#planos" onClick={toggleMenu}>
-                  Planos
-                </a>
-              </li>
-              <li>
-                <a href="#avaliacoes" onClick={toggleMenu}>
-                  Avaliações
-                </a>
-              </li>
-              <li>
-                <a href="#parceiros" onClick={toggleMenu}>
-                  Parceiros
-                </a>
-              </li>
-              <li>
-                <a href="#faq">FAQ</a>
-              </li>
-              <li>
-                <Link to="/login" onClick={toggleMenu}>
-                  Entrar
-                </Link>
-              </li>
-              <li>
-                <Link to="/cadastro" onClick={toggleMenu}>
-                  Começar
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        {isMenuOpen && (
-          <div
-            id="overlay"
-            className={`${Style.overlay_menu} ${
-              isMenuOpen ? Style.active : ""
-            }`}
-            onClick={toggleMenu}
-          ></div>
-        )}
-
-        <nav className={Style.nav_desktop}>
-          <ul>
-            <li className={Style.liLink}>
-              <a href="#home">Inicio</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#funcionalidades">Soluções</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#planos">Planos</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#avaliacoes">Avaliações</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#parceiros">Parceiros</a>
-            </li>
-            <li className={Style.liLink}>
-              <a href="#faq">FAQ</a>
-            </li>
-            <li>
-              <Link to="/login">
-                <button className={Style.buttonLogin}>Entrar</button>
-              </Link>
-            </li>
-            <li>
-              <Link to="/cadastro">
-                <ButtonStart>Começar</ButtonStart>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-
+      <HeaderGlobal />
       <main className={Style.main}>
         {/* Seção Home */}
         <section className={Style.home} id="home" data-aos="fade-up">
@@ -434,7 +278,7 @@ function LandingPage() {
                   "Treinamento de Primeiros Socorros",
                 ]}
                 icon={IconPlanoGratuito}
-                link="/auth"
+                link="/planospremium"
                 buttonText="Obter Agora!"
               />
             </div>
@@ -458,7 +302,7 @@ function LandingPage() {
                 </ul>
               </div>
               <div className={Style.box}>
-                <Link to={""} style={{ width: "80%", display: "block" }}>
+                <Link to={"/planospremium"} style={{ width: "80%", display: "block" }}>
                   <ButtonStart children={"Obter Agora!"} width={"100%"} />
                 </Link>
               </div>
@@ -477,7 +321,7 @@ function LandingPage() {
                   "Assistente por IA sem Limites",
                   "Multiplos Perfis de Anamnese",
                 ]}
-                link=""
+                link="/planospremium"
                 buttonText="Obter Agora!"
               />
             </div>

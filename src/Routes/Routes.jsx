@@ -68,11 +68,6 @@ const router = createBrowserRouter([
         element: <RegistrosPage />,
       },
       {
-        path: "sobrenos",
-        element: <SobreNos />,
-
-      },
-      {
         path: "forum",
         element: <ForumPage />,
       },

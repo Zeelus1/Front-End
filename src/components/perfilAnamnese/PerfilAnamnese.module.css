@@ -50,7 +50,7 @@
   border: none;
   color: white;
   font-size: 2.3rem;
-  padding: 0.6rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   margin: 5rem auto 2rem auto;
   cursor: pointer;
@@ -60,12 +60,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease; /* Transição suave para tudo */
+  transition: all 0.3s ease;
+}
+
+.iconePremium {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .botaoPremium:hover {
-  filter: brightness(0.85);  /* Escurece */
-  transform: scale(0.97);    /* Reduz levemente */
+  filter: brightness(0.85);
+  transform: scale(0.97);
+}
+
+.botaoPremium:hover .iconePremium {
+  transform: scale(1.05);
 }
 
 .card {
@@ -127,59 +138,165 @@
 }
 
 /* RESPONSIVIDADE */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 85%;
+    margin: -2.5rem auto 2rem auto;
+    padding: 2.5rem 1.8rem;
+  }
+
+  .titulo {
+    font-size: 3rem;
+  }
+
+  .subTextoNegrito {
+    font-size: 2rem;
+  }
+
+  .card {
+    max-width: 600px;
+    font-size: 1.8rem;
+    line-height: 3.5rem;
+  }
+
+  .botaoPremium {
+    max-width: 340px;
+    padding: 0.9rem 1.8rem;
+  }
+
+  .iconePremium {
+    height: 35px;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    margin: -2rem auto 1.5rem auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .titulo {
+    font-size: 2.6rem;
+  }
+
+  .subTextoNegrito {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .quantidadePerfis {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .botaoPremium {
+    max-width: 300px;
+    padding: 0.8rem 1.5rem;
+    margin: 3rem auto 1.5rem auto;
+  }
+
+  .iconePremium {
+    height: 32px;
+  }
+
+  .card {
+    padding: 2rem;
+    font-size: 1.6rem;
+    line-height: 3rem;
+    margin: 2rem auto;
+  }
+
+  .tituloCard {
+    font-size: 2.2rem;
+  }
+
+  .botaoVerMais {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    margin: -1.5rem auto 1rem auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .titulo {
+    font-size: 2.2rem;
+  }
+
+  .subTextoNegrito {
+    font-size: 1.6rem;
+  }
+
+  .quantidadePerfis {
+    font-size: 1.4rem;
+  }
+
+  .botaoPremium {
+    max-width: 260px;
+    padding: 0.7rem 1.2rem;
+    margin: 2rem auto 1rem auto;
+  }
+
+  .iconePremium {
+    height: 28px;
+  }
+
+  .card {
+    padding: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 2.6rem;
+    border-radius: 20px;
+  }
+
+  .tituloCard {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .botaoVerMais {
+    font-size: 1.4rem;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .card p {
+    margin: 0.4rem 0;
+  }
+}
+
+@media (max-width: 360px) {
   .titulo {
     font-size: 2rem;
   }
 
-  .subtitulo {
-    font-size: 1.3rem;
-  }
-
-  .subTexto,
   .subTextoNegrito {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
-  .botaoPremium,
-  .botaoVerMais {
-    font-size: 1.4rem;
-    padding: 1rem 2rem;
-    max-width: 260px;
+  .botaoPremium {
+    max-width: 220px;
+    padding: 0.6rem 1rem;
+  }
+
+  .iconePremium {
+    height: 24px;
   }
 
   .card {
-    font-size: 1.4rem;
-    padding: 2rem;
+    font-size: 1.3rem;
+    line-height: 2.4rem;
   }
 
   .tituloCard {
     font-size: 1.6rem;
   }
-}
 
-@media (max-width: 480px) {
-  .titulo {
-    font-size: 1.8rem;
-  }
-
-  .subtitulo {
-    font-size: 1.2rem;
-  }
-
-  .card {
-    font-size: 1.3rem;
-    padding: 1.5rem;
-  }
-
-  .botaoPremium,
   .botaoVerMais {
     font-size: 1.3rem;
-    padding: 0.8rem 1.5rem;
-    max-width: 230px;
-  }
-
-  .tituloCard {
-    font-size: 1.5rem;
   }
 }
