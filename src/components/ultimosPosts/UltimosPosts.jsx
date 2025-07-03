@@ -3,6 +3,7 @@ import styles from './UltimosPosts.module.css';
 import avatarJose from '../../img/avatarJose.png';
 import iconeConversa from '../../img/iconeConversa.png';
 import icones from '../../img/icones.png';
+import { Link } from 'react-router';
 
 export default function UltimosPosts() {
   return (
@@ -43,7 +44,11 @@ export default function UltimosPosts() {
         </div>
       </div>
 
-      <button className={styles.botao}>Ir para o Fórum</button>
+      <Link to="/home/forum">
+        <button className={styles.botao}>Ir para o Fórum</button>
+      
+      </Link>
+
     </div>
   );
 }

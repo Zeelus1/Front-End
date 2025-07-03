@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./UltimosRegistros.module.css";
 import folhaSorrindo from "../../img/folhaSorrindo.png"; 
+import { Link } from "react-router";
 
 function UltimosRegistros() {
   return (
@@ -24,9 +25,13 @@ function UltimosRegistros() {
           </p>
         </article>
 
-        <button className={styles.botao} aria-label="Ver todos os registros">
-          Ver todos os registros
-        </button>
+        <Link to="/home/registros">
+          <button className={styles.botao} aria-label="Ver todos os registros">
+            Ver todos os registros
+          </button>
+        </Link>
+
+        
       </div>
     </section>
   );

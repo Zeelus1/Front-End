@@ -8,12 +8,6 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-
-  background-image: url("../../img/texturaFundo.png"),
-    linear-gradient(to bottom, var(--verdeNeve), var(--verdeNeve));
-  background-repeat: repeat, no-repeat;
-  background-size: 250px, cover;
-  background-position: top left, center center;
 }
 
 .wave {
