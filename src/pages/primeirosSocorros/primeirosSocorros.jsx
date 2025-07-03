@@ -9,29 +9,29 @@ import WaveFaq from "../../components/waveFaq/WaveFaq.jsx";
 
 const faqData = [
   {
-    question: "Os vídeos são voltados só para cuidadores de idosos?",
+    question: "E se eu não tiver certeza sobre qual serviço chamar?",
     answer:
-      "Não, as dicas são para qualquer pessoa seja ela cuidadora de crianças, adultos ou idosos. O objetivo é ensinar como agir em situações de emergência.",
+      "Ligue para o SAMU (192), eles orientam o que fazer. Se necessário, eles acionam os Bombeiros ou a Polícia.",
   },
   {
-    question: "Quem grava os vídeos? Posso confiar nas informações?",
+    question: "Posso ligar para o SAMU só para pedir orientação?",
     answer:
-      "Os vídeos são gravados por um bombeiro especializado em situações de emergência. Todo o conteúdo é baseado em procedimentos reconhecidos e na experiência prática do profissional, garantindo orientações claras e seguras para agir em momentos críticos.",
+      "Sim, o SAMU orienta em casos de dúvida. Eles estão disponíveis para ajudar, mesmo que não seja uma emergência.",
   },
   {
-    question: "E se eu não encontrar um vídeo sobre o que estou procurando?",
+    question: "Tem algum problema em acionar o serviço errado sem querer?",
     answer:
-      "Se você não encontrar um vídeo específico, pode sugerir temas através do nosso canal de contato. Estamos sempre abertos a novas ideias e conteúdos que possam ajudar nossos usuários.",
+      "Não, o importante é pedir ajuda. Eles redirecionam se necessário. Não se preocupe em errar, o foco é garantir a segurança de todos.",
   },
   {
-    question: "Vocês vão adicionar outras categorias além de Primeiros Socorros?",
+    question: "E se for uma situação leve, como uma febre ou queda sem machucado?",
     answer:
-      "Sim, estamos planejando expandir nosso conteúdo para incluir outras áreas de cuidado, como nutrição, saúde mental e desenvolvimento infantil. Fique atento às atualizações!",
+      "Nesses casos, o ideal é procurar uma UPA ou posto de saúde. Assim, o SAMU continua disponível para emergências mais graves e você ainda recebe o cuidado adequado.",
   }
 ];
 const PrimeirosSocorrosPage = () => (
   <main className={styles.main}>
-    
+
     <section className={styles.videoSection}>
       <div className={styles.videoContainer}>
   <iframe
