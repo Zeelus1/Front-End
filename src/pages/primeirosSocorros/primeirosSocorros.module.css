@@ -1,0 +1,371 @@
+.main {
+  background: var(--color-2);
+  min-height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  font-family: var(--font-text);
+}
+
+.videoSection {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.videoContainer {
+  background: var(--white);
+  border-radius: 32px;
+  border: 6px solid var(--color-7);
+  box-shadow: 0 8px 32px rgba(61, 81, 124, 0.10);
+  padding: 0;
+  margin-bottom: 56px;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 600px;
+}
+
+.videoContainer iframe {
+  width: 100%;
+  height: 600px;
+  border-radius: 24px;
+  border: none;
+  background: #000;
+  display: block;
+}
+
+.infoGrid {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.infoCard {
+  flex: 2;
+  background: var(--color-4);
+  border-radius: 28px;
+  padding: 48px 40px 36px 40px;
+  box-shadow: 0 4px 24px rgba(61, 81, 124, 0.10);
+  min-width: 420px;
+}
+
+.infoTitle {
+  color: var(--color-7);
+  font-size: 2.5rem;
+  margin-bottom: 22px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-family: var(--font-title);
+}
+
+.infoCard p {
+  font-size: 2rem;
+  line-height: 1.8;
+  font-family: var(--font-text);
+}
+
+.verificado {
+  margin-top: 28px;
+  font-size: 5rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.materialCard {
+  flex: 1;
+  background: linear-gradient(135deg, var(--color-7) 0%, #005fa3 100%);
+  border-radius: 28px;
+  padding: 48px 36px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 24px rgba(61, 81, 124, 0.10);
+  min-width: 320px;
+}
+
+.materialCard p {
+  font-size: 2rem;
+  line-height: 2;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 32px;
+  font-family: var(--font-text);
+}
+
+.materialButton {
+  margin-top: 0;
+  display: inline-block;
+  background: var(--white);
+  color: var(--color-7);
+  text-decoration: none;
+  padding: 22px 0;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(61, 81, 124, 0.10);
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-title);
+}
+
+.materialButton:hover {
+  background: var(--color-7);
+  color: var(--white);
+}
+.alertCard {
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(90deg, #2c4740 0%, var(--color-4) 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  margin: 48px auto 0 auto;      
+  min-height: 160px;
+  box-shadow: 0 4px 24px rgba(61, 81, 124, 0.10);
+  width: 100%;
+  max-width: 1300px;             
+}
+
+.alertImage {
+  width: 220px;
+  min-width: 220px;
+  height: 160px; /* altura fixa para garantir que a imagem apareça */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 24px 0 0 24px;
+}
+
+.alertText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Centraliza verticalmente */
+  padding: 0 48px;
+  font-size: 2.45rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  line-height: 1.4;
+  width: 100%;
+  min-height: 160px;
+  /* Garante que ocupe o espaço ao lado da imagem */
+}
+
+.alertWhite {
+  color: #fff;
+}
+
+.alertBlack {
+  color: #191919;
+}
+
+@media (max-width: 900px) {
+  .alertCard {
+    flex-direction: column;
+    max-width: 100%;
+    min-height: unset;
+  }
+  .alertImage {
+    width: 100%;
+    min-width: unset;
+    height: 140px;
+    border-radius: 24px 24px 0 0;
+  }
+  .alertText {
+    padding: 24px 18px;
+    font-size: 1.1rem;
+  }
+}
+.emergencySection {
+  background: var(--color-4);
+  border-radius: 32px;
+  padding: 64px 0 64px 0;
+  margin: 64px auto 0 auto;
+  max-width: 1300px;   /* igual aos outros cards */
+  box-shadow: 0 8px 32px rgba(61, 81, 124, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emergencyTitle {
+  color: var(--color-7);
+  font-size: 3.7rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 56px;
+  font-family: var(--font-title);
+  padding: 2rem ;
+}
+
+.emergencyGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 56px; /* Espaço grande entre os cards */
+  width: 100%;
+  align-items: center;
+}
+
+.emergencyCard {
+  background: var(--white);
+  border-radius: 32px;
+  border: 4px solid var(--color-7);
+  box-shadow: 0 8px 32px rgba(61, 81, 124, 0.13);
+  padding: 56px 64px;
+  gap: 56px;
+  width: 96%;
+  max-width: 1100px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.emergencyIcon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;    /* aumentado */
+  height: 200px;   /* aumentado */
+}
+
+.emergencyIcon img {
+  width: 100%;
+  height: auto;
+  max-height: 220px; /* garante que não estoure o card */
+  object-fit: contain;
+}
+
+.emergencyContent {
+  flex: 1;
+}
+
+.emergencyTitleRow {
+  margin-bottom: 22px;
+}
+
+.emergencyNumber {
+  font-size: 3.7rem;
+  font-weight: 800;
+  color: var(--color-7);
+  font-family: var(--font-title);
+}
+
+.samu,
+.bombeiros,
+.policia {
+  color: var(--color-7);
+}
+
+.emergencyListBox {
+  background: var(--color-7);
+  border-radius: 18px;
+  padding: 28px 38px;
+  margin-bottom: 0;
+  color: var(--white);
+  max-width: 600px; /* igual ao .emergencyNote */
+}
+
+.emergencyListBox ul {
+  margin: 0;
+  padding-left: 28px;
+  font-size: 2.3rem;
+  color: var(--white);
+}
+
+.emergencyListBox li {
+  margin-bottom: 12px;
+}
+
+.emergencyNote {
+  background: var(--color-7);         /* mesmo azul da lista */
+  border-radius: 18px;
+  padding: 18px 32px;
+  font-size: 1.35rem;
+  color: var(--white);                /* texto branco */
+  font-weight: 700;
+  display: block;
+  margin-left: 0;                     /* alinha à esquerda */
+  margin-top: 18px;
+  max-width: 600px;                   /* igual ou menor que a lista azul */
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .emergencySection {
+    padding: 32px 0;
+    max-width: 100%;
+  }
+  .emergencyCard {
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 18px;
+    gap: 24px;
+    width: 98%;
+    max-width: 100%;
+  }
+  .emergencyIcon {
+    width: 120px;
+    height: 120px;
+  }
+  .emergencyNumber {
+    font-size: 2rem;
+  }
+  .emergencyListBox {
+    padding: 18px 14px;
+    font-size: 1.1rem;
+  }
+  .emergencyNote {
+    padding: 12px 14px;
+    font-size: 1.1rem;
+  }
+}
+.faqtreinamentosPage {
+  background-image:
+    url("../../img/texturaFundo.png"),
+    linear-gradient(to bottom, var(--verdeNeve), var(--verdeDegrade));
+  background-repeat: repeat, no-repeat;
+  background-size: 250px, cover;
+  background-position: top left, center;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faqtreinamentosPage > * {
+  width: 100%;
+}
+
+.faqtreinamentosPage h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  font-family: var(--fonteTitulos);
+  margin: 2.5rem 0 2rem 0;
+  text-align: center;
+}
+
+.faqtreinamentosPage .faq-container {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.faqtreinamentosPage span[class*="questionText"] {
+  color: #000 !important;
+}
+
+.faqtreinamentosPage div[class*="answerContent"] {
+  color: #000 !important;
+}
+
+.faqtreinamentosPage span[class*="plus"] {
+  color: var(--azulProfundo) !important;
+}
