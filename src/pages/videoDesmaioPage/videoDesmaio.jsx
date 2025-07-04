@@ -10,19 +10,19 @@ import WaveFaq from "../../components/waveFaq/WaveFaq.jsx";
 const faqData = [
   {
     question: "E se eu não tiver certeza sobre qual serviço chamar?",
-    answer: "Ligue para o SAMU (192)...",
+    answer: "Ligue para o SAMU (192) e explique a situação. Eles vão te orientar.",
   },
   {
     question: "Posso ligar para o SAMU só para pedir orientação?",
-    answer: "Sim, o SAMU orienta em casos de dúvida...",
+    answer: "Sim, o SAMU orienta em casos de dúvidas. Eles estão lá para ajudar.",
   },
   {
     question: "Tem algum problema em acionar o serviço errado sem querer?",
-    answer: "Não, o importante é pedir ajuda...",
+    answer: "Não, o importante é pedir ajuda quando necessário. Eles vão te direcionar para o serviço certo.",
   },
   {
     question: "E se for uma situação leve, como uma febre ou queda sem machucado?",
-    answer: "Nesses casos, o ideal é procurar uma UPA ou posto de saúde...",
+    answer: "Nesses casos, o ideal é procurar uma UPA ou posto de saúde. Ou até mesmo perguntar a Zee, nossa assistente virtual.",
   }
 ];
 
@@ -42,7 +42,7 @@ const VideoDesmaioPage = () => (
 
       <div className={styles.infoGrid}>
         <div className={styles.infoCard}>
-          <h2 className={styles.infoTitle}>Conduta de Engasgo</h2>
+          <h2 className={styles.infoTitle}>Conduta de Desmaio</h2>
           <p>
             Neste vídeo, você aprende a agir com calma e segurança...
           </p>
