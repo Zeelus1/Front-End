@@ -33,3 +33,7 @@
 .faqprimeirosSocorros span[class*="plus"] {
   color: var(--azulProfundo) !important;
 }
+
+.faq{
+  background-image: url("../../img/fundoVerde.png");
+}
