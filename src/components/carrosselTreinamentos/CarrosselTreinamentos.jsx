@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './CarrosselTreinamentos.module.css';
 import imgTreinamento from '../../img/treinamentosComDaniel.png';
 import ImgSeta from "../../img/seta.png";
-
+import { Link } from 'react-router';
 const cards = [
   {
     titulo: 'Conduta de Desmaio',
@@ -104,7 +104,9 @@ export default function CarrosselTreinamentos() {
                 <span className={styles.tempo}>{card.tempo}</span>
               </div>
               <p className={styles.descricao}>{card.descricao}</p>
-              <button className={styles.botao}>Vamos lá?</button>
+              <Link to="/home/treinamentos/primeirossocorros/videoDesmaio">
+               <button className={styles.botao}>Vamos lá?</button>
+              </Link>
             </div>
           </div>
         ))}
