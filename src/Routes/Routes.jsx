@@ -18,6 +18,7 @@ import { ptBR } from 'rsuite/esm/locales/index.js';
 import HomePage from "../pages/homePage/Homepage.jsx";
 import Anamnesia from "../pages/anamnesia/Anamnesia.jsx";
 import PlanosPremium from "../pages/planosPremium/PlanosPremium.jsx";
+import VideoDesmaioPage from "../pages/videoDesmaioPage/videoDesmaio.jsx"; 
 const router = createBrowserRouter([
 
 
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       path: "treinamentos/primeirossocorros",
       element: <PrimeirosSocorrosPage />,
     },
+      {
+        path: "treinamentos/primeirossocorros/videoDesmaio",
+        element: <VideoDesmaioPage />,
+      },
     ],
   },
 ]);
