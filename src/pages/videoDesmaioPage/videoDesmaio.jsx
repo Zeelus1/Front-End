@@ -156,12 +156,17 @@ const VideoDesmaioPage = () => (
     </section>
 
 
-  <WaveFaq />
-    <Faq
-      data={faqData}
-      title="Dúvidas frequentes"
-      className={styles.faqvideoDesmaioPage}
-    />
+  <section className={styles.faq}>
+    <WaveFaq />
+      <Faq
+        data={faqData}
+        title="Dúvidas frequentes"
+        answerColor={"#000"}
+        questionColor={"#000"}
+        titleColor={"#004777"}
+        plusColor={"#004777"}
+      />
+  </section>
     
   </main>
 );

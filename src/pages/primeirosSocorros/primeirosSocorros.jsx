@@ -58,12 +58,17 @@ const primeirosSocorros = () => {
 
       <CarrosselTreinamentos />
 
-      <WaveFaq />
-      <Faq
-        data={faqData}
-        title="Dúvidas frequentes"
-        className={Style.faqprimeirosSocorros}
-      />
+      <section className={Style.faq}>
+        <WaveFaq />
+        <Faq
+          data={faqData}
+          title="Dúvidas frequentes"
+          answerColor={"#000"}
+          questionColor={"#000"}
+          titleColor={"#004777"}
+          plusColor={"#004777"}
+        />
+      </section>
       
     </>
   )
